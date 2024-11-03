@@ -1,0 +1,48 @@
+{% set hero_choice = post.meta('hero_type') %}
+{% set title = post.meta('hero_title')?: post.title %}
+{% set subtitle = post.meta('hero_subtitle') %}
+{% set image = post.meta('hero_image_source') == 'featuredImage' ? post.thumbnail : post.meta('hero_image') %}
+{% set video = post.meta('hero_video').file %}
+{% set placeholder = post.meta('hero_video').placeholder %}
+{% set ctas = post.meta('hero_ctas') ? post.meta('hero_ctas') : null %}
+
+{% if hero_choice == 'hero_large' or hero_choice == 'hero_video' %}
+	{% include 'modules/heroes/large_hero.twig' with {
+    title: title,
+    subtitle: subtitle,
+    ctas: ctas,
+    image: image,
+		colour: page_theme.name,
+    video: video,
+    placeholder: placeholder
+	} %}
+
+{% elseif  hero_choice == 'hero_article' %}
+	{% include 'modules/heroes/large_hero.twig' with {
+			title: title,
+			subtitle: subtitle,
+			image: image,
+			colour: page_theme.name,
+			ctas: null
+		} %}
+
+{% elseif  hero_choice == 'hero_regular' %}
+	{% set image = post.meta('hero_image_source_regular') == 'featuredImage' ? post.thumbnail : post.meta('hero_image') %}
+
+	{% include 'modules/heroes/regular_hero.twig' with {
+	    title: title,
+	    subtitle: subtitle,
+	    ctas: ctas,
+	    image: image
+		} %}
+
+{% elseif  hero_choice == 'hero_no_image' %}
+	{% include 'modules/heroes/no_image_hero.twig' with {
+	    title: title,
+	    subtitle: subtitle,
+	    ctas: ctas,
+			colour: page_theme.name,
+		} %}
+
+
+{% endif %}

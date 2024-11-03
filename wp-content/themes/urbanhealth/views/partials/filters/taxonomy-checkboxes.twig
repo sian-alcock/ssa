@@ -1,0 +1,14 @@
+{#
+  Loops over a native wordpress term from get_terms and creates checkboxes
+  @param terms  array
+  @param active_terms  array
+  @param name  string
+  @param id_prefix  string
+#}
+{% for term in terms %}
+  {% set checkbox_id = id_prefix ~ name  ~ term.term_id %}
+  <div class='o-checkbox'>
+    <input type="checkbox" id="{{ checkbox_id }}" name="{{name}}" value="{{term.term_id}}" {{term.term_id in active_terms ? 'checked' : ''}}>
+    <label for="{{checkbox_id}}">{{term.name}}</label>
+  </div>
+{% endfor %}

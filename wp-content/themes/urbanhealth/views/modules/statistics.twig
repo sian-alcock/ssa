@@ -1,0 +1,19 @@
+<section class="c-statistics c-statistics--{{ additional_classes }}">
+  <div class="o-grid-container">
+    <div class="c-statistics__container flex bg-{{ page_theme.name }}">
+      {% if acf.statistics__heading %}
+        <h2 class="c-statistics__heading">
+          {{ acf.statistics__heading }}
+        </h2>
+      {% endif %}
+      <div class="c-statistics__items-container flex">
+        {% for item in acf.statistics__item %}
+          <div class="c-statistics__item-wrapper flex">
+            <h3 class="c-statistics__stat-heading">{{ item.item_heading }}</h3>
+            <span class="c-statistics__stat-description">{{ item.item_description }}</span>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

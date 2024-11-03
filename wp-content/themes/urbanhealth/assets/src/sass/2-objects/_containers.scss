@@ -1,0 +1,43 @@
+.o-row-margin {
+  width: 100%;
+  margin-bottom: 30px;
+
+  @include breakpoint($break-tablet) {
+    margin-bottom: 35px;
+  }
+
+  @include breakpoint($break-desktop) {
+    margin-bottom: 40px;
+  }
+
+  @include breakpoint($break-desktop-wide) {
+    margin-bottom: 50px;
+  }
+
+  @include breakpoint($break-desktop-wider) {
+    margin-bottom: 60px;
+  }
+}
+
+.o-grid-container {
+  max-width: 1500px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  // background: susy-svg-grid() no-repeat scroll;
+
+  @include breakpoint($break-tablet) {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+
+.o-grid-container--thin {
+  @include breakpoint($break-tablet) {
+    width: span(8 of 12);
+  }
+  @include breakpoint($break-desktop-med) {
+    width: span(6 of 12);
+  }
+}

@@ -1,0 +1,106 @@
+// standard clearfix
+@mixin clearfix {
+  &::before,
+  &::after {
+    content: ' ';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+
+  & {
+    *zoom: 1;
+  }
+}
+
+// aspect ratio mixin
+@mixin aspect-ratio($arglist...) {
+  $map: keywords($arglist);
+  $height: map-get($map, height) or nth-or-null($arglist, 2);
+  $width: map-get($map, width) or nth-or-null($arglist, 1);
+  $ratio: map-get($map, ratio) or if($width and $height, $width/$height, nth-or-null($arglist, 1))
+    or 1;
+  $padding: 1 / $ratio * 100%;
+
+  &::before {
+    content: '';
+    position: relative;
+    display: block;
+    padding-bottom: $padding;
+  }
+
+  &::after {
+    content: '';
+    display: table;
+  }
+}
+
+// Helper function
+// Return null rather than throwing an error if index is outside list range.
+@function nth-or-null($list, $index) {
+  @return if(length($list) >= $index, nth($list, $index), null);
+}
+
+// remove default styles in iOS.
+@mixin remove-webkit-defaults {
+  border-radius: 0;
+  appearance: none;
+}
+
+@function calculateRem($size) {
+  $remSize: $size / 16;
+  @return #{$remSize}rem;
+}
+
+// USAGE: @include font-size(12);
+@mixin font-size($size) {
+  font-size: calculateRem($size);
+}
+
+// USAGE: @include stagger-transition-delay(10, 0.5s, 0.1s);
+@mixin stagger-transition-delay($i, $initial-delay, $stagger-delay) {
+  @while $i > 0 {
+    &:nth-child(#{$i}) {
+      transition-delay: $initial-delay + $stagger-delay * $i;
+    }
+
+    $i: $i - 1;
+  }
+}
+
+// USAGE: @include hocus {color: red;}
+@mixin hocus {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+$wp-admin-bar-md: 32px;
+$wp-admin-bar-sm: 48px;
+
+$wp-breakpoint-md: 784px;
+$wp-breakpoint-sm: 600px;
+
+@mixin wp-admin-offset($prop: top, $offset: 0) {
+  // No WP admin bar
+  #{ $prop }: #{$offset};
+
+  // WP admin bar is visible
+  body.admin-bar & {
+    // Medium-sized devices
+    #{ $prop }: if($offset != 0, calc(#{$offset} + #{$wp-admin-bar-sm}), #{$wp-admin-bar-sm});
+
+    // Larger devices
+    @media (min-width: #{ $wp-breakpoint-md }) {
+      #{ $prop }: if($offset != 0, calc(#{$offset} + #{$wp-admin-bar-md}), #{$wp-admin-bar-md});
+    }
+
+    // Mobile-ish sizes, the admin bar isn't sticky anymore
+    @media (max-width: #{ $wp-breakpoint-sm }) {
+      #{ $prop }: #{$offset};
+    }
+  }
+}

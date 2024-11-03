@@ -1,0 +1,109 @@
+{
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "airbnb",
+    "prettier",
+    "prettier/react"
+  ],
+  "plugins": ["react-hooks"],
+  "rules": {
+    "import/no-unresolved": "off",
+    "no-plusplus": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "no-debugger": 0,
+    "no-alert": 0,
+    "no-unused-vars": [
+      1,
+      {
+        "ignoreSiblings": true,
+        "argsIgnorePattern": "res|next|^err"
+      }
+    ],
+    "prefer-const": ["error"],
+    "arrow-body-style": [2, "as-needed"],
+    "no-unused-expressions": [
+      2,
+      {
+        "allowTaggedTemplates": true
+      }
+    ],
+    "no-param-reassign": [
+      2,
+      {
+        "props": false
+      }
+    ],
+    "linebreak-style": 0,
+    "no-console": 0,
+    "import": 0,
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/__tests__/**",
+          "**/__mocks__/**",
+          "**/*{.,_}{test,spec}.{js,jsx}",
+          "loadershim.js",
+          "test-helpers/**/*",
+          "**/gatsby-node.js"
+        ],
+        "packageDir": ".",
+        "optionalDependencies": false
+      }
+    ],
+    "import/prefer-default-export": 0,
+    "func-names": 0,
+    "space-before-function-paren": 0,
+    "comma-dangle": 0,
+    "max-len": 0,
+    "import/extensions": 0,
+    "no-underscore-dangle": 0,
+    "consistent-return": 0,
+    "react/display-name": 1,
+    "react/no-array-index-key": 0,
+    "react/prefer-stateless-function": 0,
+    "react/forbid-prop-types": 0,
+    "react/no-unescaped-entities": 0,
+    "jsx-a11y/accessible-emoji": 0,
+    "react/require-default-props": 0,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "radix": 0,
+    "no-shadow": 0,
+    "jsx-a11y/href-no-hash": "off",
+    "jsx-a11y/anchor-is-valid": [
+      "warn",
+      {
+        "aspects": ["invalidHref"]
+      }
+    ],
+    "curly": [2, "multi-line"],
+    "jsx-a11y/label-has-associated-control": [
+      2,
+      {
+        "labelComponents": ["label"],
+        "labelAttributes": ["htmlFor"],
+        "controlComponents": ["input", "Input"]
+      }
+    ],
+    "jsx-a11y/label-has-for": [
+      "error",
+      {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }
+    ],
+    "camelcase": 0
+  }
+}

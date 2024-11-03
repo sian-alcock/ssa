@@ -1,0 +1,233 @@
+.hamburger {
+  @include breakpoint($break-mobile-nav-break-point) {
+    display: none;
+  }
+}
+
+.c-navigation__group-label {
+  margin: 24px 0 16px 0px;
+  // font-family: $font-primary;
+  font-weight: $bold;
+  @include font-size(14);
+
+  @media (min-width: $break-mobile-nav-break-point) {
+    @include font-size(16);
+    margin: 24px 0 8px 20px;
+  }
+}
+
+.c-navigation__child-menu {
+  z-index: 5;
+  display: none;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  background-color: $brand-white;
+  transition: height 0.2s ease;
+}
+
+.c-navigation__has-children {
+  .c-navigation__icon {
+    display: inline-block;
+  }
+  &.open {
+    .c-navigation__child-menu {
+      display: block;
+      height: auto;
+    }
+    .c-navigation__icon {
+      transform: rotate(180deg);
+    }
+  }
+}
+.c-navigation__child-layout {
+  @extend .o-grid-container;
+  display: flex;
+  align-items: flex-start;
+}
+
+.c-navigation__link {
+  font-family: $font-graphik-medium;
+}
+
+// Desktop only
+@include breakpoint($break-mobile-nav-break-point) {
+  .c-navigation__child-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    .c-navigation__list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 0 auto;
+      padding: 1rem;
+      border-top: 1px solid $brand-mid-grey;
+    }
+    .c-navigation__link {
+      display: block;
+      margin: 1rem 0.5rem;
+      padding: 0.5rem 0.75rem;
+      @include font-size(28);
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+    .c-navigation__group {
+      width: span(6);
+      margin-right: gutter() / 2;
+      .menu-item {
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+  }
+  .c-navigation__top-level-link {
+    display: inline-block;
+    padding: 1rem 0.25rem;
+  }
+
+  .c-navigation__has-children.open {
+    border-bottom: 4px solid $brand-teal;
+  }
+
+  .c-navigation__see-all-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    line-height: 1;
+
+    .c-navigation__link:hover {
+      background-color: transparent;
+    }
+    .c-navigation__link {
+      @include font-size(14);
+    }
+  }
+
+  .c-navigation__list {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .c-navigation__item {
+    margin-right: 1.5rem;
+    @include breakpoint($break-desktop-med) {
+      margin-right: 3rem;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  .c-navigation__layout--has-featured {
+    .c-navigation__list {
+      justify-content: flex-start;
+      max-width: none;
+      padding-left: 0;
+    }
+    .menu-item {
+      width: span(6);
+      margin-right: gutter() / 2;
+    }
+    .c-navigation__link {
+      display: inline-block;
+      margin-left: 0;
+    }
+  }
+
+  .c-navigation__featured-article {
+    flex-basis: span(6);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-left: 4rem;
+
+    .c-card-listing__image-wrapper {
+      margin-bottom: 1rem;
+    }
+  }
+}
+@include breakpoint($break-desktop-wide) {
+  .c-navigation__featured-article {
+    flex-basis: span(4);
+  }
+  .c-navigation__child-menu {
+    .c-navigation__link {
+      margin: 1.5rem 0.5rem;
+    }
+  }
+}
+
+// Mobile only - to avoid lots of resetting styles
+@media (max-width: $break-mobile-nav-break-point) {
+  .c-navigation {
+    position: absolute;
+    top: 108px;
+    right: 0;
+    z-index: 5;
+    width: 0;
+    min-height: calc(100vh - 108px);
+    overflow: hidden;
+    background-color: $brand-white;
+    transform: translateX(100%);
+    transition: transform 0.2s ease-in;
+
+    &.open {
+      width: 100%;
+      transform: translateX(0);
+      @include breakpoint($break-mobile-land) {
+        width: 320px;
+      }
+    }
+  }
+  .c-navigation__featured-article {
+    display: none;
+  }
+
+  .c-navigation__has-children {
+    button {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+
+  .c-navigation__top-level-item {
+    padding: 1rem;
+    border-bottom: 1px solid $brand-mid-grey;
+
+    &:first-of-type {
+      border-top: 1px solid $brand-mid-grey;
+    }
+  }
+
+  .c-navigation__child-menu {
+    .c-navigation__list {
+      width: 100%;
+      padding-bottom: 0;
+    }
+    .c-navigation__link {
+      display: block;
+      padding: 0.75rem 0;
+      font-family: $font-graphik-regular;
+    }
+    .current-menu-item {
+      font-weight: bold;
+    }
+  }
+
+  .c-navigation__list {
+    padding: 1rem;
+  }
+
+  .c-navigation__see-all-item {
+    span {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,263 @@
+/* stylelint-disable declaration-no-important */
+.c-form {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  .c-form__title {
+    @extend h1;
+  }
+  .c-form__title,
+  .c-form__subtitle {
+    width: span(12);
+    margin-right: auto;
+    margin-bottom: 2rem;
+    margin-left: auto;
+    text-align: center;
+    @include breakpoint($break-desktop) {
+      width: span(8);
+    }
+    @include breakpoint($break-desktop-wide) {
+      width: span(6);
+    }
+  }
+}
+.c-form__container {
+  width: span(12);
+  margin: 0 auto;
+
+  .gform_wrapper label.gfield_label {
+    font-weight: $reg;
+  }
+
+  .gform_wrapper ul li.gfield {
+    margin-top: 0;
+    margin-bottom: 3rem;
+  }
+
+  input[type='text'],
+  input[type='email'],
+  textarea {
+    width: 100% !important;
+    height: 48px;
+    background-color: $brand-mid-grey;
+  }
+
+  & select {
+    width: 100%;
+    height: 48px;
+    margin-right: 0.6rem;
+
+    padding-left: 0.5rem !important;
+    background: url('/wp-content/themes/urbanhealth/assets/src/img/dropdown-open.svg') no-repeat
+      $brand-mid-grey;
+    background-position: 98%;
+    background-size: 15px 15px;
+
+    option {
+      padding-top: 0.5rem !important;
+      padding-left: 0.5rem !important;
+    }
+  }
+
+  select::-ms-expand {
+    display: none; /* Remove default arrow in Internet Explorer 10 and 11 */
+  }
+
+  input[type='submit'],
+  input[Type='button'].gform_next_button {
+    display: block;
+    margin-bottom: 1rem;
+    padding: 0rem 1.5rem;
+    background: $brand-teal;
+    border: 2px solid transparent;
+    font-family: $font-graphik-medium;
+    text-align: center;
+
+    @include breakpoint($break-mobile) {
+      display: inline-block;
+    }
+
+    @include breakpoint($break-tablet) {
+      padding: 0.8rem 1.5rem;
+    }
+  }
+
+  .gform_wrapper {
+    form {
+      text-align: center;
+    }
+    .gform_page_footer {
+      border: none;
+      text-align: center;
+
+      @include breakpoint($break-tablet) {
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+    .gsection {
+      margin-bottom: 2rem;
+      border: none;
+    }
+    .gsection_title {
+      margin-top: 6rem !important;
+      text-align: center;
+      @extend h2;
+    }
+    .gsection_description {
+      margin-top: 0.5rem;
+      text-align: center;
+    }
+  }
+  .gform_body {
+    text-align: left;
+  }
+
+  input[Type='button'].gform_previous_button {
+    margin-left: 1rem;
+    @extend .o-cta;
+    @extend .o-cta--white;
+  }
+
+  .gfield_checkbox li input[type='checkbox'],
+  .gfield_radio li input[type='radio'] {
+    height: 20px;
+    margin-top: 0;
+    margin-right: 0.5rem;
+    &:hover {
+      background-color: $brand-teal;
+    }
+  }
+
+  .gform_wrapper ul.gfield_checkbox li label,
+  .gform_wrapper ul.gfield_radio li label {
+    margin-top: 0.5rem;
+  }
+
+  .gfield,
+  .top_label li.gfield_error {
+    @include breakpoint($break-desktop) {
+      width: span(8);
+      margin-right: auto !important;
+      margin-left: auto !important;
+
+      input[type='text'] {
+        width: 100% !important;
+      }
+    }
+    @include breakpoint($break-desktop-wide) {
+      width: span(6);
+    }
+  }
+
+  .gfield_description {
+    margin-top: 0.5rem;
+    color: $brand-dark-grey;
+    @include font-size(14px);
+  }
+
+  .gf-page-item__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gf-page-item {
+    display: inline-block;
+    margin-left: 2rem;
+    padding: 1rem 1.5rem;
+    background-color: $brand-light-teal;
+    &.current {
+      background-color: $brand-teal;
+    }
+  }
+
+  .gf-page-item__divider {
+    width: 60px;
+    height: 4px;
+    background-color: $brand-light-teal;
+  }
+
+  .gform_confirmation_wrapper {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .ginput_container_fileupload {
+    input[type='file'] {
+      background-color: transparent;
+    }
+  }
+
+  .button.gform_next_button {
+    margin-right: 0 !important;
+  }
+  .gform_ajax_spinner {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-top: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+    border: 3px solid $brand-teal-light;
+    border-top-color: $brand-teal;
+    border-radius: 50%;
+    animation: spinner 1.1s infinite linear;
+  }
+
+  @keyframes spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+.gform_legacy_markup_wrapper {
+  .footer-newsletter {
+    display: flex;
+    height: 50px;
+
+    .gform_fields {
+      height: 100%;
+      li.gfield.gfield {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        padding-right: 0;
+
+        .ginput_container.ginput_container {
+          height: 100%;
+          margin: 0;
+
+          input {
+            height: 100%;
+            padding-left: 10px;
+          }
+        }
+      }
+    }
+
+    .gform_body {
+      flex-basis: 75%;
+    }
+
+    .gform_footer {
+      flex-basis: 25%;
+      margin: 0;
+      padding: 0;
+
+      .gform_button {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+.gfield--type-captcha .gfield_label,
+.gfield--input-type-captcha .gfield_label {
+  display: none !important;
+}
+/* stylelint-enable declaration-no-important */

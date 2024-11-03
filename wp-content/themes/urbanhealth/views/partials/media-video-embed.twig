@@ -1,0 +1,15 @@
+<div class="c-media__video-embed-wrapper border-left-{{ page_theme.name }}">
+  <div class="c-media__video-embed">
+    {% set oEmbed = acf.video_url %}
+    {% if  "youtube.com" in oEmbed %}
+      {% set oEmbed = function('addYoutubeQuery', oEmbed) %}
+    {% endif %}
+    {{oEmbed}}
+  </div>
+
+  {% if acf.video_caption %}
+  <div class="c-text-media__image-caption">
+    {{acf.video_caption}}
+  </div>
+  {% endif %}
+</div>

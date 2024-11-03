@@ -1,0 +1,159 @@
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+
+// Settings
+// ==================================================
+$hamburger-padding-x           : 12px !default;
+$hamburger-padding-y           : 12px !default;
+$hamburger-layer-width         : 28px !default;
+$hamburger-layer-height        : 2px !default;
+$hamburger-layer-spacing       : 6px !default;
+$hamburger-layer-color         : #000 !default;
+$hamburger-layer-border-radius : 4px !default;
+$hamburger-hover-opacity       : 0.7 !default;
+$hamburger-active-layer-color  : $hamburger-layer-color !default;
+$hamburger-active-hover-opacity: $hamburger-hover-opacity !default;
+
+// To use CSS filters as the hover effect instead of opacity,
+// set $hamburger-hover-use-filter as true and
+// change the value of $hamburger-hover-filter accordingly.
+$hamburger-hover-use-filter   : false !default;
+$hamburger-hover-filter       : opacity(50%) !default;
+$hamburger-active-hover-filter: $hamburger-hover-filter !default;
+
+
+// Hamburger
+// ==================================================
+.hamburger {
+  display: inline-block;
+  margin: 0;
+  padding: $hamburger-padding-y $hamburger-padding-x;
+  overflow: visible;
+  background-color: transparent;
+  border: 0;
+  color: inherit;
+
+  // Normalize (<button>)
+  font: inherit;
+  text-transform: none;
+  transition-duration: 0.15s;
+
+  transition-property: opacity, filter;
+  transition-timing-function: linear;
+  cursor: pointer;
+
+  &:hover {
+    @if $hamburger-hover-use-filter == true {
+      filter: $hamburger-hover-filter;
+    }
+    @else {
+      opacity: $hamburger-hover-opacity;
+    }
+  }
+
+  &.is-active {
+    &:hover {
+      @if $hamburger-hover-use-filter == true {
+        filter: $hamburger-active-hover-filter;
+      }
+      @else {
+        opacity: $hamburger-active-hover-opacity;
+      }
+    }
+
+    .hamburger-inner,
+    .hamburger-inner::before,
+    .hamburger-inner::after {
+      background-color: $hamburger-active-layer-color;
+    }
+  }
+}
+
+.hamburger-box {
+  position: relative;
+  display: inline-block;
+  width: $hamburger-layer-width;
+  height: $hamburger-layer-height * 3 + $hamburger-layer-spacing * 2;
+}
+
+.hamburger-inner {
+  top: 50%;
+  display: block;
+  margin-top: $hamburger-layer-height / -2;
+
+  &,
+  &::before,
+  &::after {
+    position: absolute;
+    width: $hamburger-layer-width;
+    height: $hamburger-layer-height;
+    background-color: $hamburger-layer-color;
+    border-radius: $hamburger-layer-border-radius;
+    transition-duration: 0.15s;
+    transition-property: transform;
+    transition-timing-function: ease;
+  }
+
+  &::before,
+  &::after {
+    display: block;
+    content: '';
+  }
+
+  &::before {
+    top: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
+  }
+
+  &::after {
+    bottom: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
+  }
+}
+
+// squeeze
+/*
+   * Squeeze
+   */
+.hamburger--squeeze {
+  .hamburger-inner {
+    transition-duration: 0.075s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+    &::before {
+      transition: top 0.075s 0.12s ease,
+        opacity 0.075s ease;
+    }
+
+    &::after {
+      transition: bottom 0.075s 0.12s ease,
+        transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+  }
+
+  &.is-active {
+    .hamburger-inner {
+      transform: rotate(45deg);
+      transition-delay: 0.12s;
+      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+      &::before {
+        top: 0;
+        transition: top 0.075s ease,
+          opacity 0.075s 0.12s ease;
+        opacity: 0;
+      }
+
+      &::after {
+        bottom: 0;
+        transform: rotate(-90deg);
+        transition: bottom 0.075s ease,
+          transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+    }
+  }
+}

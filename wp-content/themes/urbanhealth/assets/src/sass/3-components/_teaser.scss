@@ -1,0 +1,161 @@
+.c-teaser {
+  padding: ($module-padding + 1rem) 0 $module-padding 0;
+}
+
+.c-teaser__layout {
+  @include breakpoint($break-desktop) {
+    display: flex;
+  }
+}
+
+.c-teaser__box {
+  z-index: 2;
+  padding: 1.5rem 1rem;
+}
+
+.c-teaser__box--teal {
+  background-color: $brand-teal;
+  color: $white;
+}
+
+.c-teaser__box--overlap {
+  padding: 1.5rem 1rem;
+
+  @include breakpoint($break-desktop) {
+    flex: 1 0 calc(50% + 2rem);
+    margin: 2rem 0 2rem -2rem;
+    padding: 3rem 2rem;
+  }
+}
+
+.c-teaser__heading {
+  margin-bottom: 0.75em;
+}
+
+.c-teaser__description {
+  margin-bottom: 2em;
+}
+
+.c-teaser__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  @include breakpoint($break-desktop) {
+    position: absolute;
+  }
+}
+
+.c-teaser__caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+
+  .c-box__caption {
+    margin-left: 0;
+  }
+}
+
+.c-teaser__cta {
+  margin-right: 1rem;
+}
+
+// No image
+.c-teaser--no-image {
+  .c-teaser__heading {
+    @extend h1;
+    @include breakpoint($break-desktop) {
+      margin-right: gutter();
+      padding-right: 1rem;
+    }
+  }
+
+  .c-teaser__box {
+    @include breakpoint($break-desktop) {
+      padding: 3rem 4rem;
+    }
+  }
+  .c-teaser__layout {
+    @include breakpoint($break-desktop) {
+      display: flex;
+    }
+  }
+}
+.c-teaser__desktop-col-6 {
+  @include breakpoint($break-desktop) {
+    width: span(6 of 12);
+  }
+}
+
+// Image Large
+.c-teaser--large-image {
+  padding-top: 0;
+  .c-teaser__image-container {
+    min-width: 100%;
+
+    @include breakpoint($break-tablet) {
+      height: 65vh;
+    }
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .c-teaser__caption {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+  }
+  .c-teaser__box-container {
+    position: relative;
+
+    @include breakpoint($break-tablet) {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+  .c-teaser__box {
+    position: relative;
+    max-width: 570px;
+    margin-top: -1rem;
+
+    @include breakpoint($break-tablet) {
+      position: absolute;
+      right: 0;
+      bottom: -3rem;
+      padding: 1.5rem 3rem;
+    }
+  }
+  .c-teaser__cta {
+    @include breakpoint($break-mobile) {
+      margin-bottom: 0;
+    }
+  }
+  .c-teaser__box--padding-top {
+    padding-top: 2.5rem;
+
+    @include breakpoint($break-tablet) {
+      padding-top: 2.5rem;
+    }
+  }
+}
+
+// Image right
+.c-teaser--image-right {
+  .c-teaser__layout {
+    @include breakpoint($break-desktop) {
+      flex-direction: row-reverse;
+    }
+  }
+  .c-teaser__box--overlap {
+    @include breakpoint($break-desktop) {
+      margin: 2rem -2rem 2rem 0;
+    }
+  }
+}
+
+.c-teaser__mailto {
+  margin-bottom: 0.5rem;
+}

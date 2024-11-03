@@ -1,0 +1,17 @@
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+.idea
+build/mode_modules/
+build/yarn-error.log
+
+../twentyfifteen/
+../twentyseventeen/
+../twentysixteen/

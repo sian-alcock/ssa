@@ -1,0 +1,66 @@
+.o-breadcrumbs {
+  margin-left: -10px;
+  padding: 1rem 0;
+  color: $brand-cool-grey;
+
+  nav {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+
+    @include breakpoint($break-desktop) {
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+  }
+  .breadcrumb_last {
+    display: none;
+    @include breakpoint($break-desktop) {
+      display: inline;
+    }
+  }
+
+  @include breakpoint($break-desktop) {
+    margin-left: -15px;
+  }
+  a {
+    color: $brand-black;
+
+    &:not(:last-of-type) {
+      display: none;
+
+      @include breakpoint($break-desktop) {
+        display: inline;
+      }
+    }
+  }
+
+  .breadcrumb-separator {
+    display: inline-block;
+
+    &:not(:last-of-type) {
+      display: none;
+      @include breakpoint($break-desktop) {
+        display: inline;
+      }
+    }
+    &:last-of-type {
+      transform: rotate(180deg);
+      @include breakpoint($break-desktop) {
+        transform: none;
+      }
+    }
+  }
+
+  a,
+  .breadcrumb_last {
+    padding: 0 10px;
+    font-family: $font-graphik-medium;
+    font-size: 0.875em;
+
+    @include breakpoint($break-desktop) {
+      padding: 0 15px;
+    }
+  }
+}

@@ -1,0 +1,146 @@
+{% set variant = acf.teaser_variant %}
+{# The teaser colour is taken from the target page of the first CTA #}
+{% set first_cta = acf.teaser_ctas[0] %}
+
+{% set no_image_bg_color = acf.no_image_background_color %}
+
+{% set teaser_theme = 'teal' %}
+{% if acf.teaser_type == 'content' %}
+	{% set first_cta_theme = fn('get_post_theme', first_cta.cta_post_id) %}
+	{% set teaser_theme = first_cta_theme.name %}
+{% else %}
+	{% set teaser_theme = acf.teaser_theme.topic_colour %}
+{% endif %}
+
+{% set tracking_key = 'teaser_' ~ variant %}
+
+{% if variant == 'large-image' %}
+	<section class="c-teaser {{ additional_classes }} c-teaser--large-image js-teaser" data-tracking="{{tracking_key}}">
+		<div class='c-teaser__image-container o-image-overlay o-image-overlay--{{teaser_theme}}'>
+			{% set image = get_image(acf.teaser_image) %}
+			{% include 'partials/full-width-image.twig' with {
+        image: image
+      } %}
+		</div>
+		<div class="o-grid-container">
+			<div class='c-teaser__box-container'>
+				<div class='c-teaser__box c-box {{acf.box_caption ? ' border-top-' ~ teaser_theme : ' '}} {{acf.box_tagline ? ' c-teaser__box--padding-top' : ' '}}'>
+					<div class='c-teaser__caption'>
+						{% include 'partials/box-caption-text.twig' with {tagline: acf.box_tagline, caption: acf.box_caption, colour: teaser_theme } %}
+					</div>
+					<h3 class='c-teaser__heading'>{{acf.teaser_heading}}</h3>
+					{% if acf.teaser_description %}
+						<p class='c-teaser__description'>{{acf.teaser_description}}</p>
+					{% endif %}
+					{{ _self.buttons(acf, tracking_key, teaser_theme, acf.teaser_type, acf.external_buttons, acf.teaser_ctas, acf.download_buttons, acf.mailto_links) }}
+					{{ _self.buttons(acf, tracking_key, teaser_theme, acf.teaser_type_two, acf.external_buttons_two, acf.teaser_ctas_two, acf.download_buttons_two, acf.mailto_links_two) }}
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% elseif variant == 'no-image' %}
+
+	<section class="c-teaser {{ additional_classes }} c-teaser--no-image js-teaser" data-tracking="{{tracking_key}}">
+		<div class="o-grid-container">
+			<div class='c-teaser__box  c-teaser__box--{{no_image_bg_color}} c-box'>
+				<div class='c-teaser__layout'>
+					<h3 class='c-teaser__heading c-teaser__desktop-col-6'>{{acf.teaser_heading}}</h3>
+					<div class='c-teaser__desktop-col-6'>
+						{% if acf.teaser_description %}
+							<p class='c-teaser__description'>{{acf.teaser_description}}</p>
+						{% endif %}
+							{{ _self.buttons(acf, tracking_key, teaser_theme, acf.teaser_type, acf.external_buttons, acf.teaser_ctas, acf.download_buttons, acf.mailto_links) }}
+							{{ _self.buttons(acf, tracking_key, teaser_theme, acf.teaser_type_two, acf.external_buttons_two, acf.teaser_ctas_two, acf.download_buttons_two, acf.mailto_links_two) }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% else %}
+
+	<section class="c-teaser  c-teaser--{{variant}} {{ additional_classes }} js-teaser" data-tracking="{{tracking_key}}">
+		<div class="o-grid-container">
+			<div class='c-teaser__layout'>
+
+				<div class='c-teaser__image-container c-teaser__desktop-col-6 o-image-overlay o-image-overlay--{{teaser_theme}}'>
+					{% set image = get_image(acf.teaser_image) %}
+					<img class="c-teaser__image" src="{{image.src('banner')}}" srcset="{{get_image(image).src|resize(420) }} 420w, {{get_image(image).src|resize(640) }} 640w, {{ image.src('medium_large')}} 768w, {{ image.src('large')}} 1024w, {{ image.src('extra_large')}} 1536w" sizes="(max-width: 640px) 100vw, (max-width: 1100) 50vw, 700px" alt="{{image.alt}}" loading="lazy"/>
+				</div>
+
+				<div class='c-teaser__box c-teaser__box--overlap c-box {{acf.box_caption ? ' border-top-' ~ teaser_theme : ' '}}'>
+					<div class='c-teaser__caption'>
+						{% include 'partials/box-caption-text.twig' with {tagline: acf.box_tagline, caption: acf.box_caption, colour: teaser_theme } %}
+					</div>
+					<h3 class='c-teaser__heading'>{{acf.teaser_heading}}</h3>
+					{% if acf.teaser_description %}
+						<p class='c-teaser__description'>{{acf.teaser_description}}</p>
+					{% endif %}
+					{{ _self.buttons(acf, tracking_key, teaser_theme, acf.teaser_type, acf.external_buttons, acf.teaser_ctas, acf.download_buttons, acf.mailto_links) }}
+					{{ _self.buttons(acf, tracking_key, teaser_theme, acf.teaser_type_two, acf.external_buttons_two, acf.teaser_ctas_two, acf.download_buttons_two, acf.mailto_links_two) }}
+				</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endif %}
+
+
+{% macro buttons(acf, tracking_key, teaser_theme, teaser_type, external_buttons, internal_buttons, download_buttons, mailto_links) %}
+	{% set ctas = null %}
+	{% set is_internal = teaser_type == 'content'  %}
+	{% set is_download = teaser_type == 'download'  %}
+	{% set is_external = teaser_type == 'external'  %}
+	{% set is_mailto = teaser_type == 'mailto'  %}
+
+	{% if is_external %}
+		{% set ctas = external_buttons %}
+	{% elseif is_internal %}
+		{% set ctas = internal_buttons %}
+	{% elseif is_download %}
+		{% set ctas = download_buttons %}
+	{% endif %}
+
+	{% for cta in ctas %}
+		{% set button_text = cta.cta_text %}
+
+		{% if is_internal %}
+			{% set link = fn('get_permalink', cta.cta_post_id) %}
+		{% elseif is_download %}
+			{% set link = cta.download_file.url %}
+			{% set button_text = cta.cta_text ~ ' (' ~ fn('format_filesize_units', cta.download_file.filesize) ~ ')' %}
+		{% elseif is_external %}
+			{% set link = cta.external_link %}
+		{% endif %}
+
+		{% set theme = 'teal' %}
+		{% if is_internal %}
+			{% set target_page_theme = fn('get_post_theme', cta.cta_post_id) %}
+			{% set theme = target_page_theme.name %}
+		{% else %}
+			{% set theme = teaser_theme %}
+		{% endif %}
+		{% set no_image_bg_color = acf.no_image_background_color %}
+		{% include 'partials/cta.twig' with {
+      tracking: tracking,
+      link: link,
+      colour: theme,
+      class: class,
+      text: button_text,
+      download: is_download,
+      no_image_bg_color : no_image_bg_color,
+    } %}
+	{% endfor %}
+
+	{% if is_mailto %}
+		{% set links = mailto_links %}
+		{% for link in links %}
+			{% set mailto = 'mailto:' ~ link.email %}
+			{% set subject = link.email_subject ? 'subject=' ~ link.email_subject : '' %}
+			{% set body = link.email_body ? '&body=' ~ link.email_body : '' %}
+			<a class='c-teaser__mailto o-cta o-cta--{{teaser_theme}}' href='{{mailto}}?{{subject}}{{body}}'>{{link.email}}</a>
+		{% endfor %}
+	{% endif %}
+{% endmacro %}

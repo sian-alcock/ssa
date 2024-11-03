@@ -1,0 +1,11 @@
+<div class='js-modal c-full-modal' role='dialog' aria-label='Search the site'>
+  <form role="search" method="get" id="searchform" action="{{site.link}}">
+    <div class='o-search-bar'>
+      <label class="screen-reader-only" for="s">Search for:</label>
+      <input type="text" value="{{ function('get_search_query') }}" name="s" id="s" placeholder='Start typing'/>
+      <button type="submit" id="searchsubmit" value="Search" ><span class='icon-search-1' /></button>
+    </div>
+  </form>
+  <button class='js-modal-close c-full-modal__close icon-cancel'></button>
+
+</div>

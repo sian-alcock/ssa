@@ -1,0 +1,16 @@
+{#
+  @param caption text for caption
+  @param tagline text for tagline
+	@param colour possible options [yellow, purple]
+#}
+
+{% if tagline or caption %}
+	<p class='c-box__caption no-margin bg-{{colour ?: "yellow"}}'>
+
+		<span class='c-box__caption-tagline'>{{tagline}}</span>
+		{% if tagline and caption %}
+			<span class='c-box__caption-separator'>•</span>
+		{% endif %}
+		<span class='c-box__caption-caption'>{{caption}}</span>
+	</p>
+{% endif %}

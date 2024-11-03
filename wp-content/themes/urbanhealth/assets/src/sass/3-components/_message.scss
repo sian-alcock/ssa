@@ -1,0 +1,21 @@
+.c-message {
+  width: 100%;
+  padding: $module-padding;
+
+  .display-xl {
+    margin-bottom: 0.1em;
+  }
+  p {
+    margin-bottom: 1.5em;
+  }
+}
+
+.c-message__layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 540px;
+  margin: 0 auto;
+  text-align: center;
+}

@@ -1,0 +1,83 @@
+.c-statistics {
+  padding: 2rem 0;
+  background-color: $brand-light-teal;
+
+  @include breakpoint($break-desktop) {
+    padding: 3rem 0;
+  }
+}
+
+.c-statistics__container {
+  flex-direction: column;
+  padding: 2rem 1rem;
+  @include breakpoint($break-desktop-med) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 3rem 2rem;
+  }
+}
+
+.c-statistics--bg-pale-grey {
+  background-color: $brand-light-grey;
+}
+
+.c-statistics--bg-pale-teal {
+  background-color: $brand-light-teal;
+}
+
+.c-statistics__heading {
+  @extend h2;
+  margin-bottom: 0;
+
+  @include breakpoint($break-desktop) {
+    padding-right: 1.5rem;
+  }
+}
+
+.c-statistics__items-container {
+  flex-direction: column;
+  @include breakpoint($break-desktop-med) {
+    flex-direction: row;
+  }
+}
+
+.c-statistics__item-wrapper {
+  flex-direction: column;
+  overflow-wrap: break-word;
+  padding: 1rem 0;
+  &:not(:first-of-type) {
+    border-top: 1px solid $brand-black;
+  }
+  @include breakpoint($break-desktop-med) {
+    flex: 2 1 30%;
+    justify-content: stretch;
+    min-width: 25%;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    &:not(:first-of-type) {
+      border-top: none;
+      border-left: 1px solid $brand-black;
+    }
+  }
+}
+
+.c-statistics__stat-heading {
+  width: 100%;
+  margin-bottom: 0;
+  font-family: $font-graphik-bold;
+  @include font-size(42);
+
+  @include breakpoint($break-desktop) {
+    @include font-size(56);
+  }
+}
+
+.c-statistics__stat-description {
+  font-family: $font-graphik-regular;
+  line-height: 1.8;
+  @include breakpoint($break-desktop-wide) {
+    width: 80%;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,213 @@
+@keyframes border-slide {
+  from {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  to {
+    top: 3px;
+    right: 3px;
+    bottom: 3px;
+    left: 3px;
+  }
+}
+
+.o-cta {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin-bottom: 1em;
+  padding: 1em 1.5em;
+  color: $brand-black;
+  font-family: $font-graphik-medium;
+  text-align: center;
+  transition: 0.5s;
+  @include breakpoint($break-mobile) {
+    display: inline-block;
+  }
+  //stop stlye for <a>
+  &:hover {
+    outline: none;
+
+    opacity: 0.7;
+    opacity: 1;
+
+    &:after {
+      display: block;
+      animation: border-slide 0.5s forwards;
+    }
+  }
+
+  // The default bg colour
+  &:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -2;
+    content: '';
+  }
+
+  // the bg colour on hover
+  &:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    display: none;
+    content: '';
+  }
+}
+
+.o-cta--download {
+  display: inline-flex;
+
+  svg {
+    display: block;
+    width: 18px;
+    max-height: 20px;
+    margin-right: 0.5rem;
+  }
+}
+
+// teal - default --- teal - default --- teal - default ---
+// teal - default --- teal - default --- teal - default ---
+
+.o-cta--teal {
+  background-color: $brand-teal;
+
+  &:before {
+    background-color: $brand-teal;
+  }
+
+  &:after {
+    background-color: $brand-white;
+  }
+
+  &:hover {
+    outline: none;
+
+    color: $brand-black;
+  }
+}
+
+// teal-on-teal --- teal-on-teal --- teal-on-teal ---
+// teal-on-teal --- teal-on-teal --- teal-on-teal ---
+
+.o-cta--teal-on-teal {
+  background-color: $brand-white;
+
+  color: $brand-black;
+
+  &:before {
+    background-color: $brand-white;
+  }
+
+  &:after {
+    background-color: $brand-teal;
+  }
+
+  &:hover {
+    outline: none;
+
+    color: $brand-white;
+  }
+}
+
+// orange - adolescaernt mental health -- orange - adolescaernt mental health
+// orange - adolescaernt mental health -- orange - adolescaernt mental health
+
+.o-cta--orange {
+  background-color: $brand-orange;
+
+  &:before {
+    background-color: $brand-orange;
+  }
+
+  &:after {
+    background-color: $brand-white;
+  }
+  &:hover {
+    outline: none;
+    color: $brand-black;
+  }
+}
+
+// purple - adolescaernt mental health -- purple - adolescaernt mental health
+// purple - adolescaernt mental health -- purple - adolescaernt mental health
+
+.o-cta--purple {
+  background-color: $brand-purple;
+  color: $brand-white;
+
+  &:before {
+    background-color: $brand-purple;
+  }
+
+  &:after {
+    background-color: $brand-white;
+  }
+
+  &:hover {
+    outline: none;
+
+    color: $brand-black;
+  }
+}
+
+// yellow - air pollution -- yellow - air pollution
+// yellow - air pollution -- yellow - air pollution
+
+.o-cta--yellow {
+  background-color: $brand-yellow;
+  color: $brand-black;
+  &:before {
+    background-color: $brand-yellow;
+  }
+
+  &:after {
+    background-color: $brand-white;
+  }
+
+  &:hover {
+    outline: none;
+
+    color: $brand-black;
+  }
+}
+
+// green - multiple long term issues -- green - multiple long term issues
+// green - multiple long term issues -- green - multiple long term issues
+
+.o-cta--green {
+  background-color: $brand-green;
+  color: $brand-white;
+
+  &:before {
+    background-color: $brand-green;
+  }
+
+  &:after {
+    background-color: $brand-white;
+  }
+
+  &:hover {
+    outline: none;
+
+    color: $brand-black;
+  }
+}
+
+.o-cta--white {
+  background-color: $brand-white;
+  border: 2px solid $brand-black;
+}
+
+.o-cta--small {
+  padding: 0.5rem 0.75rem;
+}

@@ -1,0 +1,118 @@
+.c-signposting.cards-2x, .c-signposting.cards-4x {
+
+  .c-card:nth-of-type(2), .c-card:nth-of-type(4) {
+    @include breakpoint($break-tablet) {
+      margin-left: gutter();
+    }
+  }
+
+  .c-signposting__cards-container {
+    @include breakpoint($break-tablet) {
+      flex-direction: row;
+    }
+  }
+
+  .c-card {
+    @include breakpoint($break-tablet) {
+      width: span(6 of 12);
+    }
+  }
+}
+
+.c-signposting.cards-1x {
+
+  .c-card__inner-container {
+    display: flex;
+    flex-direction: column;
+    @include breakpoint($break-desktop-med) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  .c-card {
+    @include breakpoint($break-desktop-med) {
+
+      .c-card__image-wrapper {
+        width: span(5 of 12);
+      }
+      .c-card__text-content {
+        margin-top: 0;
+        margin-left: -2rem;
+        padding: 3rem;
+      }
+      .c-card__text-content-top {
+        margin-bottom: 0.3rem;
+      }
+    }
+  }
+}
+
+.c-signposting.cards-3x {
+
+  .c-signposting__cards-container {
+    @include breakpoint($break-tablet) {
+      flex-direction: row;
+    }
+  }
+
+  .c-card {
+    @include breakpoint($break-tablet) {
+      width: span(6 of 12);
+      &:nth-of-type(2) {
+        margin-left: gutter();
+      }
+    }
+    @include breakpoint($break-desktop) {
+      width: span(4 of 12);
+      &:nth-of-type(3) {
+        margin-left: gutter();
+      }
+    }
+  }
+
+}
+
+
+.c-signposting__container {
+  flex-direction: column;
+}
+
+.c-signposting__cards-container {
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.c-signposting__text-container {
+  flex-direction: column;
+  padding: 3rem 0;
+  @include breakpoint($break-desktop) {
+    flex-direction: row;
+  }
+}
+
+.c-signposting__heading {
+  @extend h1;
+  margin-bottom: 1rem;
+  @include breakpoint($break-desktop) {
+    flex-basis: 50%;
+  }
+}
+
+.c-signposting__description {
+  @include breakpoint($break-desktop) {
+    flex-basis: 50%;
+    margin-left: 2rem;
+    padding-top: 0.6rem;
+  }
+}
+
+.c-signposting__cta-wrapper {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+
+

@@ -1,0 +1,25 @@
+{#
+  Renders an image using srcset sized for half-screen or smaller
+  @param image passed ACF image reference
+  @param class Class to add to image
+#}
+
+{% if image %}
+
+<img
+  class="{{class}}"
+  src="{{ image.src('medium') }}"
+  srcset="
+    {{ get_image(image).src | resize(420) }} 420w,
+    {{ get_image(image).src | resize(740) }} 740w,
+  "
+
+  sizes="
+    (max-width: 641px) 100vw,
+    (max-width: 800px) 50vw,
+    740px"
+
+  alt="{{image.alt}}"
+  loading="lazy"
+/>
+{% endif %}

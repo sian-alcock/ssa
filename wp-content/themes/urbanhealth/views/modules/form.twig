@@ -1,0 +1,21 @@
+<section class="c-form {{ bg_class }}" data-form-id="{{acf.form.id}}" data-form-name="{{acf.form.title}}">
+  <div class="o-grid-container">
+
+  {% if acf.form_title %}
+  <h2 class="c-form__title">
+  {{ acf.form_title }}
+  </h2>
+  {% endif %}
+
+  {% if acf.form_subtitle %}
+  <p class="c-form__subtitle">
+  {{ acf.form_subtitle }}
+  </p>
+  {% endif %}
+    <div class="c-form__container">
+      {{ function('do_shortcode', '[gravityform id="' ~ (acf.form.id) ~ '" title="false" description="false" tabindex="49" output="raw" ajax="true"]') }}
+    </div>
+
+  </div>
+
+</section>

@@ -1,0 +1,37 @@
+.c-header {
+  position: relative;
+  z-index: 5;
+
+  background: $brand-white;
+
+  .c-header__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    @include breakpoint($break-mobile-nav-break-point) {
+    }
+  }
+
+  // .o-logo {}
+
+  .o-search-icon {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    @include breakpoint($break-mobile-nav-break-point) {
+      margin-left: 0;
+    }
+
+    svg {
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  .c-navigation--top-level {
+    @include breakpoint($break-mobile-nav-break-point) {
+      display: flex;
+      align-items: center;
+    }
+  }
+}

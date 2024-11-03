@@ -1,0 +1,31 @@
+{% set colour = page_theme.name %}
+{% if acf.name or acf.job_title or acf.quote_image %}
+	{% set figure_follows = 'figure-follows' %}
+{% endif %}
+<section class='c-quote {{additional_classes}}'>
+	<div class='o-grid-container'>
+		<blockquote class='c-quote__layout border-top-{{colour}}'>
+			<span class='c-quote__icon bg-{{colour}}'>{% include "partials/svgs/quote.svg.twig" %}</span>
+			<p class='c-quote__text {{ figure_follows }}'>{{acf.quote_text}}</p>
+			{% if figure_follows %}
+				<figure>
+					{% if acf.quote_image %}
+						{% set image = get_image(acf.quote_image) %}
+						<img src="{{image.src|resize(230, 230)}}" alt="{{image.alt}}">
+					{% endif %}
+
+					{% if acf.name or acf.job_title %}
+						<figcaption>
+							{% if acf.name %}
+								<span class='c-quote__name'>{{acf.name}}</span>
+							{% endif %}
+							{% if acf.job_title %}
+								<span class='c-quote__job-title'>{{acf.job_title}}</span>
+							{% endif %}
+						</figcaption>
+					{% endif %}
+				</figure>
+			{% endif %}
+		</blockquote>
+	</div>
+</section>

@@ -1,0 +1,9 @@
+{% if standfirst %}
+<section class="c-standfirst {{ hero_bg_class }}">
+  <div class="o-grid-container">
+    <p class='c-standfirst__text overlap-top bg-{{ page_theme.name?: "teal" }}'>
+      {{standfirst}}
+    </p>
+  </div>
+</section>
+{% endif %}

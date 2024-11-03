@@ -1,0 +1,29 @@
+{% set container_class = acf.media_type == 'single_image' and acf.single_image_width == 'full-screen' ? '' : 'o-grid-container' %}
+
+<section class="c-media {{ bg_class }} {{follows_text ?  '' : additional_classes }}  {{ follows_text ? 'c-media--follows-text' : '' }}">
+  <div class='{{ container_class }}'>
+    <div class="c-media__container ">
+      {% if acf.media_type == 'single_image' %}
+        {% include 'partials/media-single-image.twig' %}
+      {% endif %}
+
+      {% if acf.media_type == 'twin_images' %}
+        {% include 'partials/media-twin-images.twig' %}
+      {% endif %}
+
+      {% if acf.media_type == 'video' %}
+        {% include 'partials/media-video-embed.twig' %}
+      {% endif %}
+
+      {% if acf.media_type == 'flourish_embed' %}
+        {% include 'partials/media-flourish-embed.twig' %}
+      {% endif %}
+
+      {% if acf.media_type == 'tableau_embed' %}
+        {% include 'partials/media-tableau-embed.twig' %}
+      {% endif %}
+
+      </div>
+    </div>
+
+</section>

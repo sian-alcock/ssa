@@ -1,0 +1,47 @@
+{% extends "base.twig" %}
+
+{% block content %}
+  <section class="c-listing" id="search_results">
+    <div class="o-grid-container" id="listings-top">
+      <div class="c-search-header">
+
+        {% if title %}
+          <h1 class='o-page-title'>{{title}}</h1>
+        {% endif %}
+
+        <div class="c-tabs c-tabs--search js-search-options">
+          <div class='c-tabs__tabs js-search-tab'>
+            <button class='c-tabs__tab'>
+
+              {% set string_relevance = "Relevance" %}
+              {% set string_oldest = "Date (oldest first)" %}
+              {% set string_newest = "Date (newest first)" %}
+
+              {% if order_terms is null %}
+                {{ string_relevance }}
+              {% else %}
+                {{ order_terms is same as('ASC') ? string_oldest : string_newest }}
+              {% endif %}
+
+              <span class="icon-down-open"></span>
+            </button>
+          </div>
+          <div class="c-tabs__dropdown js-search-dropdown">
+            <div class="c-tabs__list">
+              <a href="/?s={{query_terms|replace({' ': '+'})}}" class="c-tabs__item">{{ string_relevance }}</a>
+              <a href="/?s={{query_terms|replace({' ': '+'})}}&order=DESC" class="c-tabs__item">{{ string_newest }}</a>
+              <a href="/?s={{query_terms|replace({' ': '+'})}}&order=ASC" class="c-tabs__item">{{ string_oldest }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="o-grid-container">
+      <div class="c-listing__wrapper">
+        {% include 'partials/listings-loop.twig' with {ajax: false} %}
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% set box_tagline = post.meta('box_tagline') %}
+{% set box_caption = post.meta('box_caption') %}
+{% set post_theme = fn('get_post_theme', post.ID ) %}
+{% set colour = post.meta('teaser_colour') ? post.meta('teaser_colour')  :  post_theme.name%}
+
+<section class='c-hero-no-image border-top-{{colour ?: "teal"}}'>
+
+	<div class="o-grid-container">
+		<div class='c-hero-no-image__container'>
+			<div class='c-box'>
+				{% include 'partials/box-caption-text.twig' with {caption: box_caption, tagline: box_tagline, colour: colour } %}
+				<div class='c-box__content'>
+
+					<h1 class='o-hero-title'>{{title}}</h1>
+
+					{% if subtitle %}
+						<p class='o-hero-subtitle'>{{subtitle}}</p>
+					{% endif %}
+
+					{% if ctas %}
+						{% include 'partials/cta-repeater.twig' with {
+              tracking: hero_choice,
+              cta_items: ctas,
+              class: 'c-hero-no-image__cta',
+              no_image_hero : true
+            } %}
+					{% endif %}
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

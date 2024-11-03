@@ -1,0 +1,7 @@
+{% set embed_without_script = fn('remove_script_from_embed', acf.embed_code) %}
+
+<div class='c-media__flourish-container'>
+	{% if embed_without_script  %}
+		{{embed_without_script | raw}}
+	{% endif %}
+</div>

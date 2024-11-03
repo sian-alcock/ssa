@@ -1,0 +1,33 @@
+<div class='c-page-navigation__page-marker'></div>
+<div class='c-page-navigation c-page-navigation--{{page_navigation|length > 4 ? ' small' : ' default'}}' id='js-page-navigation'>
+  <div class='o-grid-container o-grid-container--thin'>
+    <nav>
+      <div class='c-accordion'>
+        <button class='c-accordion__button js-jump-to-button' aria-expanded="false">Jump to<span class='icon-down-open'/></button>
+        <div id='content-filters' aria-hidden="true" class='hide-on-mob c-accordion__content js-accordion-content'>
+
+          <ul class='c-page-navigation__layout list-reset'>
+            {% for label in page_navigation %}
+              <li>
+                <a href='{{post.link ~ '#' ~ label|url_encode}}' class='c-page-navigation__link' data-link="{{label|url_encode}}">
+                  <span>{{loop.index}}.</span>
+                  {{label}}</a>
+              </li>
+            {% endfor %}
+          </ul>
+
+        </div>
+      </div>
+
+      <ul class='c-page-navigation__layout-desktop list-reset'>
+        {% for label in page_navigation %}
+          <li>
+            <a href='{{post.link ~ '#' ~ label|url_encode}}' class='c-page-navigation__link' data-link="{{label|url_encode}}">
+              <span>{{loop.index}}.</span>
+              {{label}}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</div>

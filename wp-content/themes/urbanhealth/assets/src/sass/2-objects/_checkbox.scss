@@ -1,0 +1,63 @@
+.o-checkbox {
+  margin-bottom: 0.5rem;
+
+  input {
+    position: absolute;
+    left: -9999px;
+  }
+  label {
+    position: relative;
+    padding: 4px 0 4px 30px;
+    line-height: 24px;
+    cursor: pointer;
+  }
+
+  label:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background: $brand-white;
+    border: 2px solid $brand-black;
+    content: '';
+  }
+  label:after {
+    position: absolute;
+    top: 5px;
+    left: 7px;
+    color: $brand-black;
+    font-family: 'fontello';
+    line-height: 0.8;
+    transition: all 0.1s;
+    content: '\2713';
+  }
+  input:not(:checked) + label:after {
+    opacity: 0;
+  }
+  input:checked + label:after {
+    opacity: 1;
+  }
+  input:disabled:not(:checked) + label:before,
+  input:disabled:checked + label:before {
+    background-color: $brand-white;
+    border-color: $brand-black;
+    box-shadow: none;
+  }
+  // input:disabled:checked + label:after {
+  //   color: #999;
+  // }
+  // input:disabled + label {
+  //   color: #aaa;
+  // }
+  input:checked:focus + label:before,
+  label:hover:before,
+  input:not(:checked):focus + label:before {
+    background-color: $brand-teal-light;
+  }
+
+  /* hover style just for information */
+  label:hover:before {
+    // border: 2px solid transparent;
+  }
+}

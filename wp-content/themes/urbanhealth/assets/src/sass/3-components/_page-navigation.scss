@@ -1,0 +1,130 @@
+.c-page-navigation__page-marker {
+  visibility: hidden;
+}
+
+.c-page-navigation {
+  position: relative;
+  z-index: 3;
+  background-color: $brand-white;
+  box-shadow: $box-shadow;
+
+  &.sticky {
+    position: fixed;
+    top: 0;
+    @include wp-admin-offset(top, 0);
+    width: 100%;
+  }
+
+  .c-accordion__content {
+    padding: 1rem 0;
+
+    @include breakpoint($break-mobile-nav-break-point) {
+      padding: 0;
+    }
+  }
+
+  .c-accordion {
+    .c-accordion__button {
+      padding: 1rem 0;
+      font-weight: bold;
+
+      @include breakpoint($break-mobile-nav-break-point) {
+        display: none;
+      }
+    }
+    .hidden {
+      @include breakpoint($break-mobile-nav-break-point) {
+        display: block;
+      }
+    }
+    @media (min-width: $break-mobile-nav-break-point) {
+      display: none;
+    }
+  }
+
+  @include breakpoint($break-mobile-nav-break-point) {
+    position: static;
+  }
+}
+
+// More than 4 items
+.c-page-navigation--small {
+  .c-page-navigation__link {
+    @include breakpoint($break-mobile-nav-break-point) {
+      padding: 1rem 0.5rem;
+      font-size: 0.875em;
+    }
+  }
+}
+
+.c-page-navigation__layout-desktop {
+  display: none;
+  @media (min-width: $break-mobile-nav-break-point) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.c-page-navigation__link {
+  display: block;
+  padding: 0.75rem 0;
+  border-bottom: 2px solid transparent;
+  color: $brand-dark-grey;
+  font-family: $font-graphik-medium;
+  text-decoration: underline;
+
+  @include breakpoint($break-mobile-nav-break-point) {
+    padding: 1rem;
+    text-decoration: none;
+  }
+
+  &.active {
+    color: $brand-black;
+    font-weight: bold;
+    @include breakpoint($break-mobile-nav-break-point) {
+      border-bottom: 2px solid $brand-teal;
+      font-weight: normal;
+    }
+  }
+
+  span {
+    margin-right: 0.25rem;
+
+    @include breakpoint($break-mobile-nav-break-point) {
+      display: none;
+    }
+  }
+}
+
+.c-page-navigation__target {
+  &:before {
+    position: relative;
+    z-index: -1;
+    display: block;
+    height: 80px;
+    margin-top: -80px;
+    visibility: hidden;
+    content: ' ';
+    pointer-events: none;
+  }
+}
+
+.c-page-navigation__target-heading {
+  z-index: 1;
+}
+
+// WP admin bar is visible
+body.admin-bar {
+  .c-page-navigation__target {
+    &:before {
+      @include breakpoint($wp-breakpoint-md) {
+        height: calc(80px + #{$wp-admin-bar-md});
+        margin-top: calc((80px + #{$wp-admin-bar-md}) * -1);
+      }
+      @include breakpoint($wp-breakpoint-sm) {
+        height: calc(80px + #{$wp-admin-bar-sm});
+        margin-top: calc((80px + #{$wp-admin-bar-sm}) * -1);
+      }
+    }
+  }
+}

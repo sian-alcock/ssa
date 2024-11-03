@@ -1,0 +1,41 @@
+.c-hero-no-image {
+  position: relative;
+  margin-top: $hero-margin-bottom / 2;
+  margin-bottom: $hero-margin-bottom / 2;
+  background-color: $brand-teal;
+
+  .c-box {
+    width: span(12 of 12);
+    background-color: transparent;
+    box-shadow: none;
+    @include breakpoint($break-desktop) {
+      width: span(10 of 12);
+    }
+    @include breakpoint($break-desktop-med) {
+      width: span(6 of 12);
+    }
+  }
+
+  .c-box__content {
+    padding: 4rem 0;
+  }
+
+  .o-hero-title,
+  .o-hero-subtitle {
+    color: $brand-white;
+  }
+
+  @include breakpoint($break-desktop) {
+    margin-bottom: $hero-margin-bottom;
+  }
+}
+
+.c-hero-no-image__cta {
+  @include breakpoint($break-mobile) {
+    margin-right: 1rem;
+  }
+
+  &:not(:first-of-type) {
+    margin-right: 0;
+  }
+}

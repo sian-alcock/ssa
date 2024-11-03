@@ -1,0 +1,36 @@
+@font-face {
+  font-family: 'GraphikMedium';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/wp-content/themes/urbanhealth/assets/fonts/Graphik-Medium.woff2') format('woff2'),
+    url('/wp-content/themes/urbanhealth/assets/fonts/Graphik-Medium.ttf') format('truetype'),
+    url('/wp-content/themes/urbanhealth/assets/fonts/Graphik-Medium.woff') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'GraphikRegular';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/wp-content/themes/urbanhealth/assets/fonts/Graphik-Regular.woff2') format('woff2'),
+    url('/wp-content/themes/urbanhealth/assets/fonts/Graphik-Regular.ttf') format('truetype'),
+    url('/wp-content/themes/urbanhealth/assets/fonts/Graphik-Regular.woff') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'GraphikBold';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/wp-content/themes/urbanhealth/assets/fonts/Graphik-Bold.woff2') format('woff2'),
+    url('/wp-content/themes/urbanhealth/assets/fonts/Graphik-Bold.ttf') format('truetype'),
+    url('/wp-content/themes/urbanhealth/assets/fonts/Graphik-Bold.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik Web';
+  font-style:   italic;
+  font-weight:  400;
+  src: url('/wp-content/themes/urbanhealth/assets/fonts/Graphik-RegularItalic.woff2') format('woff2'),
+    url('/wp-content/themes/urbanhealth/assets/fonts/Graphik-RegularItalic.woff') format('woff');
+  font-stretch: normal;
+}

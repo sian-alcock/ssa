@@ -1,0 +1,19 @@
+<div class="c-card-listing__post-details flex">
+{# If an author has been chosen on the article use the first selected, if not fallback to post author #}
+{% if post.author_repeater %}
+  {% set selected_authors = post.meta('author_repeater', post.id) %}
+  {% set author =  fn('get_userdata', selected_authors[0].author) %}
+  {% set author_image = author.author_image %}
+  {% set author_job_title = author.author_job_title %}
+
+{% else %}
+  {% set author = post.author %}
+  {% set author_image = author.meta('author_image') %}
+  {% set author_job_title = author.meta('author_job_title') %}
+{% endif %}
+
+{% set author_name = author.display_name %}
+  {% include 'partials/card-listing-author.twig' with { author_name : author_name, author_image : author_image, author_job_title : author_job_title } %}
+  {% include 'partials/card-listing-post-date.twig' %}
+</div>
+

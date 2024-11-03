@@ -1,0 +1,68 @@
+{% if menu %}
+	<nav id="primary-menu" class="c-navigation c-navigation--top-level">
+		<ul class="c-navigation__list list-reset js-nav-list" role="menu">
+			{% for item in menu %}
+				<li class="{{ item.classes | join(' ') }} c-navigation__item c-navigation__top-level-item {{item.children ? 'c-navigation__has-children' : ''}}" role="listitem">
+					{% if item.children  %}
+						{% set menu_id = item.id %}
+						{% set submenu_id = menu_id ~ '-submenu' %}
+
+						<button id="{{menu_id}}" aria-controls="{{submenu_id}}" aria-haspopup="true" class="c-navigation__link c-navigation__top-level-link js-nav-item-has-children">{{ item.title }}<span class="c-navigation__icon icon-down-open-1"/></button>
+
+						<nav class="c-navigation__child-menu js-nav-child-menu">
+							<div class='c-navigation__child-layout {{item.featured_article ? ' c-navigation__layout--has-featured' : ' '}}'>
+								<ul id="{{submenu_id}}" class="c-navigation__list list-reset" role="menu" aria-labelledby="{{menu_id}}">
+
+									{% for child_item in item.children  %}
+										{% if child_item.is_a_menu_grouping %}
+											<li class='c-navigation__group' role="listitem">
+												<ul class='list-reset'>
+													{% if child_item.menu_grouping_heading %}
+														<li class="c-navigation__group-label" role="listitem">{{child_item}}</li>
+													{% endif %}
+													{% for grouped_child_item in child_item.children  %}
+														{{ _self.menuItem(grouped_child_item, total_vacancies) }}
+													{% endfor %}
+												</ul>
+											</li>
+										{% else %}
+											{{ _self.menuItem(child_item, total_vacancies) }}
+										{% endif %}
+									{% endfor %}
+
+									{% set item_view_all_label = item.menu_item_see_all_label %}
+									{% if item_view_all_label %}
+										<li class="{{ child_item.classes | join(' ') }} c-navigation__item c-navigation__see-all-item" role="listitem">
+											<a class="c-navigation__link" href="{{ item.link }}" {{item.current ? 'aria-current="true"' : ''}}>{{ item_view_all_label }}</a>
+											<span class='icon-angle-right'/>
+										</li>
+									{% endif %}
+								</ul>
+
+								{% if item.featured_article %}
+                  {% set featured_article = get_post(item.featured_article)   %}
+									<a href="{{ item.featured_article.meta('link') }}" class='c-navigation__featured-article' role="listitem">
+										{% include 'partials/card-image.twig' with {post: featured_article, label: 'hide'} %}
+										<h3>{{featured_article.title}}</h3>
+										<p>{{ featured_article.post_excerpt }}</p>
+									</a>
+								{% endif %}
+							</nav>
+						{% else %}
+							<a class="c-navigation__link c-navigation__top-level-link" target="{{item.link}}" href="{{ item.link }}" {{item.current ? 'aria-current="true"' : ''}} role="listitem">{{ item.title }}</a>
+						{% endif %}
+					</li>
+				{% endfor %}
+				{% include 'partials/newsletter-signup-desktop.twig' %}
+			</ul>
+			{% include 'partials/newsletter-signup-mobile.twig' %}
+		</nav>
+	{% endif %}
+
+	{% macro menuItem(item, total_vacancies) %}
+		<li class="{{ item.classes | join(' ') }} c-navigation__item {{item.current ? 'js-current-menu-item' : ''}} " role="listitem">
+			{% set target_page_theme = fn('get_post_theme', item._menu_item_object_id) %}
+			<a class="c-navigation__link bg-hover--{{target_page_theme.name}}" href="{{ item.link }}" {{item.current ? 'aria-current="true"' : ''}} role="listitem">{{ item.title }}
+				{{ item.append_total_number_of_vacancies and total_vacancies ? '(' ~ total_vacancies ~ ')' : ''}}</a>
+		</li>
+	{% endmacro %}

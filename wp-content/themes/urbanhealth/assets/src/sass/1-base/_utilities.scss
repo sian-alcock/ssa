@@ -1,0 +1,170 @@
+.list-reset {
+  margin-left: 0;
+  list-style: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.screen-reader-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+}
+
+// Brand background classes
+.bg-yellow {
+  background-color: $brand-yellow;
+}
+.bg-purple {
+  background-color: $brand-purple;
+  color: $brand-white;
+}
+.bg-teal {
+  background-color: $brand-teal;
+}
+.bg-green {
+  background-color: $brand-green;
+  color: $brand-white;
+}
+.bg-orange {
+  background-color: $brand-orange;
+}
+
+.bg-pale-teal {
+  background-color: $brand-light-teal;
+}
+
+.bg-pale-grey {
+  background-color: $brand-light-grey;
+}
+
+// Brand background hover classes used in navigation
+.bg-hover--yellow:hover {
+  @include breakpoint($break-desktop) {
+    background-color: $brand-yellow;
+  }
+}
+.bg-hover--purple:hover {
+  @include breakpoint($break-desktop) {
+    background-color: $brand-purple;
+    color: $brand-white;
+  }
+}
+.bg-hover--teal:hover {
+  @include breakpoint($break-desktop) {
+    background-color: $brand-teal;
+  }
+}
+.bg-hover--green:hover {
+  @include breakpoint($break-desktop) {
+    background-color: $brand-green;
+    color: $brand-white;
+  }
+}
+.bg-hover--orange:hover {
+  @include breakpoint($break-desktop) {
+    background-color: $brand-orange;
+  }
+}
+
+// Brand background classes
+// Top border in theme colour
+.border-top-yellow {
+  border-top: 4px solid $brand-yellow;
+}
+
+.border-top-purple {
+  border-top: 4px solid $brand-purple;
+}
+.border-top-teal {
+  border-top: 4px solid $brand-teal;
+}
+.border-top-green {
+  border-top: 4px solid $brand-green;
+}
+.border-top-orange {
+  border-top: 4px solid $brand-orange;
+}
+
+// Left border in theme colour
+
+.border-left-yellow {
+  border-left: 4px solid $brand-yellow;
+}
+
+.border-left-purple {
+  border-left: 4px solid $brand-purple;
+}
+.border-left-teal {
+  border-left: 4px solid $brand-teal;
+}
+.border-left-green {
+  border-left: 4px solid $brand-green;
+}
+.border-left-orange {
+  border-left: 4px solid $brand-orange;
+}
+
+.smaller {
+  font-size: 0.875em;
+}
+
+.mobile-only {
+  @include breakpoint($break-tablet) {
+    display: none;
+  }
+}
+.tablet-only {
+  @include breakpoint($break-desktop) {
+    display: none;
+  }
+}
+.above-desktop-only {
+  display: none;
+  @include breakpoint($break-desktop) {
+    display: block;
+  }
+}
+
+.hide {
+  /* stylelint-disable declaration-no-important */
+  display: none !important;
+  /* stylelint-enable declaration-no-important */
+}
+
+.hide-on-mob {
+  /* stylelint-disable declaration-no-important */
+  display: none !important;
+  @media (min-width: 950px) {
+    display: block !important;
+  }
+  /* stylelint-enable declaration-no-important */
+}
+
+.overlap-top {
+  margin-top: -$hero-margin-bottom;
+
+  // To not interfere with component padding
+  &:before {
+    content: '';
+    display: block;
+    padding-top: $hero-margin-bottom / 2;
+  }
+}

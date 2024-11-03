@@ -1,0 +1,103 @@
+.c-pagination-container {
+  flex-direction: column;
+  align-items: center;
+
+  @include breakpoint($break-tablet) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.c-pagination__block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  @include breakpoint($break-tablet) {
+    width: auto;
+  }
+}
+
+.c-pagination__pages {
+  display: none;
+
+  @include breakpoint($break-tablet) {
+    display: flex;
+    list-style: none;
+  }
+}
+
+.c-pagination__page-item {
+  margin-right: 0.3rem;
+
+  @include breakpoint($break-desktop) {
+    margin-right: 0.5rem;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.c-pagination__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin: 0 0.5rem;
+  text-decoration: none;
+  transition: all 0.1s ease-out;
+  cursor: pointer;
+
+  &.current {
+    background-color: $brand-teal;
+  }
+}
+
+.c-pagination__nav-wrapper--prev, .c-pagination__nav-wrapper--next {
+  cursor: pointer;
+}
+
+.c-pagination__nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  padding-right: 0.25rem;
+  padding-left: 0.25rem;
+  transition: all 0.1s ease-out;
+
+  .icon-angle-right::before, .icon-angle-left::before {
+    margin: 0;
+    font-weight: $bold;
+  }
+
+  .icon-angle-right::before {
+    padding-left: 0.5rem;
+  }
+
+  .icon-angle-left::before {
+    padding-right: 0.5rem;
+  }
+
+  &.invisible {
+    color: $brand-teal;
+
+    @include breakpoint($break-tablet) {
+      display: none;
+    }
+  }
+}
+
+.c-pagination__counts {
+  color: $brand-cool-grey;
+  &--top {
+    position: absolute;
+    top: 2rem;
+    @include breakpoint($break-top-page-count) {
+    }
+  }
+}

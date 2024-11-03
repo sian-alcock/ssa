@@ -1,0 +1,111 @@
+.c-insights {
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+
+  @include breakpoint($break-desktop) {
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+  }
+
+  .c-card-listing {
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
+
+  &.aos-init {
+    overflow: hidden;
+
+    .c-insights__left-column .c-card-listing,
+    .c-insights__right-column .c-card-listing {
+      transform: translate3d(0, 100px, 0);
+      transition-duration: 1.5s;
+      transition-timing-function: ease;
+      opacity: 0;
+    }
+
+    &.aos-animate {
+
+      .c-insights__left-column .c-card-listing,
+      .c-insights__right-column .c-card-listing {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+
+      .c-insights__right-column .c-card-listing {
+
+        &:first-child {
+          transition-delay: 0.5s;
+        }
+
+        &:nth-child(2) {
+          transition-delay: 0.75s;
+        }
+
+        &:last-child {
+          transition-delay: 1s;
+        }
+      }
+    }
+  }
+}
+
+.c-insights__text-container {
+  flex-direction: column;
+  margin-bottom: 2rem;
+  @include breakpoint($break-desktop) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+  }
+}
+
+.c-insights__heading {
+  margin-bottom: 1rem;
+  @include breakpoint($break-desktop) {
+    max-width: 80%;
+    margin-bottom: 0;
+  }
+}
+
+.c-insights__link {
+  background-color: none;
+  border: none;
+  font-family: $font-graphik-bold;
+}
+
+.c-insights__cards-container {
+  flex-direction: column;
+  @include breakpoint($break-desktop) {
+    flex-direction: row;
+  }
+}
+
+.c-insights__left-column {
+
+
+  @include breakpoint($break-desktop) {
+    flex-basis: 50%;
+    margin-right: gutter() * 2;
+
+    .c-card-listing {
+      height: 100%;
+    }
+  }
+}
+
+
+
+.c-insights__right-column {
+  flex-basis: 50%;
+
+  @include breakpoint($break-desktop) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .c-card-listing:nth-of-type(3) {
+      margin-bottom: 0;
+    }
+  }
+}

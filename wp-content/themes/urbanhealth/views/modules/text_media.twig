@@ -1,0 +1,27 @@
+{% set wysiwyg_colour = page_theme.name %}
+
+
+<section
+  class="c-text-media {{ overlapTopClass }} {{ bg_class }} {{ acf.include_media == 1 ? 'media_follows' : '' }}"
+>
+
+	<div class="o-grid-container o-grid-container--thin">
+
+  {% if page_navigation_used %}
+    <h2 id='{{ acf.in_page_navigation_label|url_encode }}' class='c-page-navigation__target'>
+      <span class='c-page-navigation__target-heading'>{{acf.in_page_chapter_heading ?: acf.in_page_navigation_label}}</span>
+    </h2>
+  {% endif %}
+
+    {% if acf.text_media__text %}
+    <div class="c-text-media__text o-wysiwyg o-wysiwyg--{{ wysiwyg_colour }} {{page_navigation_used ? 'js-page-text-module' : ''}}">
+		{{ acf.text_media__text }}
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+
+    {% if acf.include_media == 1 %}
+    {% include 'modules/media.twig' with { follows_text : true } %}
+    {% endif %}

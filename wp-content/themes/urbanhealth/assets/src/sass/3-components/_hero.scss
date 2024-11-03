@@ -1,0 +1,74 @@
+.c-hero {
+  position: relative;
+  margin-bottom: $hero-margin-bottom / 2;
+  background-color: $brand-white;
+
+  @include breakpoint($break-desktop) {
+    margin-bottom: $hero-margin-bottom;
+  }
+}
+
+.c-hero__cta {
+  @include breakpoint($break-mobile) {
+    margin-right: 1rem;
+  }
+}
+
+.c-hero__layout {
+  @include breakpoint($break-desktop) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.c-hero__layout--image-right {
+  flex-direction: row-reverse;
+}
+
+.c-hero__content {
+  padding-bottom: 1rem;
+
+  @include breakpoint($break-desktop) {
+    width: span(5 of 12);
+    padding: 1.5rem 0;
+  }
+  @include breakpoint($break-desktop-med) {
+    padding: 3rem 0;
+  }
+
+  .c-hero__layout--no-image {
+    width: span(12 of 12);
+    @include breakpoint($break-desktop) {
+      width: span(10 of 12);
+    }
+    @include breakpoint($break-desktop-med) {
+      width: span(6 of 12);
+    }
+  }
+}
+
+.c-hero__image-container {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1.5rem;
+
+  @include breakpoint($break-desktop) {
+    width: span(6 of 12);
+    margin-bottom: -1.5rem;
+  }
+  @include breakpoint($break-desktop-med) {
+    margin-bottom: -2rem;
+  }
+
+  img {
+    width: 100%;
+
+    @include breakpoint($break-desktop) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

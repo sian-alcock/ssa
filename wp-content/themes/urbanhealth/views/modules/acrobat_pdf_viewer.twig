@@ -1,0 +1,26 @@
+
+<script src="https://acrobatservices.adobe.com/view-sdk/viewer.js"></script>
+
+
+{% set divId = acf.file_name|replace({' ': ''}) %}
+
+
+
+
+<section class='c-acrobat-wrapper {{ bg_class }}'>
+  <div class='o-grid-container'>
+
+  <div id="{{divId}}" class="c-acrobat"></div>
+    <script type="text/javascript">
+    document.addEventListener("adobe_dc_view_sdk.ready", function()
+    {
+        var adobeDCView = new AdobeDC.View({clientId: "{{acf.acrobat_id}}", divId: "{{divId}}"});
+        adobeDCView.previewFile({
+          content:  {location: {url: "{{acf.pdf_link}}"}},
+          metaData: {fileName: "{{acf.file_name}}"}
+      }, { embedMode: "FULL_WINDOW", defaultViewMode: "FIT_PAGE", showAnnotationTools: false, showDownloadPDF: true, showFullScreen: true, showBookmarks: false }
+      );
+    });
+    </script>
+  </div>
+</section>

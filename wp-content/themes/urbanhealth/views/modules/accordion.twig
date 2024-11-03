@@ -1,0 +1,22 @@
+<section class='c-accordion-module o-row accordion_center {{ bg_class }}'>
+  <div class="o-grid-container o-grid-container--thin">
+    {% if acf.title %}
+      <h2 class='c-accordion__title o-grid-article o-grid-article--center c-accordion__title--center'>{{ acf.title }}</h2>
+    {% endif %}
+      <div class='o-grid-article o-grid-article--center'>
+        {% for item in acf.accordion_content %}
+          <button class='c-accordion__button js-accordion-button bg-{{acf.teaser_colour ? acf.teaser_colour : 'white'}}' aria-expanded="false">
+            <h3 class='c-accordion__header'>{{item.expandable_header}}</h3>
+            <span class='c-accordion__open-icon icon-down-open icon-{{acf.teaser_colour ? acf.teaser_colour : 'white'}}'/>
+          </button>
+        <div id='content-filters' aria-hidden="true" class='c-accordion__content js-accordion-content bg-white hide'>
+          <div class='c-accordion__content-panel o-wysiwyg'>
+            {{item.content}}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+

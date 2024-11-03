@@ -1,0 +1,25 @@
+.c-standfirst--follows-person-hero {
+  background-color: $brand-light-grey;
+
+  .c-standfirst__text {
+    @include breakpoint($break-desktop) {
+      padding-bottom: 6rem;
+    }
+  }
+}
+
+.c-standfirst__text {
+  margin-right: -1rem;
+  padding: 1.5rem 2rem;
+  @extend h2;
+
+  @include breakpoint($break-tablet) {
+    margin-right: 0;
+    padding: 3rem 4rem;
+  }
+  @include breakpoint($break-desktop) {
+    max-width: 768px;
+    margin-right: 0;
+    padding: 4rem 5rem;
+  }
+}

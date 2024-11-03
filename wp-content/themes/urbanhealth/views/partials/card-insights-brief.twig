@@ -1,0 +1,27 @@
+{% set post_theme = fn('get_post_theme', post.ID) %}
+{% set colour = post_theme.name %}
+
+<a href="{{ post.link }}" class="c-card-listing c-card-listing--{{colour ?: "teal"}} border-left-{{colour ?: "teal"}} flex">
+
+    {% if post.type != 'people' %}
+    {% include 'partials/card-listing-post-details.twig' %}
+    {% endif %}
+
+    <div class="c-card-listing__text-content flex">
+      <div class="c-card-listing__text-content-top">
+        {% if post.title %}
+        <h3>{{ post.title }}</h3>
+        {% endif %}
+        {% if post.post_excerpt %}
+        <p>{{ post.post_excerpt }}</p>
+        {% endif %}
+      </div>
+      <div class="c-card-listing__action-text">
+        {{ post.action_link_text }}
+        <i class="c-card-listing__icon icon-angle-right"></i>
+      </div>
+
+    </div>
+</a>
+
+

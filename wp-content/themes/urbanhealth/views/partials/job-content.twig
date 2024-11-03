@@ -1,0 +1,90 @@
+{% set acf = post.meta %}
+{% set application_link = acf.url ~ "/applications/new" %}
+{% set jobpack_link = acf.job_pack %}
+
+<section class="c-job-content c-text-media bg-pale-grey">
+	<div class="o-grid-container o-grid-container--thin">
+		<div class="c-text-media__text o-wysiwyg o-wysiwyg--teal ">
+			{% if acf.description %}
+				<div class="c-job-content__description">
+					<h2>Overview</h2>
+					{{acf.description}}
+				</div>
+			{% endif %}
+
+			{% if acf.key_responsibilities %}
+
+				<div class="c-job-content__responsibilities-header">
+					<h2>{{acf.key_responsibilities_header}}</h2>
+				</div>
+
+				<div class="c-job-content__responsibilities">
+					<p>{{acf.key_responsibilities }}</p>
+				</div>
+			{% endif %}
+
+			{% if acf.skills_knowledge_expertise %}
+
+				<div class="c-job-content__expertise-header">
+					<h2>{{acf.skills_knowledge_expertise_header}}</h2>
+				</div>
+
+				<div class="c-job-content__expertise">
+					{{acf.skills_knowledge_expertise }}
+				</div>
+			{% endif %}
+
+
+			{% if acf.benefits  %}
+
+				<div class="c-job-content__benefits_header">
+					<h2>{{acf.benefits_header}}</h2>
+				</div>
+
+				<div class="c-job-content__benefits">
+					{{acf.benefits }}
+				</div>
+			{% endif %}
+
+
+			{% if acf.video %}
+				<div class="c-job-content__video">
+					{{acf.video }}
+				</div>
+			{% endif %}
+
+		</div>
+	</div>
+</section>
+
+<section class="c-teaser bg-pale-teal  c-teaser--no-image js-teaser" data-tracking="teaser_no-image" data-gtm-vis-first-on-screen35333955_14="5610" data-gtm-vis-total-visible-time35333955_14="100" data-gtm-vis-has-fired35333955_14="1">
+	<div class="o-grid-container">
+		<div class="c-teaser__box  c-teaser__box--white c-box">
+			<div class="c-teaser__layout">
+				<h3 class="c-teaser__heading c-teaser__desktop-col-6">Apply now</h3>
+				<div class="c-teaser__desktop-col-6">
+					<p class="c-teaser__description">Thanks for your interest in working with us. We’re working hard to ensure we recruit great people and minimise unconscious bias in our selection process. To support this, we use the Pinpoint platform, which anonymises applicants.</p>
+					{% include 'partials/cta.twig' with {
+          link : application_link,
+          text : "Apply now",
+          colour: 'teal',
+          target: "_blank",
+          }%}
+
+					{% include 'partials/cta.twig' with {
+          link : jobpack_link ,
+          text : "Download the job description ",
+          colour: 'teal',
+          target: "_blank",
+          }%}
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+{% for acf in options.page_modules %}
+	{% include 'modules/' ~ acf.acf_fc_layout ~ '.twig' %}
+{% endfor %}

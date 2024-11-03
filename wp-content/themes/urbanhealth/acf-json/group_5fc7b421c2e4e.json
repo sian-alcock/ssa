@@ -1,0 +1,72 @@
+{
+    "key": "group_5fc7b421c2e4e",
+    "title": "Insights and Latest update Listings",
+    "fields": [
+        {
+            "key": "field_5fc7b42978267",
+            "label": "Pre-filter article type",
+            "name": "pre_filter_article_type",
+            "type": "taxonomy",
+            "instructions": "If chosen, only articles of the selected type will be displayed and the article type filter will not appear",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "category",
+            "field_type": "select",
+            "allow_null": 1,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        },
+        {
+            "key": "field_6022b9ecec937",
+            "label": "Hide author filter",
+            "name": "hide_author_filter",
+            "type": "true_false",
+            "instructions": "If set to 'Yes' the author filter will not appear on this page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "insights.php"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "latest-updates.php"
+            }
+        ]
+    ],
+    "menu_order": 2,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1617020970
+}

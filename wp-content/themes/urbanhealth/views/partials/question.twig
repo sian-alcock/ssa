@@ -1,0 +1,92 @@
+{% set options = question.options %}
+{% set send_data_to_form = question.send_data_to_form %}
+
+<div class="c-questions__question c-questions__options--{{options|length}} js-question">
+
+      {{fn('get_form_steps_with_eligibility', question.form_stepper)}}
+
+    <div class='js-question-detail c-questions__detail'>
+      <h3>{{question.title}}</h3>
+      <p>{{question.question}}</p>
+    </div>
+
+  <div class='c-questions__options-wrapper'>
+    {# if sending to form page on completion include a hidden input to populate #}
+    {% if send_data_to_form %}<input type="hidden" name="{{question.question_key}}"/>{% endif %}
+
+    {% for option in options %}
+      {% set chosen_type = option.is_chosen %}
+      {% set popup_type = option.more_info_popup %}
+      {% set value = option.option_value %}
+
+      <div class='js-question-option c-questions__single-wrapper'
+          data-modal-type="{{popup_type}}"
+          data-chosen-type="{{chosen_type}}"
+          data-value="{{value}}"
+          {{chosen_type == 'next-question' ? 'data-next-question-id="'~ option.next_question ~'"'}}
+        >
+
+        <div class='c-questions__single  js-question-option-choice' tabindex="0" role="button">
+          <div class='c-questions__image image-choices-choice-image-wrap'>
+            {% set image =  get_image(option.image) %}
+            <img src="{{image.src | resize(500,500) }}" alt="{{image.alt}}" loading="lazy"/>
+          </div>
+          <div class='image-choices-choice-text'>
+            <div>{{option.title}}</div>
+          </div>
+        </div>
+
+        {% if option.description %}
+          <p class='c-questions__description'>{{option.description}}</p>
+        {% endif %}
+
+        {% if popup_type == 'popup_button' %}
+          <button type="button" class='o-cta bg-teal o-cta--small c-questions__popup-button js-question-popup'>Find out more <span class='icon-info-circled'/></button>
+        {% endif %}
+
+        {% if popup_type != 'no' %}
+        <div class='c-modal js-modal o-wysiwyg' aria-hidden="true" role="dialog" data-overlay="true">
+          <div class='c-modal__content'>
+            {{option.more_information_popup}}
+
+            {# If the popup is after selection we need to also show the button to progress #}
+            {% if popup_type == 'after_selection' %}
+              <button type="button" class='o-cta bg-teal js-popup-option-chosen'>Next</button>
+            {% endif %}
+            <button type="button" class='js-modal-close c-full-modal__close icon-cancel'></button>
+
+          </div>
+        </div>
+        {% endif %}
+    </div>
+
+      {# Success message #}
+      {% if chosen_type == 'success-ending' %}
+        <span class='js-option-success hide c-questions__message o-wysiwyg'>
+          {{option.success_message}}
+          {% if send_data_to_form %}
+            <button type="submit" class='o-cta bg-teal'>Continue</button>
+          {% elseif question.successful_button.url %}
+            <a class='o-cta bg-teal'href="{{question.successful_button.url}}" >{{question.successful_button.title}}</a>
+          {% endif %}
+        </span>
+      {% endif %}
+      {# Incorrect message #}
+      {% if chosen_type == 'incorrect' %}
+        <span class='js-option-unsuccessful hide c-questions__message o-wysiwyg'>
+          {{option.unsuccessful_message}}
+        </span>
+      {% endif %}
+
+    {% endfor %}
+
+  </div>
+
+  {% if question.neither_of_the_above_option %}
+    <button type="button" class='o-cta o-cta--white js-question-none-option'>None of the above</button>
+    <div class='js-none-of-above-message hide c-questions__message o-wysiwyg'>
+      {{question.none_of_the_above_unsuccessful_message}}
+    </div>
+  {% endif %}
+
+  </div>

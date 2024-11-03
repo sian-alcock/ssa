@@ -1,0 +1,78 @@
+.o-image-overlay {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 20%;
+    max-width: 285px;
+    background-color: $brand-teal-opacity;
+    mix-blend-mode: multiply;
+    content: '';
+    box-sizing: border-box;
+  }
+}
+
+.o-image-overlay--right {
+  &::before {
+    right: 0;
+    left: auto;
+  }
+}
+.o-image-overlay--thin {
+  &::before {
+    max-width: 65px;
+  }
+}
+
+.o-image-overlay--left-container {
+  &::before {
+    width: calc(1rem + 4px);
+    max-width: none;
+    border-right: 4px solid $brand-teal;
+    @include breakpoint($break-tablet) {
+      width: calc(2rem + 4px);
+    }
+    @include breakpoint(1501px) {
+      // Chrome includes scroll bar in vw calculation. This avoids that
+      width: calc(((100vw - (100vw - 100%)) - 1500px) / 2 + 2rem + 4px);
+    }
+  }
+}
+
+.o-image-overlay--purple {
+  &::before {
+    background: $brand-purple-opacity;
+    border-color: $brand-purple;
+  }
+}
+
+.o-image-overlay--teal {
+  &::before {
+    background: $brand-teal-opacity;
+    border-color: $brand-teal;
+  }
+}
+
+.o-image-overlay--yellow {
+  &::before {
+    background: $brand-yellow-opacity;
+    border-color: $brand-yellow;
+  }
+}
+
+.o-image-overlay--green {
+  &::before {
+    background: $brand-green-opacity;
+    border-color: $brand-green;
+  }
+}
+.o-image-overlay--orange {
+  &::before {
+    background: $brand-orange-opacity;
+    border-color: $brand-orange;
+  }
+}

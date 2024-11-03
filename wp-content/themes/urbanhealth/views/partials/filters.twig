@@ -1,0 +1,50 @@
+
+<div class='c-filters c-filters--{{filters|length < 3  ? 'small' : ''}}' id='listings-filters'>
+
+  {# Mobile accordion #}
+  <div class='c-filters--accordion c-accordion'>
+    <button class='c-accordion__button js-accordion-button' aria-expanded="false" aria-controls="content-filters">Filters<span class='icon-down-open'/></button>
+    <div id='content-filters' aria-hidden="true" class='hide c-accordion__content js-accordion-content'>
+      <form method="post" action="" class="js-filters_form">
+        {% for filterKey, filter_label in filters %}
+            {% if filterKey == 'by-author' and hide_author_filter %}
+            {# If hide author option is checked miss a loop #}
+            {% else %}
+            <div class='c-filters__label'>{{filter_label}}</div>
+            <div class='c-filters__list'>
+              {% include 'partials/filters/' ~ filterKey ~ '-checkboxes.twig' with {id_prefix: 'mobile'}%}
+            </div>
+            {% endif %}
+        {% endfor %}
+        {% include 'partials/filters/filters-actions.twig' with {checkbox_name: 'all' } %}
+      </form>
+    </div>
+  </div>
+
+  {# Desktop tabs #}
+  <div class='c-filters--tabs c-tabs' id='js-tabs'>
+    <div role="tablist" aria-label="Content filters" class='c-tabs__tabs'>
+      {% for filter_key, filter_label in filters %}
+        {% if filter_key == 'by-author' and hide_author_filter %}
+        {# If hide author option is checked miss a loop #}
+        {% else %}
+          <button role="tab" class='c-tabs__tab why-is-this-appearing-filterkey={{filterKey}}hide-author-{{ hide_author_filter }}' aria-selected="false" aria-controls="{{filter_key}}" id="{{'tab-' ~ loop.index}}">{{filter_label}} <span class='icon-down-open'></span></button>
+        {% endif %}
+      {% endfor %}
+   </div>
+    <form method="post" action="" class="js-filters_form">
+        {% for filterKey, filter_label in filters %}
+        {% if filterKey == 'by-author' and hide_author_filter %}
+        {# If hide author option is checked miss a loop #}
+        {% else %}
+          <div id="{{filterKey}}" role="tabpanel" hidden="true" tabindex="{{loop.index - 1}}" aria-labelledby="{{'tab-' ~ loop.index}}" class='c-tabs__content'>
+            <div class='c-filters__list'>
+              {% include 'partials/filters/' ~ filterKey ~ '-checkboxes.twig' %}
+            </div>
+          {% include 'partials/filters/filters-actions.twig' with {checkbox_name: filterKey } %}
+        </div>
+        {% endif %}
+        {% endfor %}
+    </form>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+
+
+{% set question = fn('get_fields', acf.question) %}
+<section class='c-questions {{ bg_class }}'>
+  <div class='o-grid-container'>
+
+    {% if acf.send_data_to_form %}
+    <form action="{{acf.send_data_to_form}}" method="GET">
+    {% endif %}
+
+      <div id="js-question-wrapper" class='c-questions__wrapper'>
+        {# Split into separate twig so the template can be rendered via ajax #}
+        {% include 'partials/question.twig' with { question: question } %}
+      </div>
+
+    {% if acf.send_data_to_form %}
+    </form>
+    {% endif %}
+
+    <div id='js-questions-error' class='hide'>
+      <p>There has been an error, please try again later</p>
+    </div>
+  </div>
+  <div class='o-grid-container'>
+    <button type="button" id='js-questions-back' class='c-questions__back o-cta bg-teal hide'>Back</button>
+  </div>
+</section>

@@ -1,0 +1,178 @@
+// sticky footer
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.c-footer {
+  padding-top: 1.5rem;
+
+  .o-logo {
+    flex-basis: 100%;
+  }
+  ul {
+    @extend .list-reset;
+  }
+  li {
+    @extend .smaller;
+  }
+  @include breakpoint($break-desktop) {
+    padding-top: 2rem;
+  }
+}
+
+.c-footer__logo {
+  max-width: 120px;
+  margin-bottom: 1rem;
+
+  @include breakpoint($break-tablet) {
+    margin-right: 2rem;
+  }
+  @include breakpoint($break-desktop) {
+    max-width: 160px;
+    margin-right: 6rem;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.c-footer__section {
+  margin-bottom: 3rem;
+  padding-top: 2rem;
+}
+
+.c-footer__top-part-container {
+  flex-direction: column;
+  @include breakpoint($break-desktop) {
+    flex-direction: row;
+  }
+}
+
+.c-footer__menu-wrapper {
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  @include breakpoint($break-desktop) {
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+}
+
+.c-footer__menu {
+  width: 100%;
+  margin-bottom: 3rem;
+  padding-right: 0.5rem;
+
+  @include breakpoint($break-tablet) {
+    flex: 1;
+    min-width: 50%;
+    margin-bottom: 3rem;
+    padding-right: 2rem;
+    padding-left: 0;
+
+    &:last-of-type {
+      padding-right: 0;
+    }
+  }
+
+  @include breakpoint($break-desktop-med) {
+    min-width: unset;
+    padding-right: 3rem;
+  }
+
+  ul {
+    @extend .list-reset;
+  }
+
+  li {
+    display: block;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+}
+
+.c-footer__text {
+  width: 100%;
+  padding: 2rem 0;
+
+  @include breakpoint($break-desktop) {
+    flex: 2;
+    padding: 0;
+  }
+}
+
+.c-footer__bottom {
+  @include breakpoint($break-tablet) {
+    justify-content: space-between;
+  }
+}
+.c-footer__menu-terms {
+  padding-top: 1rem;
+
+  @include breakpoint($break-desktop) {
+    display: flex;
+  }
+
+  ul {
+    @include breakpoint($break-tablet) {
+      display: flex;
+    }
+  }
+
+  li {
+    margin-bottom: 1rem;
+    color: $brand-cool-grey;
+
+    @include breakpoint($break-tablet) {
+      margin-right: 1rem;
+    }
+  }
+}
+
+.c-footer__copyright {
+  @extend .smaller;
+  margin-bottom: 1em;
+
+  @include breakpoint($break-tablet) {
+    margin-right: 2rem;
+  }
+}
+
+.c-footer__column-name {
+  margin-bottom: 1.5rem;
+  font-family: $font-graphik-medium;
+  font-size: 1rem;
+}
+
+.c-footer__social {
+  width: 100%;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+
+  @include breakpoint($break-desktop) {
+    width: auto;
+    margin-top: 2rem;
+  }
+
+  li {
+    font-size: 1.5em;
+  }
+}
+
+.c-footer__social-icon {
+  display: block;
+  width: 35px;
+  height: 35px;
+  margin-right: 0.5rem;
+  margin-left: 0;
+  background-color: $brand-teal;
+  line-height: 35px;
+  text-align: center;
+}

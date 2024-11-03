@@ -1,0 +1,43 @@
+{% set page_builder = post.meta('page_modules') %}
+{% include 'partials/breadcrumbs.twig' %}
+
+{% if post.type == 'people' %}
+	{% include 'partials/hero-person.twig' %}
+{% elseif post.type == 'job' %}
+	{% include 'partials/hero-job.twig' %}
+	{% include 'partials/job-content.twig'  %}
+{% else %}
+	{% set hero_choice = post.meta('hero_type') %}
+	{% include 'modules/heroes/index.twig' %}
+	{% set standfirst = post.meta('standfirst_text') %}
+	{% include 'modules/standfirst.twig' %}
+{% endif %}
+
+{# Count the number of modules on the page in order to set background colour #}
+{% set counter = 0 %}
+
+{% if (page_navigation_used) %}
+	{% include 'partials/page-navigation.twig' with { hero_used: hero_choice } %}
+{% endif %}
+
+{% for acf in page_builder %}
+
+	{# Exclude the stats, text/media and media module from the counter #}
+	{% if acf.acf_fc_layout != 'statistics' or  acf.acf_fc_layout != 'text_media' or acf.acf_fc_layout != 'media' %}
+		{% set counter = counter + 1 %}
+	{% endif %}
+	{% if post.type == 'people' %}
+		{# For people pages - tart with teal, then grey and alternate #}
+		{% set bg_class = counter % 2 == 0 ? 'bg-pale-grey' : 'bg-pale-teal' %}
+	{% else %}
+		{# Else start with pale grey, then teal and alternate #}
+		{% set bg_class = counter % 2 == 0 ? 'bg-pale-teal' : 'bg-pale-grey' %}
+	{% endif %}
+	{% if acf.apply_background_colour_override %}
+		{% set bg_class = acf.background_colour %}
+	{% endif %}
+	{# Heroes overlap the below module if standfirst has not been used (logic to be added when developed) #}
+	{% set overlapTopClass = loop.index == 1 and standfirst is empty and page_navigation_used is null ? 'overlap-top' : '' %}
+	{% include 'modules/' ~ acf.acf_fc_layout ~ '.twig' with { 'additional_classes': bg_class ~ ' ' ~ overlapTopClass } %}
+
+{% endfor %}

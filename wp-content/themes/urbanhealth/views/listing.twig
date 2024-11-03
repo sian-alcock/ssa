@@ -1,0 +1,36 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+  {% include 'page-builder.twig' %}
+
+  {% set title = post.meta( 'listings_heading')  %}
+  {% set listings_text = post.meta( 'listings_text')  %}
+  {% set hide_author_filter = post.meta( 'hide_author_filter')  %}
+
+  <section class="c-listing">
+    <div class="o-grid-container" id="listings-top">
+      {% if title %}
+        <h2 class='o-page-title'>{{title}}</h2>
+      {% endif %}
+      {% if listings_text %}
+        <p class='c-listing__text o-wysiwyg'>{{listings_text}}</p>
+      {% endif %}
+      {% include 'partials/filters.twig'  %}
+    </div>
+    <div class="o-grid-container">
+      <div class='c-listing__wrapper' id="js-listing-wrapper" data-post="{{post.id}}">
+        {% include 'partials/listings-loop.twig' %}
+      </div>
+
+      <p id='js-listing-error'  class='c-listing__error'>An error occurred, please try again later</p>
+
+    </div>
+    <script>
+      var globalCurrentFilters = {{ filters|json_encode() }};
+      var globalCurrentPostTypes = {{ post_types|json_encode() }};
+      var globalCurrentPreFilters = {{ pre_filters|json_encode() }};
+      </script>
+  </section>
+
+{% endblock %}

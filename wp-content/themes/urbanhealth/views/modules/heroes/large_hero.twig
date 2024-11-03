@@ -1,0 +1,119 @@
+{% set box_tagline = post.meta('box_tagline') %}
+{% set box_caption = post.meta('box_caption') %}
+{% set image_focus = post.meta('hero_image_focus') %}
+{% set show_date_published = post.meta('show_date_published_bool') %}
+{% set time_to_read = post.meta('time_to_read') %}
+{% set authors = post.meta('author_repeater') %}
+{% set share_link = post.link %}
+
+{% set post_theme = fn('get_post_theme', post.ID ) %}
+{% set colour = post.meta('teaser_colour') ? post.meta('teaser_colour')  :  post_theme.name%}
+
+<section class='c-hero-large'>
+	<div class='c-hero-large__image-container'>
+		{% if hero_choice == 'hero_video' and video %}
+			<div class="c-hero-large__image-wrapper c-hero-large__image-wrapper--video">
+				{% include 'partials/hero-video.twig' with {
+          file: video,
+          placeholder: placeholder,
+          class: 'c-hero__video'
+        } %}
+			</div>
+		{% elseif hero_choice == 'hero_large' or hero_choice == 'hero_article' and image %}
+			<div class="o-grid-container">
+				<div class='c-hero-large__image-wrapper o-image-overlay o-image-overlay--right o-image-overlay--thin o-image-overlay--{{colour}}'>
+					{% set image_classes = 'c-hero-large__image c-hero-large__image--' ~ image_focus  %}
+					{% include 'partials/full-width-image.twig' with {image: image, class: image_classes} %}
+				</div>
+			</div>
+		{% endif %}
+
+	</div>
+	<div class="o-grid-container">
+		<div class='c-hero-large__container'>
+			<div class='c-box border-top-{{colour ?: "teal"}}'>
+				{% include 'partials/box-caption-text.twig' with {caption: box_caption, tagline: box_tagline, colour: colour } %}
+				<div class='c-box__content'>
+
+					{% if hero_choice == 'hero_article' %}
+
+						<div class="c-hero-large__social-container flex">
+							<div class="c-hero-large__share flex">
+								<p class="c-hero-large__paragraph">Share</p>
+								<a class="c-hero-large__social-icon icon-linkedin" href='https://www.linkedin.com/shareArticle?url={{share_link}}&title={{title}}' target='_blank'></a>
+								<a class="c-hero-large__social-icon icon-twitter" href='https://twitter.com/share?url={{share_link}}&text={{title}}' target='_blank'></a>
+								<a class="c-hero-large__social-icon icon-mail" href='mailto:?subject={{title}}&body={{share_link}}' title='Share by Email' target='_blank'></a>
+							</div>
+						</div>
+
+					{% endif %}
+
+					<h1 class='o-hero-title'>{{title}}</h1>
+
+					{% if hero_choice == 'hero_article' and (show_date_published or time_to_read ) %}
+						<div class='c-hero-large__meta'>
+							{% if show_date_published %}
+								<div>{{post.date|date("j F Y")  }}</div>
+							{% endif %}
+							{% if show_date_published and time_to_read %}
+								<div class="c-hero-large__divider">|
+								</div>
+							{% endif %}
+							{% if time_to_read %}
+								<div>{{time_to_read}}
+									min read
+									<span class='c-hero-large__icon icon-clock'/></div>
+							{% endif %}
+						</div>
+					{% endif %}
+
+					{% if subtitle %}
+						<p class='o-hero-subtitle'>{{subtitle}}</p>
+					{% endif %}
+
+					{% if ctas %}
+						{% include 'partials/cta-repeater.twig' with {
+              tracking: hero_choice,
+              ctas: ctas,
+              class: 'c-hero-large__cta'
+            } %}
+					{% endif %}
+
+					{% if hero_choice == 'hero_article' and authors | length > 0 %}
+
+						<div class="c-hero-large__author-container flex">
+							{% for author in authors %}
+								{% set author_id = author.author %}
+								{% set author_data = fn('get_userdata', author_id) %}
+								{% set author_name = author_data.display_name %}
+								{% set author_image = author_data.author_image %}
+								{% set author_job_title = author_data.author_job_title %}
+								{% set author_website = author_data.user_url %}
+
+								{% set author_person_page_link = fn ('get_person_page_url', author_id) %}
+								{% if author_person_page_link %}
+									<a href="{{ author_person_page_link }}" class="c-hero-large__author-wrapper flex">
+									{% elseif author_website %}
+										<a href="{{ author_website }}" class="c-hero-large__author-wrapper flex">
+										{% else %}
+											<div class="c-hero-large__author-wrapper flex">
+											{% endif %}
+
+											<div class="c-hero-large__author-wrapper flex">
+												{% include 'partials/card-listing-author.twig' with { author_name : author_name, author_image : author_image, author_job_title : author_job_title } %}
+											</div>
+
+											{% if author_person_page_link or author_website %}
+											</a>
+									{% else %}
+										</div>
+									{% endif %}
+								{% endfor %}
+							</div>
+						{% endif %}
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>

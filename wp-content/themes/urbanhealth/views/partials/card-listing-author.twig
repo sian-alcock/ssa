@@ -1,0 +1,22 @@
+<div class="c-card-listing__author-details flex">
+
+
+	{% if author_image %}
+		<div class="c-card-listing__author-image-wrapper">
+			<img class="c-card-listing__author-image" src="{{ get_image(author_image).src|resize(40, 40) }}" srcset="{{ get_image(author_image).src|resize(80, 80) }} 2x" alt="{{ get_image(author_image).alt }}" loading="lazy"/>
+		</div>
+
+	{% endif %}
+
+	<div class="c-card-listing__author-identity">
+		<div class="c-card-listing__author-name">
+			{{ author_name }}
+		</div>
+		{% if author_job_title %}
+			<div class="c-card-listing__author-job-title">
+				{{ author_job_title }}
+			</div>
+		{% endif %}
+	</div>
+
+</div>

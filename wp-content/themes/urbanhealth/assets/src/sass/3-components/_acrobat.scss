@@ -1,0 +1,18 @@
+.c-acrobat-wrapper {
+  height: 600px;
+  min-height: 600px;
+  padding: 50px 0;
+  @media (min-width: $break-desktop) {
+    height: 700px;
+    min-height: 700px;
+  }
+}
+
+.c-acrobat {
+  height: 500px;
+  min-height: 500px;
+  @media (min-width: $break-desktop) {
+    height: 600px;
+    min-height: 600px;
+  }
+}

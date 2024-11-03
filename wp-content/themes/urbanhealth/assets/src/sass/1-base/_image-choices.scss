@@ -1,0 +1,108 @@
+/* stylelint-disable declaration-no-important */
+
+.image-choices-field {
+  width: 100% !important;
+  max-width: 100%;
+  margin-top: 2rem !important;
+  
+  .gfield_radio {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .image-choices-choice input[type='radio'] {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+  }
+
+  .gfield_label {
+    width: 100%;
+    text-align: center;
+  }
+
+}
+
+.image-choices-choice-selected, .image-choices-choice:hover {
+  .image-choices-choice-text {
+    background-color: $brand-light-teal;
+  }
+}
+
+.image-choices-choice-selected {
+  .image-choices-choice-text {
+    border-color: $brand-teal;
+  }
+}
+.image-choices-choice {
+  width: 100%;
+  margin-bottom: 1rem !important;
+  @include breakpoint($break-mobile-land) {
+    width: span(6);
+
+  }
+  @include breakpoint($break-tablet) {
+    margin-right: gutter() !important;
+    &:nth-of-type(2n) {
+      margin-right: 0 !important;
+    }
+  }
+
+  @include breakpoint($break-desktop) {
+    width: span(4);
+    margin-right: gutter() !important;
+    &:nth-of-type(2n) {
+      margin-right: gutter() !important;
+    }
+    &:nth-of-type(3n) {
+      margin-right: 0 !important;
+    }
+  }
+  @include breakpoint($break-desktop-wide) {
+    width: span(3);
+    margin-right: gutter() !important;
+    &:nth-of-type(3n) {
+      margin-right: gutter() !important;
+    }
+    &:nth-of-type(4n) {
+      margin-right: 0 !important;
+    }
+  }
+
+  label {
+    display: flex !important;
+    flex-direction: column;
+    max-width: none !important;
+    height: 100%;
+  }
+}
+
+.image-choices-choice-image-wrap {
+  display: block;
+  width: 100% !important;
+  background-image: none !important;
+  border: 1px solid $brand-mid-grey;
+  border-top: 2px solid $brand-teal;
+  @extend .o-image-overlay;
+
+}
+.image-choices-choice-text {
+  @extend h4;
+  position: relative;
+  z-index: 1;
+  display: block;
+  flex: 1;
+  width: calc(100% - 1rem);
+  min-height: 100px;
+  margin-top: -3rem;
+  padding: 1rem 0.75rem;
+  background-color: $brand-white;
+  border: 1px solid transparent;
+  box-shadow: $box-shadow;
+  line-height: 1.3;
+}
+/* stylelint-enable declaration-no-important */

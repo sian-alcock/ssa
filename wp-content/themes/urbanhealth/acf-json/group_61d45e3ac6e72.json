@@ -1,0 +1,52 @@
+{
+    "key": "group_61d45e3ac6e72",
+    "title": "Module - Colour Picker",
+    "fields": [
+        {
+            "key": "field_61d45e41da155",
+            "label": "Colour Picker",
+            "name": "teaser_colour",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "teal": "<div class=\"acf-radio-color acf-radio-color--teal\">Teal<\/div>",
+                "purple": "<div class=\"acf-radio-color acf-radio-color--purple\">Purple<\/div>",
+                "green": "<div class=\"acf-radio-color acf-radio-color--green\">Green<\/div>",
+                "orange": "<div class=\"acf-radio-color acf-radio-color--orange\">Orange<\/div>",
+                "yellow": "<div class=\"acf-radio-color acf-radio-color--yellow\">Yellow<\/div>",
+                "white": "<div class=\"acf-radio-color acf-radio-color--white\">White<\/div>"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1641553959
+}

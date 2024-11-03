@@ -1,0 +1,41 @@
+.c-text-media {
+  padding: $module-padding / 2 0;
+
+  .media_follows {
+    padding-bottom: 0;
+  }
+  @include breakpoint($break-tablet) {
+    padding-bottom: 2rem;
+  }
+
+  // & + .c-text-media {
+  //   padding-top: 0;
+  // }
+}
+
+.c-text-media__inner-wrapper {
+  flex-direction: column;
+  width: span(11 of 12);
+  margin-bottom: 1rem;
+
+  @include breakpoint($break-tablet) {
+    width: span(6 of 12);
+    margin-bottom: 0;
+  }
+}
+
+.c-text-media__closing-line {
+  width: span(12 of 12);
+  margin-top: 1rem;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  margin-left: auto;
+
+  @include breakpoint($break-tablet) {
+    width: span(8 of 12);
+    margin-top: 2rem;
+  }
+  @include breakpoint($break-desktop) {
+    width: span(6 of 12);
+  }
+}

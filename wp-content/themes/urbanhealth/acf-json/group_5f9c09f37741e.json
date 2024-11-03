@@ -1,0 +1,940 @@
+{
+    "key": "group_5f9c09f37741e",
+    "title": "Module - Teaser",
+    "fields": [
+        {
+            "key": "field_64650201b4eec",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_62c55e4f53120"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_5f9c0a855c1ee",
+            "label": "Display Variant",
+            "name": "teaser_variant",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "large-image": "Large Image",
+                "image-left": "Image Left",
+                "image-right": "Image Right",
+                "no-image": "No image"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_5f9c0a3e5c1ea",
+            "label": "Image",
+            "name": "teaser_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5f9c0a855c1ee",
+                        "operator": "!=",
+                        "value": "no-image"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_61fa577869c28",
+            "label": "Teaser content background colour",
+            "name": "no_image_background_color",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5f9c0a855c1ee",
+                        "operator": "==",
+                        "value": "no-image"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "white": "White",
+                "teal": "Dark teal"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_5f9c09f65c1e6",
+            "label": "Heading",
+            "name": "teaser_heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5f9c0a125c1e7",
+            "label": "Description",
+            "name": "teaser_description",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5f9c0a295c1e9",
+            "label": "Caption clone",
+            "name": "caption_clone",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_5f9203d83640a"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_5fc4d2e14349f",
+            "label": "Teaser theme",
+            "name": "teaser_theme",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5fc4cffea658a",
+                        "operator": "!=",
+                        "value": "content"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "field_5f99697eb70fc"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_5fc4cffea658a",
+            "label": "Teaser link type",
+            "name": "teaser_type",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "No buttons",
+                "content": "Link to Content",
+                "external": "External links",
+                "download": "Downloads",
+                "mailto": "Mailto links"
+            },
+            "default_value": "none",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_5f9c0a5f5c1eb",
+            "label": "Buttons",
+            "name": "teaser_ctas",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "The colour of the teaser (background on tagline and border) is inherited from the target page the first button links to",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5fc4cffea658a",
+                        "operator": "==",
+                        "value": "content"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 1,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add Row",
+            "hide_collapse": 0,
+            "collapse_all_repeater": 0,
+            "btn-icon-only": 0,
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_6213ca40a5c49",
+                    "label": "Button Text",
+                    "name": "cta_text",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "parent_repeater": "field_5f9c0a5f5c1eb"
+                },
+                {
+                    "key": "field_6213ca5da5c4a",
+                    "label": "Button Link",
+                    "name": "cta_post_id",
+                    "aria-label": "",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": "",
+                    "taxonomy": "",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1,
+                    "parent_repeater": "field_5f9c0a5f5c1eb",
+                    "bidirectional_target": []
+                }
+            ]
+        },
+        {
+            "key": "field_5fc4ceb816b62",
+            "label": "Download buttons",
+            "name": "download_buttons",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5fc4cffea658a",
+                        "operator": "==",
+                        "value": "download"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add Row",
+            "hide_collapse": 0,
+            "collapse_all_repeater": 0,
+            "btn-icon-only": 0,
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_5fc4d2acd9ba2",
+                    "label": "Button text",
+                    "name": "cta_text",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "parent_repeater": "field_5fc4ceb816b62"
+                },
+                {
+                    "key": "field_5fc4cf2ea6589",
+                    "label": "Download file",
+                    "name": "download_file",
+                    "aria-label": "",
+                    "type": "file",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "parent_repeater": "field_5fc4ceb816b62"
+                }
+            ]
+        },
+        {
+            "key": "field_5fc4d0faa658b",
+            "label": "External buttons",
+            "name": "external_buttons",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5fc4cffea658a",
+                        "operator": "==",
+                        "value": "external"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add Row",
+            "hide_collapse": 0,
+            "collapse_all_repeater": 0,
+            "btn-icon-only": 0,
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_5fc4d1e9ea8e3",
+                    "label": "Button text",
+                    "name": "cta_text",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "parent_repeater": "field_5fc4d0faa658b"
+                },
+                {
+                    "key": "field_5fc4d140a658c",
+                    "label": "External Link",
+                    "name": "external_link",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_5fc4d0faa658b"
+                }
+            ]
+        },
+        {
+            "key": "field_6329866e4752b",
+            "label": "Mailto links",
+            "name": "mailto_links",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5fc4cffea658a",
+                        "operator": "==",
+                        "value": "mailto"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_632986b04752c",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add link",
+            "hide_collapse": 0,
+            "collapse_all_repeater": 0,
+            "btn-icon-only": 0,
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_632986b04752c",
+                    "label": "Email",
+                    "name": "email",
+                    "aria-label": "",
+                    "type": "email",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_6329866e4752b"
+                },
+                {
+                    "key": "field_632986be4752d",
+                    "label": "Email subject",
+                    "name": "email_subject",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "parent_repeater": "field_6329866e4752b"
+                },
+                {
+                    "key": "field_632989273c686",
+                    "label": "Email body",
+                    "name": "email_body",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": "",
+                    "parent_repeater": "field_6329866e4752b"
+                }
+            ]
+        },
+        {
+            "key": "field_668c0ae8138e7",
+            "label": "Teaser link type two",
+            "name": "teaser_type_two",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_668c0a8455484",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "No buttons",
+                "content": "Link to Content",
+                "external": "External links",
+                "download": "Downloads",
+                "mailto": "Mailto links"
+            },
+            "default_value": "none",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_668c0aed138e8",
+            "label": "Buttons two",
+            "name": "teaser_ctas_two",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "The colour of the teaser (background on tagline and border) is inherited from the target page the first button links to",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_668c0ae8138e7",
+                        "operator": "==",
+                        "value": "content"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "hide_collapse": 0,
+            "collapse_all_repeater": 0,
+            "btn-icon-only": 0,
+            "min": 1,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_668c0aed138ed",
+                    "label": "Button Text",
+                    "name": "cta_text",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_668c0aed138e8"
+                },
+                {
+                    "key": "field_668c0aed138ee",
+                    "label": "Button Link",
+                    "name": "cta_post_id",
+                    "aria-label": "",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": "",
+                    "post_status": "",
+                    "taxonomy": "",
+                    "return_format": "object",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "bidirectional": 0,
+                    "ui": 1,
+                    "bidirectional_target": [],
+                    "parent_repeater": "field_668c0aed138e8"
+                }
+            ]
+        },
+        {
+            "key": "field_668c0af2138ef",
+            "label": "Download buttons two",
+            "name": "download_buttons_two",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_668c0ae8138e7",
+                        "operator": "==",
+                        "value": "download"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "hide_collapse": 0,
+            "collapse_all_repeater": 0,
+            "btn-icon-only": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_668c0af2138f0",
+                    "label": "Button text",
+                    "name": "cta_text",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_668c0af2138ef"
+                },
+                {
+                    "key": "field_668c0af2138f1",
+                    "label": "Download file",
+                    "name": "download_file",
+                    "aria-label": "",
+                    "type": "file",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "parent_repeater": "field_668c0af2138ef"
+                }
+            ]
+        },
+        {
+            "key": "field_668c0af9138f2",
+            "label": "External buttons two",
+            "name": "external_buttons_two",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_668c0ae8138e7",
+                        "operator": "==",
+                        "value": "external"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "hide_collapse": 0,
+            "collapse_all_repeater": 0,
+            "btn-icon-only": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_668c0af9138f3",
+                    "label": "Button text",
+                    "name": "cta_text",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_668c0af9138f2"
+                },
+                {
+                    "key": "field_668c0af9138f4",
+                    "label": "External Link",
+                    "name": "external_link",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_668c0af9138f2"
+                }
+            ]
+        },
+        {
+            "key": "field_668c0bfef0b18",
+            "label": "Mailto links two",
+            "name": "mailto_links_two",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_668c0ae8138e7",
+                        "operator": "==",
+                        "value": "mailto"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "hide_collapse": 0,
+            "collapse_all_repeater": 0,
+            "btn-icon-only": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_632986b04752c",
+            "button_label": "Add link",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_668c0bfef0b19",
+                    "label": "Email",
+                    "name": "email",
+                    "aria-label": "",
+                    "type": "email",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_668c0bfef0b18"
+                },
+                {
+                    "key": "field_668c0bfef0b1a",
+                    "label": "Email subject",
+                    "name": "email_subject",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_668c0bfef0b18"
+                },
+                {
+                    "key": "field_668c0bfef0b1b",
+                    "label": "Email body",
+                    "name": "email_body",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "placeholder": "",
+                    "new_lines": "",
+                    "parent_repeater": "field_668c0bfef0b18"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1720515740
+}

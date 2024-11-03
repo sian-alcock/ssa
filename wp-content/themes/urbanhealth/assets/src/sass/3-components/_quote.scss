@@ -1,0 +1,83 @@
+.c-quote {
+  padding: $module-padding 0;
+}
+
+.c-quote__layout {
+  position: relative;
+  padding: calc(2rem + 32px) 1rem 2rem 1rem;
+  background-color: $brand-white;
+  box-shadow: $box-shadow;
+
+  @include breakpoint($break-tablet) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 2rem;
+  }
+
+  @include breakpoint($break-desktop) {
+    padding: 4rem;
+  }
+
+  figure {
+    font-family: $font-graphik-regular;
+
+    @include breakpoint($break-tablet) {
+      width: span(3);
+    }
+
+    img {
+      max-width: 130px;
+      margin-bottom: 0.5rem;
+      border-radius: 50%;
+    }
+  }
+}
+
+.c-quote__text {
+  margin-bottom: 2rem;
+  font-family: $font-graphik-regular;
+  font-size: 1.5rem;
+
+  @include breakpoint($break-tablet) {
+    &.figure-follows {
+      width: span(8);
+    }
+
+    margin-bottom: 0;
+    font-size: 2rem;
+  }
+}
+.c-quote__name {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  @include font-size(18);
+  @include breakpoint($break-desktop) {
+    @include font-size(24);
+    margin-bottom: 1rem;
+  }
+}
+.c-quote__job-title {
+  display: block;
+  @include font-size(18);
+  @include breakpoint($break-desktop) {
+    @include font-size(24);
+  }
+}
+.c-quote__icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 66px;
+  height: 66px;
+  margin-top: -35px;
+  font-size: 80px;
+  font-style: italic;
+  line-height: 35px;
+  text-align: center;
+
+  svg {
+    width: 42px;
+  }
+}

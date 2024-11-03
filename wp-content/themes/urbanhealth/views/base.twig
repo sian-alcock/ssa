@@ -1,0 +1,25 @@
+{% block html_head_container %}
+	{% include 'html-header.twig' %}
+{% endblock %}
+
+	<body class="{{body_class}}" data-template="base.twig" itemscope itemtype="http://schema.org/WebPage">
+
+
+		{% block header %}
+      {% include 'header.twig' %}
+		{% endblock %}
+
+		<main class="main {{ fn('is_front_page') ? 'main--away' : null }}">
+			{% block content %}
+				Sorry, no content
+			{% endblock %}
+    </main>
+
+		{% block footer %}
+			{% include 'footer.twig' %}
+			{{ function('wp_footer') }}
+		{% endblock %}
+
+
+	</body>
+</html>

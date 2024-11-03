@@ -1,0 +1,32 @@
+{#
+  @param post wordpress post reference
+#}
+{% set box_tagline = label != 'hide' ? post.meta('box_tagline') : null %}
+{% set box_caption = label != 'hide' ?  post.meta('box_caption') : null %}
+{% set colour = post_theme.name %}
+
+{% if post.type == 'people' %}
+	{% set image = person_data.author_image %}
+{% else %}
+
+	{% include 'partials/box-caption-text.twig' with {caption: box_caption, tagline: box_tagline, colour: colour } %}
+
+	{% if post.thumbnail %}
+		{% set image = post.thumbnail %}
+	{% elseif post.meta('hero_image') %}
+		{% set image = get_image(post.meta('hero_image')) %}
+	{% else %}
+		{% set image = '' %}
+	{% endif %}
+
+{% endif %}
+
+{% if image %}
+
+	<div class="c-card-listing__image-wrapper o-image-overlay o-image-overlay--{{colour ?: " teal"}}">
+		<img class="c-card-listing__image" src="{{ get_image(image).src|resize(700) }}" srcset="{{ get_image(image).src|resize(1400) }} 2x" alt="{{ get_image(image).alt }}" loading="lazy"/>
+	</div>
+
+{% else %}
+	<img src="{{ theme.link }}/assets/src/img/card-placeholder.png" alt="" loading="lazy"/>
+{% endif %}

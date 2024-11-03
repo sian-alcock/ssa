@@ -1,0 +1,124 @@
+.c-hero-large {
+  margin-bottom: $hero-margin-bottom / 2;
+
+  @include breakpoint($break-desktop) {
+    margin-bottom: $hero-margin-bottom;
+  }
+
+  .c-box {
+    width: calc(100% + 1rem);
+    margin-left: -1rem;
+
+    @include breakpoint($break-tablet) {
+      width: auto;
+      margin-left: 0;
+    }
+
+    @include breakpoint($break-desktop) {
+      position: absolute;
+      bottom: -2rem;
+      width: 510px;
+      margin-left: 2rem;
+    }
+  }
+
+  .c-box__caption {
+    margin-left: -1rem;
+
+    @include breakpoint($break-desktop) {
+      margin-left: -2.5rem;
+    }
+  }
+}
+
+.c-hero-large__image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.c-hero-large__image--right {
+  object-position: right;
+}
+.c-hero-large__image--left {
+  object-position: left;
+}
+.c-hero-large__image--top {
+  object-position: top;
+}
+.c-hero-large__image--bottom {
+  object-position: bottom;
+}
+.c-hero-large__image-container {
+  max-height: 500px;
+  overflow: hidden;
+  background-color: $brand-teal;
+}
+.c-hero-large__image-wrapper {
+  position: relative;
+  height: 225px;
+
+  @include breakpoint($break-mobile) {
+    height: 300px;
+  }
+  @include breakpoint($break-tablet) {
+    height: 400px;
+  }
+  @include breakpoint($break-desktop) {
+    height: 500px;
+  }
+}
+
+.c-hero-large__container {
+  position: relative;
+}
+
+.c-hero-large__cta {
+  @include breakpoint($break-mobile) {
+    margin-right: 1rem;
+  }
+}
+
+.c-hero-large__meta {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+  color: $brand-cool-grey;
+  @extend .smaller;
+}
+
+.c-hero-large__divider {
+  padding: 0 1rem;
+}
+
+.c-hero-large__icon {
+  margin-left: 0.25rem;
+}
+
+.c-hero-large__author-wrapper {
+  &:not(:first-of-type) {
+    margin-left: 2rem;
+  }
+}
+
+.c-hero-large__social-container {
+  padding-bottom:1rem;
+}
+
+.c-hero-large__social-icon {
+  padding-right:0.15rem;
+  padding-left:0.15rem;
+  &:first-child {
+    padding-left:0rem;
+  }
+  &:last-child {
+    padding-right:0rem;
+  }
+}
+
+.c-hero-large__paragraph {
+  @extend .smaller;
+  padding-right:0.5rem;
+  color: $brand-cool-grey;
+}

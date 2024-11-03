@@ -1,0 +1,39 @@
+<div class="c-pagination-container flex">
+  <div class="c-pagination__counts">
+    Showing {{(paged - 1) * posts_per_page + 1}} to {{posts.found_posts < paged * posts_per_page ? posts.found_posts : paged * posts_per_page}} of {{posts.found_posts}} items
+  </div>
+  <div class="c-pagination__block">
+    <div class="c-pagination__nav-wrapper c-pagination__nav-wrapper--prev {{posts.pagination.prev.link|length ? '' : 'invisible'}}">
+      <span><i class="icon-angle-left"></i></span>
+      {% if posts.pagination.prev %}
+        {% set the_page_link = posts.pagination.prev.link %}
+        <span data-href="{{the_page_link}}" class="c-pagination__nav page-link">Previous</span>
+      {% else %}
+        <span class="c-pagination__nav">Previous</span>
+      {% endif %}
+    </div>
+    <ul class="c-pagination__pages">
+      {% for page in posts.pagination.pages %}
+        <li class="c-pagination__page-item">
+          {% if page.link %}
+        {% set the_page_link = page.link %}
+            <span data-href="{{ the_page_link }}" class="c-pagination__number {{page.class}} page-link">{{page.title}}</span>
+          {% else %}
+            <span class="c-pagination__number {{page.class}}">{{page.title}}</span>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+
+    <div class="c-pagination__nav-wrapper c-pagination__nav-wrapper--next {{posts.pagination.next.link|length ? '' : 'invisible'}}">
+      {% if posts.pagination.next %}
+        {% set the_page_link = posts.pagination.next.link %}
+      <span data-href="{{ the_page_link}}" class="c-pagination__nav c-pagination__nav--next page-link">Next</span>
+      {% else %}
+      <span class="c-pagination__nav c-pagination__nav--next">Next</a>
+      {% endif %}
+      <span><i class="icon-angle-right"></i></span>
+    </div>
+  </div>
+</div>
+

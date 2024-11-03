@@ -1,0 +1,99 @@
+{% set person_id = post.user %}
+{% set person_data = fn('get_userdata', person_id) %}
+{% set person_name = person_data.display_name %}
+{% set person_job_title = person_data.author_job_title %}
+{% set person_bio = person_data.description %}
+{% set person_image = person_data.author_image %}
+{% set person_phone = person_data.author_telephone_number %}
+{% set person_email = person_data.user_email %}
+{% set person_twitter = person_data.twitter %}
+{% set person_facebook = person_data.facebook %}
+{% set person_linkedin = person_data.linkedin %}
+{% set person_instagram = person_data.instagram %}
+
+
+<section class='c-hero-person'>
+	<div class="o-grid-container">
+		<div class='c-hero__layout c-hero-person__layout c-hero__layout--image-left'>
+
+			{% if person_image %}
+				<div class='c-hero__image-container c-hero__person-image'>
+					{% include 'partials/hero-person-image.twig' with {image: person_image} %}
+				</div>
+			{% endif %}
+
+			<div class='c-hero-person__content'>
+				<h1 class='o-hero-title'>{{ person_name }}</h1>
+				{% if person_job_title %}
+					<p class='c-hero-person__job'>{{person_job_title}}</p>
+				{% endif %}
+				{% if person_bio %}
+					<p class='o-hero-subtitle'>{{ person_bio }}</p>
+				{% endif %}
+
+				<div class="c-hero-person__contact-wrapper flex">
+					{% if person_phone %}
+						<div class="c-hero-person__phone-container">
+							<div class="c-hero-person__phone-wrapper">Call</div>
+							<div class="flex">
+								<i class="c-hero-person__icon icon-phone"></i>
+								<div class="c-hero-person__phone">{{ person_phone }}</div>
+							</div>
+						</div>
+					{% endif %}
+					{% if person_email and post.hide_email_address != 1 %}
+						<div class="c-hero-person__mail-container">
+							<div class="c-hero-person__mail-wrapper">Mail</div>
+							<div class="flex">
+								<i class="c-hero-person__icon icon-mail"></i>
+								<div class="c-hero-person__mail">{{ person_email }}</div>
+							</div>
+						</div>
+					{% endif %}
+				</div>
+				{% if person_twitter or person_facebook or person_instagram or person_linkedin %}
+					<div class="c-hero-person__connect-wrapper">
+						<div class="c-hero-person__connect-label">Connect</div>
+						<div class="c-hero-person__connections flex">
+							{% for link in post.user_connection_opportunities %}
+
+								{% if link == 'twitter' and person_twitter %}
+									<div>
+										<a href="https://twitter.com/{{ person_twitter }}" class="c-hero-person__connection" target="_blank">Twitter<i class="c-hero-person__connect-icon icon-right"></i>
+										</a>
+									</div>
+								{% endif %}
+
+								{% if link == 'facebook' and person_facebook %}
+									<div>
+										<a href="{{ person_facebook }}" class="c-hero-person__connection" target="_blank">Facebook<i class="c-hero-person__connect-icon icon-right"></i>
+										</a>
+									</div>
+								{% endif %}
+
+								{% if link == 'instagram' and person_instagram %}
+									<div>
+										<a href="{{ person_instagram }}" class="c-hero-person__connection" target="_blank">Instagram<i class="c-hero-person__connect-icon icon-right"></i>
+										</a>
+									</div>
+								{% endif %}
+
+								{% if link == 'linked_in' and person_linkedin %}
+									<div>
+										<a href="{{ person_linkedin }}" class="c-hero-person__connection" target="_blank">LinkedIn<i class="c-hero-person__connect-icon icon-right"></i>
+										</a>
+									</div>
+								{% endif %}
+							{% endfor %}
+						</div>
+					</div>
+				{% endif %}
+			</div>
+
+		</div>
+	</div>
+</section>
+
+{% if post.meta('include_standfirst') and post.meta('standfirst_text') %}
+	{% include 'modules/standfirst.twig' with { standfirst : post.meta('standfirst_text'), hero_bg_class : 'c-standfirst--follows-person-hero' } %}
+{% endif %}

@@ -1,0 +1,132 @@
+{
+    "key": "group_5fa969b6aa9a5",
+    "title": "Menu item",
+    "fields": [
+        {
+            "key": "field_5fa969c466c01",
+            "label": "See all label",
+            "name": "menu_item_see_all_label",
+            "type": "text",
+            "instructions": "E.G. \"All insights\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "js-top-level",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5fbbc4cb33101",
+            "label": "Featured Article",
+            "name": "featured_article",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "js-top-level",
+                "id": ""
+            },
+            "post_type": [
+                "project",
+                "post",
+                "page"
+            ],
+            "taxonomy": "",
+            "allow_null": 1,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
+            "key": "field_5fcf4e0026af7",
+            "label": "Is a menu grouping",
+            "name": "is_a_menu_grouping",
+            "type": "true_false",
+            "instructions": "If True then the link will not be rendered. Must also have child items",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "js-second-level",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_60105511baab7",
+            "label": "Menu grouping heading",
+            "name": "menu_grouping_heading",
+            "type": "true_false",
+            "instructions": "If 'Yes' navigation label will be used as a heading",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5fcf4e0026af7",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "js-second-level",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_616d9f6374753",
+            "label": "Append total number of vacancies",
+            "name": "append_total_number_of_vacancies",
+            "type": "true_false",
+            "instructions": "Intended for use with the Jobs or Vacancies menu item. If set to 'Yes' the number of jobs that are active (currently published) will be displayed in brackets after the title",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "nav_menu_item",
+                "operator": "==",
+                "value": "location\/navigation_primary"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1634574259
+}

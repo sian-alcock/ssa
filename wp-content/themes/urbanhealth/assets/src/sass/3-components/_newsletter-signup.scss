@@ -1,0 +1,30 @@
+.c-newsletter-signup--mobile {
+  .c-newsletter-signup__button {
+    width: 100%;
+    padding-left: 1rem;
+    text-align: left;
+  }
+
+  .c-newsletter-signup__icon {
+    margin-right: 0.5rem;
+    &::before {
+      margin-left: 0;
+    }
+  }
+  @include breakpoint($break-mobile-nav-break-point) {
+    display: none;
+  }
+}
+
+.c-newsletter-signup--desktop {
+  display: none;
+  @extend .menu-item;
+  @include breakpoint($break-mobile-nav-break-point) {
+    display: block;
+    .c-newsletter-signup__button {
+      width: fit-content;
+      margin-bottom: 0;
+      text-align: center;
+    }
+  }
+}

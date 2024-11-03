@@ -1,0 +1,74 @@
+{% set job_title = post.meta('job_title') ? post.meta('job_title') : post.title %}
+{% set application_link = post.meta('url') ~ "/applications/new" %}
+{% set jobpack_link = post.meta('job_pack') %}
+{% set title = post.meta('title') %}
+{% set job_description = post.meta('job_description') %}
+{% set job_salary = post.meta('compensation') %}
+{% set job_closing_date = post.meta('deadline_at') %}
+{% set job_interview_dates = post.meta('job_interview_dates') %}
+{% set job_location = post.meta('location') %}
+{% set job_employment_type = post.meta('employment_type_text') %}
+{% set team = post.get_terms('department') | join (', ') %}
+
+
+<section class='c-hero-job'>
+	<div class='o-grid-container'>
+		<div class='c-hero-job__container'>
+			<div class='c-hero-job__top-section'>
+				<h1 class='o-hero-title'>{{ title }}</h1>
+				<div class="c-hero-job__top-section-buttons">
+
+					{% include 'partials/cta.twig' with {
+          link : application_link,
+          text : "Apply now",
+          colour: 'teal-on-teal',
+          target: "_blank",
+          }%}
+
+					{% include 'partials/cta.twig' with {
+          link : jobpack_link ,
+          text : "Download the job description ",
+          colour: 'teal-on-teal',
+          target: "_blank",
+          download : true
+          }%}
+				</div>
+			</div>
+			<div class="c-hero-job__branding-line"></div>
+			<div class='c-hero-job__bottom-section'>
+				{% if job_description %}
+					<p class='o-hero-subtitle'>{{ job_description }}</p>
+				{% endif %}
+
+        <div class='c-hero-job__details-wrapper'>
+          {% if job_closing_date %}
+          <div class='c-hero-job__detail-wrapper'>
+            <h3 class='c-hero-job__detail-heading'>Closing date</h3>
+            {# Slice job_closing_date to stop time +1:00 displaying wrong date #}
+						{% set job_closing_date   = job_closing_date[:10] %}
+            <div>{{ job_closing_date |date("d F Y") }}</div>
+          </div>
+          {% endif %}
+          {% if job_employment_type %}
+          <div class='c-hero-job__detail-wrapper'>
+            <h3 class='c-hero-job__detail-heading'>Employment type</h3>
+            <div>{{ job_employment_type }}</div>
+          </div>
+          {% endif %}
+          {% if job_location %}
+          <div class='c-hero-job__detail-wrapper'>
+            <h3 class='c-hero-job__detail-heading'>Location</h3>
+            <div>{{ job_location }}</div>
+          </div>
+          {% endif %}
+          {% if job_salary %}
+          <div class='c-hero-job__detail-wrapper'>
+            <h3 class='c-hero-job__detail-heading'>Salary</h3>
+            <div>{{ job_salary }}</div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

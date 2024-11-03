@@ -1,0 +1,99 @@
+.c-hero-person {
+  position: relative;
+  margin-bottom: $hero-margin-bottom / 2;
+  padding-top: 1rem;
+  background-color: $brand-light-grey;
+
+  @include breakpoint($break-desktop) {
+    margin-bottom: $hero-margin-bottom;
+    padding-top: 2rem;
+  }
+}
+
+.c-hero-person__layout {
+  @include breakpoint($break-desktop) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.c-hero-person__layout--image-right {
+  flex-direction: row-reverse;
+}
+.c-hero__person-image {
+  img {
+    position: relative;
+  }
+}
+
+.c-hero-person__content {
+  padding-bottom: 1rem;
+
+  @include breakpoint($break-desktop) {
+    width: span(6 of 12);
+    padding: 0 1rem;
+  }
+  @include breakpoint($break-desktop-med) {
+    width: span(8 of 12);
+    padding: 0 5rem;
+  }
+}
+
+.c-hero-person__job {
+  @extend h4;
+}
+
+.c-hero-person__contact-wrapper {
+  flex-direction: column;
+  margin-bottom: 2rem;
+  @include breakpoint($break-tablet) {
+    flex-direction: row;
+  }
+  @include breakpoint($break-desktop) {
+    flex-direction: column;
+  }
+  @include breakpoint($break-desktop-wide) {
+    flex-direction: row;
+  }
+}
+
+.c-hero-person__connect-icon {
+  &::before {
+    transform: rotate(-45deg);
+  }
+}
+
+.c-hero-person__icon {
+  margin-right: 0.4rem;
+  &::before {
+    margin-left: 0;
+  }
+}
+
+.c-hero-person__phone-container,
+.c-hero-person__mail-container {
+  margin-bottom: 1rem;
+  @include breakpoint($break-tablet) {
+    flex-basis: 50%;
+  }
+}
+
+.c-hero-person__mail-wrapper,
+.c-hero-person__phone-wrapper,
+.c-hero-person__connect-label {
+  margin-bottom: 0.8rem;
+}
+
+.c-hero-person__mail {
+  overflow-wrap: break-word;
+}
+
+.c-hero-person__connection {
+  margin-right: 1rem;
+  line-height: 2;
+}
+
+.c-hero-person__connections {
+  flex-wrap: wrap;
+}

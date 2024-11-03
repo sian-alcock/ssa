@@ -1,0 +1,32 @@
+<section class="c-signposting {{ additional_classes }} cards-{{ acf.signposting__related_content | length }}x">
+    <div class="c-signposting__container o-grid-container flex">
+      <div class="c-signposting__text-container flex">
+        {% if acf.signposting__heading %}
+        <h2 class="c-signposting__heading">
+          {{ acf.signposting__heading }}
+        </h2>
+        {% endif %}
+        {% if acf.signposting__description %}
+        <p class="c-signposting__description">
+          {{ acf.signposting__description }}
+        </p>
+        {% endif %}
+      </div>
+      <div class="c-signposting__cards-container flex">
+        {% for card in  get_posts(acf.signposting__related_content) %}
+            {% include 'partials/card-signposting.twig' with { number_of_cards : loop.length } %}
+        {% endfor %}
+      </div>
+      <div class="c-signposting__cta-wrapper">
+        {% if acf.signposting__cta %}
+            {% include 'partials/cta.twig' with {
+                  link: acf.signposting__cta.url,
+                  colour: 'white',
+                  class: 'c-signposting__cta',
+                  text: acf.signposting__cta.title,
+                  target: acf.signposting__cta.target
+                } %}
+        {% endif %}
+      </div>
+    </div>
+</section>

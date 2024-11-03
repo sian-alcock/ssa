@@ -1,0 +1,60 @@
+.c-filters {
+  position: relative;
+  z-index: 4;
+}
+
+.c-filters--small {
+  .c-filters--tabs {
+    max-width: 450px;
+  }
+}
+
+.c-filters--tabs {
+  display: none;
+  max-width: 650px;
+  margin-left: auto;
+  @include breakpoint($break-mobile-land) {
+    display: block;
+  }
+}
+
+.c-filters__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+
+  .o-checkbox {
+    width: span(6 of 12);
+  }
+}
+.c-filters__actions {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid rgba($brand-black, 0.1);
+}
+.c-filters__clear {
+  text-decoration: underline;
+}
+
+.c-filters__save {
+  margin-bottom: 0;
+}
+
+// Accordion
+.c-filters__label {
+  margin-bottom: 1rem;
+  color: $brand-cool-grey;
+}
+.c-filters--accordion {
+  @include breakpoint($break-mobile-land) {
+    display: none;
+  }
+  .c-filters__list {
+    margin-bottom: 1.5rem;
+  }
+  .c-filters__list:last-of-type {
+    margin-bottom: 0;
+  }
+}

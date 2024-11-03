@@ -1,0 +1,70 @@
+$fallback-fonts: Helvetica, sans-serif;
+
+$font-graphik-regular: GraphikRegular, $fallback-fonts;
+$font-graphik-medium: GraphikMedium, $fallback-fonts;
+$font-graphik-bold: GraphikBold, $fallback-fonts;
+
+$font-size-base: 16;
+
+$reg: 400;
+$semi-bold: 600;
+$bold: 800;
+$weight-black: 900;
+
+$break-mobile: 22.438em; // 359px
+$break-mobile-land: 32em; // 512px
+$break-tablet: 40.063em; // 641px
+$break-desktop: 50em; // 800px
+$break-desktop-mini: 55em; // 880px
+$break-top-page-count: 57.5em; // 920px
+$break-desktop-med: 64.063em; // 1025px
+$break-mobile-nav: 68.125em; // 1090px
+$break-desktop-wide: 75em; // 1200px
+$break-desktop-wider: 83.75em; // 1340px
+$break-desktop-xl: 88em; // 1408px
+
+$break-mobile-nav-break-point: 950px;
+
+$brand-black: #1c1c1c;
+$brand-cool-grey: #63666a;
+$brand-dark-grey: #687071;
+$brand-mid-grey: #ededee;
+$brand-light-grey: #f8f8f8;
+$brand-white: #ffffff;
+
+$brand-light-teal: #daeff1;
+$brand-teal: #00939d;
+$brand-dark-teal: #00666d;
+
+$brand-purple: #5f4b8b;
+$brand-green: #335525;
+$brand-orange: #e6680c;
+$brand-yellow: #ffe964;
+
+$brand-orange-opacity: rgba($brand-orange, 0.6);
+$brand-yellow-opacity: rgba($brand-yellow, 0.6);
+$brand-purple-opacity: rgba($brand-purple, 0.6);
+$brand-green-opacity: rgba($brand-green, 0.6);
+$brand-teal-opacity: rgba($brand-teal, 0.6);
+$brand-cool-grey-opacity: rgba($brand-cool-grey, 0.6);
+
+$brand-teal-light: #e3f1f2;
+$brand-main-grey: #63666a;
+$brand-main-off-white: #1c1c1c;
+
+$box-shadow: 0 16px 30px 0 rgba(70, 161, 168, 0.08), 0 16px 16px 0 rgba(0, 0, 0, 0.06);
+
+$white: #fff;
+$black: #000;
+
+$transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+$susy: (
+  'columns': susy-repeat(12),
+  'gutters': 0.5,
+  'spread': 'narrow',
+  'container-spread': 'narrow',
+);
+
+$module-padding: 6rem;
+$hero-margin-bottom: 4rem;

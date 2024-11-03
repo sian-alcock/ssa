@@ -1,0 +1,604 @@
+{
+  "data": [
+    {
+      "id": "151176",
+      "type": "jobs",
+      "attributes": {
+        "created_at": "2023-11-14T16:09:32+00:00",
+        "updated_at": "2023-11-22T13:33:27+00:00",
+        "application_form_url": "https://gsttfoundation.pinpointhq.com/en/jobs/151176/applications/new",
+        "benefits": "\u003cdiv\u003e\u003c!--block--\u003e·\u0026nbsp; \u0026nbsp; \u0026nbsp; \u0026nbsp;27 days of annual leave per year + bank holidays.\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003e·\u0026nbsp; \u0026nbsp; \u0026nbsp; \u0026nbsp;Annual learning and development budget of up to £1,000.\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003e·\u0026nbsp; \u0026nbsp; \u0026nbsp; \u0026nbsp;Sector-leading enhanced maternity, paternity, and parental leave pay.\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003e·\u0026nbsp; \u0026nbsp; \u0026nbsp; \u0026nbsp;Flexible working scheme.\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003e\u0026nbsp;\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003eAt Guy’s \u0026amp; St Thomas’ Foundation, we are dedicated to diversity, equity, and inclusion in every aspect of our work. Cultivating a highly skilled and diverse workforce is pivotal to fulfilling our mission. We strongly encourage candidates from diverse backgrounds to apply.\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003e\u0026nbsp;\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003eInterviews are scheduled to take place on 18th, 19th, and 20th December.\u003c/div\u003e",
+        "benefits_header": "Benefits",
+        "compensation": "£30,000 - £35,000 / year",
+        "compensation_minimum": 30000.0,
+        "compensation_maximum": 35000.0,
+        "compensation_currency": "GBP",
+        "compensation_frequency": "year",
+        "compensation_visible": true,
+        "deadline_at": "2023-12-05T00:00:00+00:00",
+        "description": "\u003cdiv\u003e\u003c!--block--\u003eWe are excited to present two new opportunities within our Administration \u0026amp; Facilities team: two Part-Time Diary Managers on a 6-month fixed-term basis. Both roles are for 18.75 hours per week, with negotiable working days and hours, ideally spread across 4-5 days per week. This hybrid role expects 30% of your monthly time to be office-based.\u003c/div\u003e",
+        "employment_type": "fixed_term_contract",
+        "employment_type_text": "Fixed Term Contract",
+        "key_responsibilities": "\u003cdiv\u003e\u003c!--block--\u003eIn these roles, you will proactively support diary management for leadership teams across three business areas: Endowment, People \u0026amp; Culture, Communications \u0026amp; Engagement, CEO office, Charities, and Operations. Additionally, the successful candidate will handle basic administration tasks directed by the Business Manager, tracking the Foundation’s planning points and rhythms to manage leadership time.\u003c/div\u003e",
+        "key_responsibilities_header": "About the role",
+        "opened_at": "2023-11-14T16:09:49+00:00",
+        "remote": false,
+        "reporting_to": null,
+        "requisition_id": "",
+        "skills_knowledge_expertise": "\u003cdiv\u003e\u003c!--block--\u003e·\u0026nbsp; \u0026nbsp; \u0026nbsp; \u0026nbsp;Previous experience in diary management for multiple senior individuals.\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003e·\u0026nbsp; \u0026nbsp; \u0026nbsp; \u0026nbsp;Proficiency in Microsoft Office Suite (especially Outlook) and a quick grasp of new software.\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003e·\u0026nbsp; \u0026nbsp; \u0026nbsp; \u0026nbsp;Prioritization skills as needed.\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003e·\u0026nbsp; \u0026nbsp; \u0026nbsp; \u0026nbsp;Outstanding written and verbal communication skills.\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003e·\u0026nbsp; \u0026nbsp; \u0026nbsp; \u0026nbsp;Excellent relationship-building skills.\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003e·\u0026nbsp; \u0026nbsp; \u0026nbsp; \u0026nbsp;Ability to work with initiative and at pace.\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003e·\u0026nbsp; \u0026nbsp; \u0026nbsp; \u0026nbsp;Problem-solving abilities and capacity to work under pressure.\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003e·\u0026nbsp; \u0026nbsp; \u0026nbsp; \u0026nbsp;Attention to detail and a proactive approach.\u003c/div\u003e",
+        "skills_knowledge_expertise_header": "Skills, Knowledge and Expertise",
+        "status": "open",
+        "title": "Diary Manager",
+        "visibility": "external",
+        "url": "https://gsttfoundation.pinpointhq.com/en/jobs/151176",
+        "path": "/en/jobs/151176",
+        "workplace_type": "hybrid",
+        "workplace_type_text": "Hybrid"
+      },
+      "relationships": {
+        "department": {
+          "meta": {
+            "included": false
+          }
+        },
+        "division": {
+          "meta": {
+            "included": false
+          }
+        },
+        "location": {
+          "data": {
+            "type": "locations",
+            "id": "15150"
+          }
+        },
+        "structure_custom_group_one": {
+          "meta": {
+            "included": false
+          }
+        },
+        "hiring_manager_user": {
+          "meta": {
+            "included": false
+          }
+        },
+        "recruitment_manager_user": {
+          "meta": {
+            "included": false
+          }
+        },
+        "applications": {
+          "meta": {
+            "included": false
+          }
+        },
+        "questions": {
+          "meta": {
+            "included": false
+          }
+        },
+        "custom_attributes": {
+          "data": [
+            {
+              "type": "custom_attributes",
+              "id": "1488030"
+            },
+            {
+              "type": "custom_attributes",
+              "id": "1524915"
+            },
+            {
+              "type": "custom_attributes",
+              "id": "1524916"
+            },
+            {
+              "type": "custom_attributes",
+              "id": "1524917"
+            }
+          ]
+        },
+        "stages": {
+          "meta": {
+            "included": false
+          }
+        }
+      }
+    },
+    {
+      "id": "151555",
+      "type": "jobs",
+      "attributes": {
+        "created_at": "2023-11-15T18:37:40+00:00",
+        "updated_at": "2023-11-17T09:09:27+00:00",
+        "application_form_url": "https://gsttfoundation.pinpointhq.com/en/jobs/151555/applications/new",
+        "benefits": "\u003cul\u003e\u003cli\u003e\u003c!--block--\u003eUp to 12% employer pension contributions\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003e£1000 annual personal development budget\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eAnnual health and wellbeing personal allowance of £400\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eEnhanced maternity, paternity, and parental leave pay accessible without length of service requirements.\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eHealth and wellbeing programme that offers optional free yearly health check-ups.\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eSupport for healthy eating via fruit bowls and onsite lunch facilities.\u0026nbsp;\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eAgile working, flexible hours, and supportive IT kit.\u0026nbsp;\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eShower facilities and bike lock area.\u0026nbsp;\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eGenerous annual leave (27 days + bank holidays)\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eSubsidies for glasses\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eEmployee Assistance Programme\u003c/li\u003e\u003c/ul\u003e\u003cdiv\u003e\u003c!--block--\u003e\u003cstrong\u003e\u0026nbsp;\u003c/strong\u003e\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003e\u003cstrong\u003e\u0026nbsp;\u003c/strong\u003e\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003eAt Guy’s \u0026amp; St Thomas’ Foundation, we are dedicated to diversity, equity, and inclusion in every aspect of our work. Cultivating a highly skilled and diverse workforce is pivotal to fulfilling our mission. We strongly encourage candidates from diverse backgrounds to apply.\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003e\u0026nbsp;\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003eInterviews are scheduled to take place week commencing 11th December 2023.\u0026nbsp;\u003c/div\u003e",
+        "benefits_header": "Benefits",
+        "compensation": "£32,000 - £36,000 / year",
+        "compensation_minimum": 32000.0,
+        "compensation_maximum": 36000.0,
+        "compensation_currency": "GBP",
+        "compensation_frequency": "year",
+        "compensation_visible": true,
+        "deadline_at": "2023-12-06T00:00:00+00:00",
+        "description": "\u003cdiv\u003e\u003c!--block--\u003e\u003cbr\u003e\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003eImpact on Urban Health have built a portfolio of programmes that demonstrate the power of long-term approaches to complex health issues in urban environments. We focus our efforts on the London boroughs of Lambeth and Southwark, working in partnership with residents, local and national government, community, and private sector partners to improve the health of local residents. By doing this, we aim to influence others in the UK and internationally to create better health. The programmes focus on childhood obesity, multiple long-term conditions, the health effects of air pollution and children’s mental health and are all at different stages of development.\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003e\u0026nbsp;\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003eWe have 3 exciting opportunities to join Impact on Urban Health as a Programme Support Officer on a 7-month fixed term contract. This is a new role to the business, established to provide essential support to our Portfolio Managers, they are responsible for building part of a programme strategy, co-develop projects with partners, and make recommendations for funding these projects.\u0026nbsp;\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003e\u0026nbsp;\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003e\u003cbr\u003e\u003c/div\u003e",
+        "employment_type": "fixed_term_contract",
+        "employment_type_text": "Fixed Term Contract",
+        "key_responsibilities": "\u003cdiv\u003e\u003c!--block--\u003eAs a Programme Support Officer, you will work with a team of 3-6 portfolio managers providing vital support across, 3 main areas. These are: Grant management support, management of a portfolio of partnerships, support with timebound projects, e.g desk-based research/ project management etc.\u003c/div\u003e",
+        "key_responsibilities_header": "Key Responsibilities",
+        "opened_at": "2023-11-15T18:46:52+00:00",
+        "remote": false,
+        "reporting_to": null,
+        "requisition_id": "",
+        "skills_knowledge_expertise": "\u003cdiv\u003e\u003c!--block--\u003e\u003cbr\u003e\u003c/div\u003e\u003cul\u003e\u003cli\u003e\u003c!--block--\u003ePrevious experience in project management, demonstrating your ability to solve problems, manage time and risks and negotiate when things change.\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eExperience managing administrative tasks and duties - updating systems, monitoring spend, developing contracts.\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eComfortable and confident using online communication platforms and technology.\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eExcellent attention to detail.\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eGreat verbal and interpersonal skills.\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eStakeholder and relationship management.\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eAbility to work independently, with self-motivation, initiative, and confidence to handle multiple projects at a time.\u003c/li\u003e\u003c/ul\u003e\u003cdiv\u003e\u003c!--block--\u003e\u003cstrong\u003e\u0026nbsp;\u003c/strong\u003e\u003c/div\u003e",
+        "skills_knowledge_expertise_header": "Skills, Knowledge and Expertise",
+        "status": "open",
+        "title": "Programme Support Officer",
+        "visibility": "external",
+        "url": "https://gsttfoundation.pinpointhq.com/en/jobs/151555",
+        "path": "/en/jobs/151555",
+        "workplace_type": "hybrid",
+        "workplace_type_text": "Hybrid"
+      },
+      "relationships": {
+        "department": {
+          "meta": {
+            "included": false
+          }
+        },
+        "division": {
+          "meta": {
+            "included": false
+          }
+        },
+        "location": {
+          "data": {
+            "type": "locations",
+            "id": "15150"
+          }
+        },
+        "structure_custom_group_one": {
+          "meta": {
+            "included": false
+          }
+        },
+        "hiring_manager_user": {
+          "meta": {
+            "included": false
+          }
+        },
+        "recruitment_manager_user": {
+          "meta": {
+            "included": false
+          }
+        },
+        "applications": {
+          "meta": {
+            "included": false
+          }
+        },
+        "questions": {
+          "meta": {
+            "included": false
+          }
+        },
+        "custom_attributes": {
+          "data": [
+            {
+              "type": "custom_attributes",
+              "id": "1494540"
+            },
+            {
+              "type": "custom_attributes",
+              "id": "1524912"
+            },
+            {
+              "type": "custom_attributes",
+              "id": "1524913"
+            },
+            {
+              "type": "custom_attributes",
+              "id": "1524914"
+            }
+          ]
+        },
+        "stages": {
+          "meta": {
+            "included": false
+          }
+        }
+      }
+    },
+    {
+      "id": "153198",
+      "type": "jobs",
+      "attributes": {
+        "created_at": "2023-11-21T09:24:50+00:00",
+        "updated_at": "2023-11-21T09:26:26+00:00",
+        "application_form_url": "https://gsttfoundation.pinpointhq.com/en/jobs/153198/applications/new",
+        "benefits": "\u003cul\u003e\u003cli\u003e\u003c!--block--\u003eUp to 12% employer pension contributions\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003e£1000 annual personal development budget\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eAnnual health and wellbeing personal allowance of £400\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eEnhanced maternity, paternity, and parental leave pay accessible without length of service requirements.\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eHealth and wellbeing programme that offers optional free yearly health check-ups.\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eSupport for healthy eating via fruit bowls and onsite lunch facilities.\u0026nbsp;\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eAgile working, flexible hours, and supportive IT kit.\u0026nbsp;\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eShower facilities and bike lock area.\u0026nbsp;\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eGenerous annual leave (27 days + bank holidays)\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eSubsidies for glasses\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eEmployee Assistance Programme\u003c/li\u003e\u003c/ul\u003e\u003cdiv\u003e\u003c!--block--\u003e\u003cstrong\u003e\u0026nbsp;\u003c/strong\u003e\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003e\u003cstrong\u003e\u0026nbsp;\u003c/strong\u003e\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003eAt Guy’s \u0026amp; St Thomas’ Foundation, we are dedicated to diversity, equity, and inclusion in every aspect of our work. Cultivating a highly skilled and diverse workforce is pivotal to fulfilling our mission. We strongly encourage candidates from diverse backgrounds to apply.\u003c/div\u003e",
+        "benefits_header": "Benefits",
+        "compensation": "£50,000 / year",
+        "compensation_minimum": 50000.0,
+        "compensation_maximum": 50000.0,
+        "compensation_currency": "GBP",
+        "compensation_frequency": "year",
+        "compensation_visible": true,
+        "deadline_at": "2023-12-18T00:00:00+00:00",
+        "description": "\u003cdiv\u003e\u003c!--block--\u003eWe are recruiting an Evaluation \u0026amp; Learning Manager, to support evaluation and learning across our Impact on Urban Health programmes. This role is designed to enable Impact on Urban Health to achieve our aim of embedding learning at the heart of everything we do. This is achieved by providing expertise, setting standards, and supporting colleagues and partners to design evaluation \u0026amp; learning strategies.\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003e\u003cbr\u003e\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003e\u0026nbsp;\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003eAt Impact on Urban Health, we are building a portfolio of programmes that demonstrate the power of long-term approaches to complex health issues in urban environments. We focus our efforts on the London boroughs of Lambeth and Southwark, working in partnership with residents, local and national government, community and private sector partners to improve the health of local residents. By doing this, we aim to influence others in the UK and internationally to create better health. The programmes focus on children’s health and food, multiple long-term conditions, the health effects of air pollution and children’s mental health and are all at different stages of development.\u003c/div\u003e",
+        "employment_type": "full_time",
+        "employment_type_text": "Full Time",
+        "key_responsibilities": "\u003cdiv\u003e\u003c!--block--\u003eYou will lead on providing technical evaluation and learning support to our Portfolio Managers and funded partners, ensuring that all evaluation and learning activity within funded projects meets the strategic objective of each programme.\u0026nbsp;\u003c/div\u003e",
+        "key_responsibilities_header": "Key Responsibilities",
+        "opened_at": "2023-11-21T09:26:26+00:00",
+        "remote": false,
+        "reporting_to": null,
+        "requisition_id": "",
+        "skills_knowledge_expertise": "\u003cul\u003e\u003cli\u003e\u003c!--block--\u003eYou can bring extensive experience of leading social research and evaluation design and implementation in a social sector context.\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eYou have expertise in either, or both, quantitative and qualitative research methods.\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eYou have expertise in adapting evaluation methods and approach to different contexts and types of intervention, and size/ scale of projects.\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eYou can demonstrate your ability to take a structured approach to task implementation and managing priorities.\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eYou are a collaborative team-player.\u003c/li\u003e\u003c/ul\u003e",
+        "skills_knowledge_expertise_header": "Skills, Knowledge and Expertise",
+        "status": "open",
+        "title": "Evaluation and Learning Manager",
+        "visibility": "external",
+        "url": "https://gsttfoundation.pinpointhq.com/en/jobs/153198",
+        "path": "/en/jobs/153198",
+        "workplace_type": "hybrid",
+        "workplace_type_text": "Hybrid"
+      },
+      "relationships": {
+        "department": {
+          "meta": {
+            "included": false
+          }
+        },
+        "division": {
+          "meta": {
+            "included": false
+          }
+        },
+        "location": {
+          "data": {
+            "type": "locations",
+            "id": "15150"
+          }
+        },
+        "structure_custom_group_one": {
+          "meta": {
+            "included": false
+          }
+        },
+        "hiring_manager_user": {
+          "meta": {
+            "included": false
+          }
+        },
+        "recruitment_manager_user": {
+          "meta": {
+            "included": false
+          }
+        },
+        "applications": {
+          "meta": {
+            "included": false
+          }
+        },
+        "questions": {
+          "meta": {
+            "included": false
+          }
+        },
+        "custom_attributes": {
+          "data": [
+            {
+              "type": "custom_attributes",
+              "id": "1518144"
+            },
+            {
+              "type": "custom_attributes",
+              "id": "1524909"
+            },
+            {
+              "type": "custom_attributes",
+              "id": "1524910"
+            },
+            {
+              "type": "custom_attributes",
+              "id": "1524911"
+            }
+          ]
+        },
+        "stages": {
+          "meta": {
+            "included": false
+          }
+        }
+      }
+    },
+    {
+      "id": "153374",
+      "type": "jobs",
+      "attributes": {
+        "created_at": "2023-11-21T16:22:02+00:00",
+        "updated_at": "2023-11-22T12:58:14+00:00",
+        "application_form_url": "https://gsttfoundation.pinpointhq.com/en/jobs/153374/applications/new",
+        "benefits": "\u003cul\u003e\u003cli\u003e\u003c!--block--\u003eUp to 12% employer pension contributions\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003e£1000 annual personal development budget\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eAnnual health and wellbeing personal allowance of £400\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eEnhanced maternity, paternity, and parental leave pay accessible without length of service requirements.\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eHealth and wellbeing programme that offers optional free yearly health check-ups.\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eSupport for healthy eating via fruit bowls and onsite lunch facilities.\u0026nbsp;\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eAgile working, flexible hours, and supportive IT kit.\u0026nbsp;\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eShower facilities and bike lock area.\u0026nbsp;\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eGenerous annual leave (27 days + bank holidays)\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eSubsidies for glasses\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eEmployee Assistance Programme\u003c/li\u003e\u003c/ul\u003e\u003cdiv\u003e\u003c!--block--\u003e\u003cstrong\u003e\u0026nbsp;\u003c/strong\u003e\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003e\u003cstrong\u003e\u0026nbsp;\u003c/strong\u003e\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003eAt Guy’s \u0026amp; St Thomas’ Foundation, we are dedicated to diversity, equity, and inclusion in every aspect of our work. Cultivating a highly skilled and diverse workforce is pivotal to fulfilling our mission. We strongly encourage candidates from diverse backgrounds to apply.\u003c/div\u003e",
+        "benefits_header": "Benefits",
+        "compensation": "£50,000 / year",
+        "compensation_minimum": 50000.0,
+        "compensation_maximum": 50000.0,
+        "compensation_currency": "GBP",
+        "compensation_frequency": "year",
+        "compensation_visible": true,
+        "deadline_at": "2024-12-18T00:00:00+00:00",
+        "description": "\u003cdiv\u003e\u003c!--block--\u003eWe are recruiting an Evaluation \u0026amp; Learning Manager, to support evaluation and learning across our Impact on Urban Health programmes. This role is designed to enable Impact on Urban Health to achieve our aim of embedding learning at the heart of everything we do. This is achieved by providing expertise, setting standards, and supporting colleagues and partners to design evaluation \u0026amp; learning strategies.\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003e\u003cbr\u003e\u003cspan data-trix-cursor-target=\"left\" data-trix-serialize=\"false\"\u003e﻿\u003c/span\u003e\u003cfigure contenteditable=\"false\" data-trix-attachment=\"{\u0026quot;content\u0026quot;:\u0026quot;\u003cdiv data-plyr-provider=\\\u0026quot;youtube\\\u0026quot; data-plyr-embed-id=\\\u0026quot;https://www.youtube.com/embed/https://www.youtube.com/embed/g4JyvP_UG1M?si=vv6vdItPVIaQkGWD\\\u0026quot; data-reactroot=\\\u0026quot;\\\u0026quot;\u003e\u003ciframe title=\\\u0026quot;Video Player\\\u0026quot; width=\\\u0026quot;560\\\u0026quot; height=\\\u0026quot;315\\\u0026quot; src=\\\u0026quot;https://www.youtube.com/embed/https://www.youtube.com/embed/g4JyvP_UG1M?si=vv6vdItPVIaQkGWD\\\u0026quot; style=\\\u0026quot;border:none;width:100%\\\u0026quot;\u003e\u003c/iframe\u003e\u003c/div\u003e\u0026quot;}\" data-trix-content-type=\"undefined\" data-trix-id=\"2661\" class=\"attachment attachment--content\"\u003e\u003cdiv data-plyr-provider=\"youtube\" data-plyr-embed-id=\"https://www.youtube.com/embed/https://www.youtube.com/embed/g4JyvP_UG1M?si=vv6vdItPVIaQkGWD\" data-reactroot=\"\"\u003e\u003ciframe title=\"Video Player\" width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/https://www.youtube.com/embed/g4JyvP_UG1M?si=vv6vdItPVIaQkGWD\" style=\"border:none;width:100%\"\u003e\u003c/iframe\u003e\u003c/div\u003e\u003cfigcaption class=\"attachment__caption\"\u003e\u003c/figcaption\u003e\u003c/figure\u003e\u003cspan data-trix-cursor-target=\"right\" data-trix-serialize=\"false\"\u003e﻿\u003c/span\u003e\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003e\u0026nbsp;\u003c/div\u003e\u003cdiv\u003e\u003c!--block--\u003eAt Impact on Urban Health, we are building a portfolio of programmes that demonstrate the power of long-term approaches to complex health issues in urban environments. We focus our efforts on the London boroughs of Lambeth and Southwark, working in partnership with residents, local and national government, community and private sector partners to improve the health of local residents. By doing this, we aim to influence others in the UK and internationally to create better health. The programmes focus on children’s health and food, multiple long-term conditions, the health effects of air pollution and children’s mental health and are all at different stages of development.\u003c/div\u003e",
+        "employment_type": "full_time",
+        "employment_type_text": "Full Time",
+        "key_responsibilities": "\u003cdiv\u003e\u003c!--block--\u003eYou will lead on providing technical evaluation and learning support to our Portfolio Managers and funded partners, ensuring that all evaluation and learning activity within funded projects meets the strategic objective of each programme.\u0026nbsp;\u003c/div\u003e",
+        "key_responsibilities_header": "Key Responsibilities",
+        "opened_at": "2023-11-21T16:29:12+00:00",
+        "remote": false,
+        "reporting_to": null,
+        "requisition_id": "",
+        "skills_knowledge_expertise": "\u003cul\u003e\u003cli\u003e\u003c!--block--\u003eYou can bring extensive experience of leading social research and evaluation design and implementation in a social sector context.\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eYou have expertise in either, or both, quantitative and qualitative research methods.\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eYou have expertise in adapting evaluation methods and approach to different contexts and types of intervention, and size/ scale of projects.\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eYou can demonstrate your ability to take a structured approach to task implementation and managing priorities.\u003c/li\u003e\u003cli\u003e\u003c!--block--\u003eYou are a collaborative team-player.\u003c/li\u003e\u003c/ul\u003e",
+        "skills_knowledge_expertise_header": "Skills, Knowledge and Expertise",
+        "status": "open",
+        "title": "TEST for TPX dev team!",
+        "visibility": "internal",
+        "url": "https://gsttfoundation.pinpointhq.com/en/jobs/153374",
+        "path": "/en/jobs/153374",
+        "workplace_type": "hybrid",
+        "workplace_type_text": "Hybrid"
+      },
+      "relationships": {
+        "department": {
+          "meta": {
+            "included": false
+          }
+        },
+        "division": {
+          "meta": {
+            "included": false
+          }
+        },
+        "location": {
+          "data": {
+            "type": "locations",
+            "id": "15150"
+          }
+        },
+        "structure_custom_group_one": {
+          "meta": {
+            "included": false
+          }
+        },
+        "hiring_manager_user": {
+          "meta": {
+            "included": false
+          }
+        },
+        "recruitment_manager_user": {
+          "meta": {
+            "included": false
+          }
+        },
+        "applications": {
+          "meta": {
+            "included": false
+          }
+        },
+        "questions": {
+          "meta": {
+            "included": false
+          }
+        },
+        "custom_attributes": {
+          "data": [
+            {
+              "type": "custom_attributes",
+              "id": "1520177"
+            },
+            {
+              "type": "custom_attributes",
+              "id": "1520258"
+            },
+            {
+              "type": "custom_attributes",
+              "id": "1520269"
+            },
+            {
+              "type": "custom_attributes",
+              "id": "1524908"
+            }
+          ]
+        },
+        "stages": {
+          "meta": {
+            "included": false
+          }
+        }
+      }
+    }
+  ],
+  "included": [
+    {
+      "id": "15150",
+      "type": "locations",
+      "attributes": {
+        "city": "Southwark",
+        "country_code": "GB",
+        "created_at": "2023-05-09T08:23:13+00:00",
+        "name": "London, Hybrid",
+        "postal_code": "SE1 0EH",
+        "province": "London",
+        "street_address": "The Grain House, 46 Loman Street",
+        "updated_at": "2023-11-09T12:55:29+00:00"
+      },
+      "relationships": {
+        "equality_monitoring_template": {
+          "meta": {
+            "included": false
+          }
+        }
+      }
+    },
+    {
+      "id": "1488030",
+      "type": "custom_attributes",
+      "attributes": {
+        "value": "Foundation",
+        "field_name": "Organisation",
+        "created_at": "2023-11-14T16:09:32+00:00",
+        "updated_at": "2023-11-14T16:09:32+00:00"
+      }
+    },
+    {
+      "id": "1524915",
+      "type": "custom_attributes",
+      "attributes": {
+        "value": "",
+        "field_name": "JobPack",
+        "created_at": "2023-11-22T13:33:27+00:00",
+        "updated_at": "2023-11-22T13:33:27+00:00"
+      }
+    },
+    {
+      "id": "1524916",
+      "type": "custom_attributes",
+      "attributes": {
+        "value": "",
+        "field_name": "Video",
+        "created_at": "2023-11-22T13:33:27+00:00",
+        "updated_at": "2023-11-22T13:33:27+00:00"
+      }
+    },
+    {
+      "id": "1524917",
+      "type": "custom_attributes",
+      "attributes": {
+        "value": "UrbanHealth and Foundation",
+        "field_name": "Organisation",
+        "created_at": "2023-11-22T13:33:27+00:00",
+        "updated_at": "2023-11-22T13:45:53+00:00"
+      }
+    },
+    {
+      "id": "1494540",
+      "type": "custom_attributes",
+      "attributes": {
+        "value": "Urban Health",
+        "field_name": "Organisation",
+        "created_at": "2023-11-15T18:37:40+00:00",
+        "updated_at": "2023-11-15T18:46:45+00:00"
+      }
+    },
+    {
+      "id": "1524912",
+      "type": "custom_attributes",
+      "attributes": {
+        "value": "",
+        "field_name": "JobPack",
+        "created_at": "2023-11-22T13:33:06+00:00",
+        "updated_at": "2023-11-22T13:33:06+00:00"
+      }
+    },
+    {
+      "id": "1524913",
+      "type": "custom_attributes",
+      "attributes": {
+        "value": "",
+        "field_name": "Video",
+        "created_at": "2023-11-22T13:33:06+00:00",
+        "updated_at": "2023-11-22T13:33:06+00:00"
+      }
+    },
+    {
+      "id": "1524914",
+      "type": "custom_attributes",
+      "attributes": {
+        "value": "UrbanHealth and Foundation",
+        "field_name": "Organisation",
+        "created_at": "2023-11-22T13:33:06+00:00",
+        "updated_at": "2023-11-23T10:19:52+00:00"
+      }
+    },
+    {
+      "id": "1518144",
+      "type": "custom_attributes",
+      "attributes": {
+        "value": "Urban Health",
+        "field_name": "Organisation",
+        "created_at": "2023-11-21T09:24:50+00:00",
+        "updated_at": "2023-11-21T09:24:50+00:00"
+      }
+    },
+    {
+      "id": "1524909",
+      "type": "custom_attributes",
+      "attributes": {
+        "value": "",
+        "field_name": "JobPack",
+        "created_at": "2023-11-22T13:32:44+00:00",
+        "updated_at": "2023-11-22T13:32:44+00:00"
+      }
+    },
+    {
+      "id": "1524910",
+      "type": "custom_attributes",
+      "attributes": {
+        "value": "",
+        "field_name": "Video",
+        "created_at": "2023-11-22T13:32:44+00:00",
+        "updated_at": "2023-11-22T13:32:44+00:00"
+      }
+    },
+    {
+      "id": "1524911",
+      "type": "custom_attributes",
+      "attributes": {
+        "value": "UrbanHealth and Foundation",
+        "field_name": "Organisation",
+        "created_at": "2023-11-22T13:32:44+00:00",
+        "updated_at": "2023-11-22T13:44:58+00:00"
+      }
+    },
+    {
+      "id": "1520177",
+      "type": "custom_attributes",
+      "attributes": {
+        "value": "Urban Health",
+        "field_name": "Organisation",
+        "created_at": "2023-11-21T16:22:02+00:00",
+        "updated_at": "2023-11-21T16:22:02+00:00"
+      }
+    },
+    {
+      "id": "1520258",
+      "type": "custom_attributes",
+      "attributes": {
+        "value": "https://gsttfoundation.org.uk/wp-content/uploads/2023/11/IoUH-Learning-Manager-Job-Pack.pdf",
+        "field_name": "JobPack",
+        "created_at": "2023-11-21T16:28:44+00:00",
+        "updated_at": "2023-11-21T16:28:44+00:00"
+      }
+    },
+    {
+      "id": "1520269",
+      "type": "custom_attributes",
+      "attributes": {
+        "value": "\u003ciframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/Oy9Pde8dBfE?si=mwGrKJCDzZZyMikN\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen\u003e\u003c/iframe\u003e",
+        "field_name": "Video",
+        "created_at": "2023-11-21T16:33:02+00:00",
+        "updated_at": "2023-11-22T15:41:49+00:00"
+      }
+    },
+    {
+      "id": "1524908",
+      "type": "custom_attributes",
+      "attributes": {
+        "value": "Foundation",
+        "field_name": "Organisation",
+        "created_at": "2023-11-22T13:32:16+00:00",
+        "updated_at": "2023-11-23T10:58:40+00:00"
+      }
+    }
+  ],
+  "meta": {}
+}0

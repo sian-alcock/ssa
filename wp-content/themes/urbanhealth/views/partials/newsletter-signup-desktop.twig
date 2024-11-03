@@ -1,0 +1,9 @@
+{# Desktop newsletter signup (features as primary nav item - desktop only) #}
+{% if options.include_newsletter_signup_desktop and options.newsletter_signup_link_desktop|length > 0 %}
+  {% set link = options.newsletter_signup_link_desktop.url %}
+  {% set button_text = options.newsletter_signup_link_desktop.title %}
+  {% set target = options.newsletter_signup_link_desktop.target ?: '_self' %}
+  <li class='c-newsletter-signup c-newsletter-signup--desktop'>
+    <a href='{{ link }}' class='c-newsletter-signup__button o-cta o-cta--teal' target='{{ target }}'>{{button_text}}</a>
+  </li>
+{% endif %}

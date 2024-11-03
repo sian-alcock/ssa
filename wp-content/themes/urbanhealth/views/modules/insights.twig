@@ -1,0 +1,34 @@
+{% set insights =  get_posts(acf.insights__selected_posts) %}
+<section class="c-insights {{ additional_classes }} cards-{{ insights | length }}x" data-aos>
+	<div class="c-insights__container o-grid-container">
+		<div class="c-insights__text-container flex">
+			{% if acf.insights__heading %}
+				<h2 class="c-insights__heading">
+					{{ acf.insights__heading }}
+				</h2>
+			{% endif %}
+			<div class="c-insights__cta-wrapper">
+				{% if acf.insights__link %}
+					<a href="{{ acf.insights__link.url }}" class="c-insights__link">
+						{{ acf.insights__link.title }}
+						<i class="c-card-listing__icon icon-angle-right"></i>
+					</a>
+				{% endif %}
+			</div>
+		</div>
+
+		<div class="c-insights__cards-container flex">
+			{% set post = insights[0] %}
+			<div class="c-insights__left-column">
+				{% include 'partials/card-listing.twig' %}
+			</div>
+			{% set insights = insights | slice(1) %}
+			<div class="c-insights__right-column">
+				{% for post in insights %}
+					{% include 'partials/card-insights-brief.twig' %}
+				{% endfor %}
+			</div>
+		</div>
+
+	</div>
+</section>

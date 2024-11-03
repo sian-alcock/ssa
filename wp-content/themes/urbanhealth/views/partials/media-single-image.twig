@@ -1,0 +1,30 @@
+{% set image = acf.image %}
+{% set size = acf.single_image_width %}
+{% set border_class = page_theme.name ? 'border-left-' ~ page_theme.name : 'border-left-teal' %}
+
+
+<div class="c-text-media__image-container">
+
+
+  <div class="c-text-media__single-image-wrapper c-text-media__single-image-wrapper--{{ size }} {{ size == 'content-width' ? border_class : '' }}">
+
+    {% if acf.url %}
+      <a href="{{acf.url}}" target="_blank">
+      {% endif %}
+      <div class="c-text-media__image-wrapper">
+        {% include 'partials/full-width-image.twig' with { image: image, class: 'c-text-media__image' } %}
+      </div>
+
+      {% if image.caption %}
+        <div class="{{ size == 'full-screen' ? 'o-grid-container' : '' }}">
+          <div class="c-text-media__image-caption {{ size == 'full-screen' ? border_class : '' }}">
+            {{ image.caption }}
+          </div>
+        </div>
+      {% endif %}
+      {% if acf.url %}
+      </a>
+    {% endif %}
+  </div>
+
+</div>

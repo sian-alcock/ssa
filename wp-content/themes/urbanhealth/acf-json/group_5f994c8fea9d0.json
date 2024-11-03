@@ -1,0 +1,124 @@
+{
+    "key": "group_5f994c8fea9d0",
+    "title": "Hero article additional fields",
+    "fields": [
+        {
+            "key": "field_5f9eb3b98a386",
+            "label": "Caption clone",
+            "name": "caption_clone",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_5f9203d83640a"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_5f994c9fda462",
+            "label": "Show date published",
+            "name": "show_date_published_bool",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5f994cafda463",
+            "label": "Time to read",
+            "name": "time_to_read",
+            "type": "number",
+            "instructions": "In minutes",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_5fa956086e287",
+            "label": "Author(s)",
+            "name": "author_repeater",
+            "type": "repeater",
+            "instructions": "Select up to two authors from the list of users",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 2,
+            "layout": "table",
+            "button_label": "Add author",
+            "sub_fields": [
+                {
+                    "key": "field_5fa9563f6e288",
+                    "label": "Author",
+                    "name": "author",
+                    "type": "user",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "role": "",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "id"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "modified": 1605007366
+}

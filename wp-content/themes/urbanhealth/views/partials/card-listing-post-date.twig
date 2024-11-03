@@ -1,0 +1,15 @@
+<div class="c-card-listing__post-type-details">
+  <div class="c-card-listing__post-type">
+    {% if post.type == 'post' or post.type == 'latest-update' %}
+      {{fn('get_post_article_tpye', post) | capitalize}}
+    {% else %}
+      {{ post.type | capitalize }}
+    {% endif %}
+  </div>
+  {% if post.show_date_published_bool %}
+    <div class="c-card-listing__post-publish-date">
+      {{ post.date|date("d M Y") }}
+    </div>
+  {% endif %}
+</div>
+

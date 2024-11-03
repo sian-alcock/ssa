@@ -1,0 +1,86 @@
+.c-hero-job {
+  position: relative;
+  margin-top: $hero-margin-bottom / 2;
+  background-color: $brand-teal;
+  color: $white;
+}
+
+.c-hero-job__top-section-buttons {
+  .o-cta {
+    &:first-child {
+      @media (min-width: $break-desktop) {
+        margin-right: 1rem;
+      }
+    }
+  }
+}
+
+.o-hero-subtitle {
+  margin-top: 1rem;
+  padding-right: 0.5rem;
+  @include font-size(16);
+
+  @include breakpoint($break-desktop) {
+    padding-right: 0;
+  }
+}
+
+.c-hero-job__container {
+  padding-top: 3rem;
+  padding-bottom: 2.5rem;
+
+  @include breakpoint($break-desktop) {
+    padding-top: 6rem;
+    padding-right: 2.5rem;
+    padding-bottom: 5rem;
+    padding-left: 2.5rem;
+  }
+}
+
+.c-hero-job__bottom-section {
+  width: 100%;
+  border-top: 3px solid $white;
+
+  @include breakpoint($break-desktop) {
+    width: 80%;
+  }
+}
+
+.c-hero-job__details-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+
+  @include breakpoint($break-desktop) {
+    flex-wrap: nowrap;
+    margin-top: 3rem;
+  }
+}
+
+.c-hero-job__detail-wrapper {
+  width: 50%;
+  margin-bottom: 1.5rem;
+
+  &:nth-of-type(2) {
+    margin-right: 0;
+  }
+
+  div {
+    @include font-size(14);
+
+    @include breakpoint($break-desktop) {
+      @include font-size(16);
+    }
+  }
+
+  @media (min-width: $break-desktop) {
+    width: unset;
+    padding-right: 2rem;
+  }
+}
+
+.c-hero-job__detail-heading {
+  @extend h5;
+  margin-bottom: 0.5rem;
+  @include font-size(16);
+}

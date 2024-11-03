@@ -1,0 +1,25 @@
+{#
+@param post wordpress post reference
+#}
+
+{% set job_title = post.meta('title') ? post.meta('title') : post.title %}
+{% set job_closing_date = post.meta('job_closing_date')|date("d F Y") %}
+{% set job_description = post.meta('job_description') %}
+{% set job_salary = post.meta('compensation') %}
+
+
+<a href="{{ post.link }}" class="c-card-listing-job c-card-listing-job--{{colour ?: " teal"}} border-left-{{colour
+					  ?: " teal" }} flex">
+	<div class="c-card-listing-job__text-content">
+		<h3>{{ job_title }}</h3>
+		{% if job_description %}
+			<div class='c-card-listing-job__detail c-card-listing-job__detail--description'>{{ job_description }}</div>
+		{% endif %}
+	</div>
+
+	<div class="c-card-listing-job__action-text">
+		{{ post.action_link_text ? post.action_link_text : 'Read more' }}
+		<i class="c-card-listing-job__icon icon-angle-right"></i>
+	</div>
+
+</a>

@@ -1,0 +1,125 @@
+.c-accordion {
+  .hidden {
+    display: none;
+  }
+}
+
+.c-accordion__button {
+  display: flex;
+  width: 100%;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid $brand-mid-grey;
+  text-align: left;
+  &[aria-expanded='true'] {
+    span {
+      transform: rotate(180deg);
+    }
+  }
+  span {
+    margin-left: auto;
+  }
+}
+
+.c-accordion__content {
+  margin-bottom:0.5rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid $brand-mid-grey;
+  &.bg-white {
+    background-color: $white;
+  }
+}
+
+.c-accordion-module {
+  position: relative;
+  padding-top:30px;
+  padding-bottom:30px;
+
+  // expandable heading
+  .c-accordion__button {
+    align-items: flex-end;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    &[aria-expanded='true'] {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    &.bg-blue {
+      .c-accordion__header, .c-accordion__open-icon {
+        color: $white;
+      }
+    }
+    &.bg-white {
+      background-color: $white;
+    }
+
+    .c-accordion__header {
+      height: 100%;
+      margin-bottom: 0;
+      padding-top: 0.6rem;
+      padding-right: 0.5rem;
+      padding-bottom: 1.2rem;
+      padding-left: 0;
+      // font-family: $font-header;
+      font-weight: 600;
+      line-height: 1.1;
+      opacity: 1;
+      @include font-size(18);
+    }
+    @include breakpoint($break-desktop) {
+      padding: 0 0 0 2rem;
+    }
+  }
+
+  //content panel
+
+  .c-accordion__content-panel {
+    @extend .o-wysiwyg;
+  }
+
+  .c-accordion__content {
+    padding-right: 1rem;
+    padding-left: 1.5rem;
+    &[aria-hidden='false'] {
+      box-shadow: 0px 12px 30px -30px rgba(0, 0, 0, 0.18);
+    }
+    &.bg-blue {
+      .c-accordion__content-panel {
+        @extend .o-wysiwyg;
+        // @extend .o-wysiwyg--blue-bg;
+      }
+    }
+
+    @include breakpoint($break-desktop) {
+      padding-right: 2rem;
+      padding-left: 2rem;
+    }
+  }
+}
+
+.c-accordion__open-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  height: 60px;
+  background-color: none;
+  color: $black;
+}
+
+.c-accordion__title {
+  @extend h3;
+  margin-bottom: 2rem;
+  // color: $brand-blue;
+}
+
+.c-accordion__title--center {
+  text-align: center;
+}
+
+.icon-purple,
+.icon-green {
+  &:before {
+    color:$white;
+  }
+}
+

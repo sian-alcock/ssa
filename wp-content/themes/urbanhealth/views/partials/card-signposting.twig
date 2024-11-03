@@ -1,0 +1,41 @@
+{% set box_tagline = card.meta('box_tagline') %}
+{% set box_caption = card.meta('box_caption') %}
+{% set post_theme = fn('get_post_theme', card.id) %}
+{% set colour = post_theme.name %}
+
+
+<a href="{{ card.link }}" class="c-card c-card--{{colour ?: " teal"}} flex" data-aos="fade-up" data-aos-duration="1500">
+
+	{% include 'partials/box-caption-text.twig' with {caption: box_caption, tagline: box_tagline, colour: colour } %}
+
+
+	<div class="c-card__inner-container">
+
+		<div class='c-card__image-wrapper o-image-overlay o-image-overlay--{{colour ?: "teal"}} border-top-{{colour ?: "teal"}}'>
+
+			{% set image = card.thumbnail ? card.thumbnail : get_image(card.meta('hero_image')) %}
+			{% if image.src %}
+				{% include 'partials/card-signposting-image.twig' with { image: image, class: 'c-card__image' } %}
+			{% else %}
+				<div class='c-card__placeholder c-card__placeholder-square'></div>
+			{% endif %}
+		</div>
+
+
+		<div class="c-card__text-content flex">
+			<div class="c-card__text-content-top">
+				{% if card.title %}
+					<h3>{{ card.title }}</h3>
+				{% endif %}
+
+				<p>{{ card.post_excerpt }}</p>
+			</div>
+			<div class="c-card__action-text">
+				{{ card.action_link_text }}
+				<i class="c-card__icon icon-angle-right"></i>
+			</div>
+
+		</div>
+
+	</div>
+</a>

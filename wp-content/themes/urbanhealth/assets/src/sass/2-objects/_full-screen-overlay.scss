@@ -1,0 +1,18 @@
+.o-full-screen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  width: 0;
+  height: 0;
+  background-color: rgba($brand-black, 0.8);
+  transition: opacity 0.2s ease-in, height 0s 0.2s ease, width 0s 0.2s ease;
+  opacity: 0;
+
+  &.open {
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.1s ease-in;
+    opacity: 1;
+  }
+}

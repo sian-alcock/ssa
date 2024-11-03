@@ -1,0 +1,57 @@
+{
+    "key": "group_5fb3c29f10e1c",
+    "title": "In page navigation",
+    "fields": [
+        {
+            "key": "field_5fb3c2a4f343b",
+            "label": "In page navigation",
+            "name": "in_page_navigation",
+            "type": "true_false",
+            "instructions": "If turned on. Every text field will have the option to create an in-page chapter link that will appear in an in-page navigation.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "latest-update"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1630943941
+}

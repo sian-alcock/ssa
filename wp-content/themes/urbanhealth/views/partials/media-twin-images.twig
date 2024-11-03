@@ -1,0 +1,52 @@
+<div class="c-text-media__image-container c-text-media__image-container--2ximage flex">
+
+  {% set image_one = acf.image_one %}
+	{% set image_one_link = acf.image_one_link %}
+  {% set image_two = acf.image_two %}
+	{% set image_two_link = acf.image_two_link %}
+
+  <div class="c-text-media__inner-wrapper c-text-media__inner-wrapper--first flex">
+
+		{% if  image_one_link %}
+			<a href="{{ image_one_link}}">
+		{% endif %}
+    
+    <div class="c-text-media__image-wrapper border-left-{{ page_theme.name }}">
+      {% include 'partials/text-media-image.twig' with { image: image_one, class: 'c-text-media__image' } %}
+    </div>
+
+    {% if image_one.caption %}
+    <div class="c-text-media__image-caption border-left-{{ page_theme.name }}">
+      {{ image_one.caption }}
+    </div>
+    {% endif %}
+    
+    {% if  image_one_link %}
+			</a>
+		{% endif %}
+    
+  </div>
+
+  <div class="c-text-media__inner-wrapper c-text-media__inner-wrapper--second flex">
+  
+  {% if  image_two_link %}
+		<a href="{{ image_two_link}}" target="_blank">
+	{% endif %}
+    
+    <div class="c-text-media__image-wrapper border-left-{{ page_theme.name }}">
+      {% include 'partials/text-media-image.twig' with { image: image_two, class: 'c-text-media__image' } %}
+    </div>
+
+    {% if image_two.caption %}
+    <div class="c-text-media__image-caption border-left-{{ page_theme.name }}">
+      {{ image_two.caption }}
+    </div>
+    {% endif %}
+    
+  {% if  image_two_link %}
+		</a>
+	{% endif %}
+
+  </div>
+
+</div>

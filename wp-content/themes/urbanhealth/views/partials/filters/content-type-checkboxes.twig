@@ -1,0 +1,7 @@
+{% for contentType in content_types %}
+  {% set checkbox_id = id_prefix ~ 'contentType-' ~ contentType.name %}
+  <div class='o-checkbox'>
+    <input type="checkbox" id="{{ checkbox_id }}" name="contentType" value="{{contentType.name}}" {{contentType.name in active_content_types ? 'checked' : ''}}>
+    <label for="{{checkbox_id}}">{{contentType.label}}</label>
+  </div>
+{% endfor %}

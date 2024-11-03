@@ -1,0 +1,39 @@
+{#
+  Renders a a loop of ctas
+  @param ctas  array of ctas
+  @param class  string class to add to cta
+  @param tracking  string data tracking attribute to include
+#}
+
+
+{% if ctas %}
+
+	{% for cta in ctas %}
+		{% if cta.link_target == "external" %}
+			{% set permalink = cta.external_link %}
+			{% set target = "_blank" %}
+      {% set colour = "teal" %}
+		{% else %}
+			{% set permalink = fn('get_permalink', cta.cta_post_id) %}
+			{% set target = "_self" %}
+      {% set target_page_theme = fn('get_post_theme', cta.cta_post_id) %}
+      {% set colour = target_page_theme.name %}
+		{% endif %}
+
+    {% if no_image_hero == true %}
+        {% set colour = "teal-on-teal" %}
+    {% endif %}
+
+
+
+		{% include 'partials/cta.twig' with {
+      tracking: tracking,
+      link: permalink,
+      colour: colour,
+      class: class,
+      postID: cta.cta_post_id,
+      text: cta.cta_text,
+      target: target
+    } %}
+	{% endfor %}
+{% endif %}

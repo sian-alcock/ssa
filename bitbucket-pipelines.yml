@@ -1,0 +1,111 @@
+image: node:12.16.2
+
+definitions:
+  steps:
+    - step: &composer-audit
+        name: Composer audit
+        image: composer:2.7.7
+        script:
+          - REPORT_FILE="test-reports/phpstan.xml"
+          - set -o pipefail # Fail if piped commands fail
+          - mkdir -p test-reports
+          - composer install
+          - composer security-analysis -- --error-format junit | tee $REPORT_FILE
+    - step: &checkVariables
+        name: Check variables are set
+        script:
+          # Check THEME variable is supplied in Repository variables
+          - if [ -z $THEME ]; then
+          - echo THEME variable not set
+          - exit 1
+          - else
+          - echo using ${THEME} as the wordpress theme
+          - fi
+    - step: &updateGitIgnore
+        name: Update gitignore
+        script:
+          # Set some default git settings
+          - git config --global user.email "services@manifesto.co.uk"
+          - git config --global user.name "Bitbucket Pipeline"
+
+          # Apply the deploy gitignore which  isn't set to ignore build files
+          - cd $BITBUCKET_CLONE_DIR/
+          - mv .gitignore .gitignoredev
+          - mv .gitignoredeploy .gitignore
+          - ls -a
+        artifacts: # defining the artifacts to be passed to each future step
+          - .gitignore
+          - .gitignoredev
+    - step: &takeBackup
+        name: Backup has been taken from WP Engine
+        trigger: manual
+        script:
+          - echo Manual WP Engine backup taken before deployment
+    - step: &compileAndDeploy
+        name: Prod tasks and Deploy
+        caches:
+          - npm-node
+        script:
+          # build assets
+          - cd wp-content/themes/$THEME/build/
+          - npm ci
+          - npm run prod
+
+          - git branch
+          - git status
+          - cd ../assets/
+          - cd dist
+          - ls -a
+
+          # Check REMOTE_REPO deployment variable is supplied
+          - if [ -z $REMOTE_REPO ]; then
+          - echo REMOTE_REPO variable not set for $BITBUCKET_DEPLOYMENT_ENVIRONMENT
+          - exit 1
+          - fi
+
+          # Add and commit the built assets
+          - git add .
+          - git status
+          - git commit -m "Bitbucket Pipelines commit build files"
+
+          # deploy to WP Engine
+          - echo push ${REMOTE_REPO} ${BITBUCKET_BRANCH} -f
+          - git push $REMOTE_REPO $BITBUCKET_BRANCH -f
+          - echo Pushed ${BITBUCKET_BRANCH} to ${BITBUCKET_DEPLOYMENT_ENVIRONMENT} deployment
+    - step: &tagRelease
+        name: Tag release with version
+        script:
+          - pwd
+          - cd $BITBUCKET_CLONE_DIR/wp-content/themes/$THEME/build/
+          - VERSION=$(npm run version --silent)
+          - echo Version = ${VERSION}
+          - git tag v$VERSION
+          - git push origin --tags
+  caches:
+    npm-node: $BITBUCKET_CLONE_DIR/wp-content/themes/$THEME/build/node_modules
+
+pipelines:
+  custom:
+    security-analysis:
+      - step: *composer-audit
+  branches:
+    develop:
+      - step: *checkVariables
+      - step: *updateGitIgnore
+      - step:
+          <<: *compileAndDeploy # Override the anchor step and provide deployment to use
+          deployment: staging
+    master:
+      - step: *checkVariables
+      - step: *updateGitIgnore
+      - step: *takeBackup
+      - step:
+          <<: *compileAndDeploy
+          deployment: production
+      - step: *tagRelease
+    testing:
+      - step: *checkVariables
+      - step: *updateGitIgnore
+      - step:
+          <<: *compileAndDeploy
+          deployment: test

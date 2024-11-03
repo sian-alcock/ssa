@@ -1,0 +1,20 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+{% set not_found_message = option.not_found_message %}
+{% set not_found_link = options.not_found_link %}
+
+  <div class='c-message'>
+    <div class='o-grid-container'>
+      <div class='c-message__layout'>
+        <h1 class='display-xl'>404</h1>
+        <p>{{options.not_found_message ?: 'page not found' }}</p>
+        {% if not_found_link %}
+          <a href='{{not_found_link.url}}' class='o-cta bg-teal' target="{{not_found_link.target}}">{{not_found_link.title}}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{#
+  Renders an image using srcset sized for a person hero
+  @param image  passed ACF image reference
+  @param class Class to add to image
+#}
+{% if image %}
+  {% set image = get_image(image) %}
+  <img class="{{class}}" src="{{image.src('medium_large')}}"
+    srcset="{{get_image(image).src|resize(420, 420) }} 420w,
+            {{get_image(image).src|resize(640, 640) }} 640w,
+            {{get_image(image).src|resize(800, 800) }} 800w"
+
+    sizes="(max-width: 1024px) 100vw, 700px"
+  alt="{{image.alt}}" loading="lazy"/>
+{% endif %}

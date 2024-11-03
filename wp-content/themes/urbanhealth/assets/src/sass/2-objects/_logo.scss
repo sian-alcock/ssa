@@ -1,0 +1,10 @@
+.o-logo {
+  width: 100px;
+
+  @include breakpoint($break-desktop) {
+    width: 130px;
+  }
+  svg {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,15 @@
+.c-search-header {
+
+  padding-top: 3rem;
+
+  .o-page-title {
+    margin-bottom:0;
+    padding-top:0;
+  }
+
+  @include breakpoint($break-desktop) {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

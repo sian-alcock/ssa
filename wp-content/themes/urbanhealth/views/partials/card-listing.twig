@@ -1,0 +1,47 @@
+{#
+  @param post wordpress post reference
+#}
+{% set post_theme = fn('get_post_theme', post.ID) %}
+{% set colour = post_theme.name %}
+
+{% if post.type == 'people' %}
+  {% set person_id = post.meta('user') %}
+  {% set person_data = fn('get_userdata', person_id) %}
+{% endif %}
+
+<a href="{{ post.link }}" class="c-card-listing c-card-listing--{{colour ?: "teal"}} border-left-{{colour ?: "teal"}} flex">
+    {% include 'partials/card-image.twig' with {post: post} %}
+
+    {% if post.type != 'people' and post.type != 'project' %}
+      {% include 'partials/card-listing-post-details.twig' %}
+    {% endif %}
+
+    <div class="c-card-listing__text-content flex">
+      <div class="c-card-listing__text-content-top">
+        {% if post.type == 'people' %}
+          {% set person_name = person_data.display_name %}
+          <h3>{{ person_name }}</h3>
+        {% else %}
+          <h3>{{ post.title }}</h3>
+        {% endif %}
+
+        {% if post.type == 'people' %}
+
+          {% set author_job_title = person_data.author_job_title %}
+          <p>{{ author_job_title }}</p>
+          {% set person_bio = person_data.description %}
+          <p>{{ person_bio }}</p>
+        {% else %}
+          <p>{{ post.post_excerpt }}</p>
+        {% endif %}
+
+      </div>
+      <div class="c-card-listing__action-text">
+        {{ post.action_link_text ? post.action_link_text : 'Read more' }}
+        <i class="c-card-listing__icon icon-angle-right"></i>
+      </div>
+
+    </div>
+</a>
+
+
