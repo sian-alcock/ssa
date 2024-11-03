@@ -24,6 +24,7 @@ if (!class_exists('AIOWPSecurity_Ajax')) :
 			$this->commands_object = new AIOWPSecurity_Commands();
 
 			add_action('wp_ajax_aios_ajax', array($this, 'handle_ajax_requests'));
+			add_action('wp_ajax_nopriv_get_antibot_keys', array($this->commands_object, 'get_antibot_keys'));
 		}
 
 		/**

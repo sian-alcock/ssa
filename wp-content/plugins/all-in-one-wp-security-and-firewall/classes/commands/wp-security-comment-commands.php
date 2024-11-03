@@ -21,6 +21,7 @@ trait AIOWPSecurity_Comment_Commands_Trait {
 		$info = array();
 
 		$options['aiowps_enable_spambot_detecting'] = isset($data["aiowps_enable_spambot_detecting"]) ? '1' : '';
+		$options['aiowps_spambot_detect_usecookies'] = isset($data["aiowps_spambot_detect_usecookies"]) ? '1' : '';
 		$options['aiowps_spam_comments_should'] = !empty($data["aiowps_spam_comments_should"]) ? '1' : '0';
 		$options['aiowps_enable_trash_spam_comments'] = isset($data['aiowps_enable_trash_spam_comments']) ? '1' : '';
 		if (isset($data['aiowps_trash_spam_comments_after_days'])) {
@@ -150,7 +151,7 @@ trait AIOWPSecurity_Comment_Commands_Trait {
 		$ip = strip_tags($data['ip']);
 
 		if (AIOWPSecurity_Utility_IP::get_user_ip_address() == $ip) {
-			return array('status' => 'error', 'message' => __('You cannot block your own IP address: ', 'all-in-one-wp-security-and-firewall') . $ip);
+			return array('status' => 'error', 'message' => __('You cannot block your own IP address:', 'all-in-one-wp-security-and-firewall') . ' ' . $ip);
 		}
 
 		$result = AIOWPSecurity_Blocking::add_ip_to_block_list($ip, 'spam');

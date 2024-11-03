@@ -8,9 +8,9 @@ if (!class_exists('AIO_WP_Security')) {
 
 	class AIO_WP_Security {
 
-		public $version = '5.3.3';
+		public $version = '5.3.4';
 
-		public $db_version = '2.0.10';
+		public $db_version = '2.1.1';
 
 		public $firewall_version = '1.0.8';
 
@@ -200,6 +200,7 @@ if (!class_exists('AIO_WP_Security')) {
 			include_once(AIO_WP_SECURITY_PATH.'/classes/wp-security-utility-file.php');
 			include_once(AIO_WP_SECURITY_PATH.'/classes/wp-security-utility-permissions.php');
 			include_once(AIO_WP_SECURITY_PATH.'/classes/wp-security-utility-ui.php');
+			include_once(AIO_WP_SECURITY_PATH.'/classes/wp-security-utility-api.php');
 			include_once(AIO_WP_SECURITY_PATH.'/classes/wp-security-general-init-tasks.php');
 			include_once(AIO_WP_SECURITY_PATH.'/classes/wp-security-wp-loaded-tasks.php');
 
@@ -240,13 +241,13 @@ if (!class_exists('AIO_WP_Security')) {
 		public function loader_operations() {
 			add_action('plugins_loaded', array($this, 'plugins_loaded_handler'));//plugins loaded hook
 			add_action('plugins_loaded', array($this, 'load_plugin_textdomain'));
+			add_action('plugins_loaded', array($this, 'set_pagenow_for_renamed_loginpage'));
 
 			$debug_config = $this->configs->get_value('aiowps_enable_debug');
 			$debug_enabled = empty($debug_config) ? false : true;
 			$this->debug_logger = new AIOWPSecurity_Logger($debug_enabled);
 
 			$this->load_ajax_handler();
-			$this->set_pagenow_for_renamed_loginpage();
 		}
 
 		/**

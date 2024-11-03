@@ -216,4 +216,79 @@ class AIOWPSecurity_Commands {
 
 		return $result;
 	}
+
+	/**
+	 * Prepares and returns a structured response for AJAX commands.
+	 *
+	 * @param bool        $success Indicates whether the operation was successful (true for success, false for failure).
+	 * @param string|bool $message The message to include in the response (optional).
+	 *                             If false, no message is passed with the response.
+	 *                             If empty string, it defaults to a success or error message based on the $success flag.
+	 * @param array       $args    Optional. An associative array of additional response data, such as badges, info, values, or content.
+	 *
+	 * @return array The constructed response array containing status, message, and any additional data from $args.
+	 */
+	public function handle_response($success, $message = '', $args = array()) {
+		$response = array(
+			'status' => $success ? 'success' : 'error',
+		);
+
+		if (false !== $message) {
+			$response['message'] = $this->get_message($success, $message);
+		}
+
+		$allowed_keys = array('badges', 'info', 'values', 'content', 'extra_args');
+		foreach ($allowed_keys as $key) {
+			if (!empty($args[$key])) {
+				$response[$key] = 'badges' === $key ? $this->get_features_id_and_html($args[$key]) : $args[$key];
+			}
+		}
+
+		return $response;
+	}
+
+	/**
+	 * Get the appropriate message based on success flag and provided message.
+	 *
+	 * @param bool   $success Indicates whether the operation was successful.
+	 * @param string $message The provided message.
+	 *
+	 * @return string The final message to be used in the response.
+	 */
+	private function get_message($success, $message) {
+		if ('' === $message) {
+			return $success ? __('The settings have been successfully updated.', 'all-in-one-wp-security-and-firewall') : __('The settings update was unsuccessful.', 'all-in-one-wp-security-and-firewall');
+		}
+		return $message;
+	}
+
+	/**
+	 * Get antibot keys for the spam detection
+	 *
+	 * @return array
+	 */
+	public function get_antibot_keys() {
+		global $aio_wp_security;
+		
+		$response = array(
+			'status' => 'success',
+			'data' => array(),
+		);
+		
+		$nonce = empty($_POST['nonce']) ? '' : $_POST['nonce'];
+		if (!wp_verify_nonce($nonce, 'wp-security-ajax-nonce')) {
+			$response['status'] = false;
+			$response['error_code'] = 'invalid_nonce';
+			$response['error_message'] = 'Invalid nonce (wp-security-ajax-nonce) provided for this action.';
+		} else {
+			$key_map_arr = AIOWPSecurity_Comment::generate_antibot_keys(true);
+			$response['data'] = $key_map_arr[0];
+			if ('1' == $aio_wp_security->configs->get_value('aiowps_spambot_detect_usecookies')) {
+				AIOWPSecurity_Comment::insert_antibot_keys_in_cookie();
+			}
+		}
+		
+		echo json_encode($response);
+		exit;
+	}
 }

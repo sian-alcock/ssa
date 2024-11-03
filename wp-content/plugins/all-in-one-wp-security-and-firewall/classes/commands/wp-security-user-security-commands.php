@@ -106,7 +106,7 @@ trait AIOWPSecurity_User_Security_Commands_Trait {
 			}
 		} else { // No username value was entered
 			$response['status'] = 'error';
-			$error = __('Please enter a value for your username. ', 'all-in-one-wp-security-and-firewall');
+			$error = __('Please enter a value for your username.', 'all-in-one-wp-security-and-firewall');
 		}
 
 		if (!empty($error)) { // We have some validation or other error

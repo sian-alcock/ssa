@@ -19,8 +19,7 @@ class AIOWPSecurity_Settings_Tasks {
 		$aio_wp_security->configs->set_value('aiowps_enable_basic_firewall', '1', true);
 
 		//Now let's write the applicable rules to the .htaccess file
-		$serverType = AIOWPSecurity_Utility::get_server_type();
-		if (!in_array($serverType, array('-1', 'nginx', 'iis'))) {
+		if (AIOWPSecurity_Utility::allow_to_write_to_htaccess()) {
 			$res = AIOWPSecurity_Utility_Htaccess::write_to_htaccess();
 		} else {
 			$res = true;
@@ -44,8 +43,7 @@ class AIOWPSecurity_Settings_Tasks {
 		AIOWPSecurity_Configure_Settings::turn_off_all_security_features();
 		
 		//Now let's clear the applicable rules from the .htaccess file
-		$serverType = AIOWPSecurity_Utility::get_server_type();
-		if (!in_array($serverType, array('-1', 'nginx', 'iis'))) {
+		if (AIOWPSecurity_Utility::allow_to_write_to_htaccess()) {
 			$res = AIOWPSecurity_Utility_Htaccess::write_to_htaccess();
 		} else {
 			$res = true;
@@ -73,11 +71,10 @@ class AIOWPSecurity_Settings_Tasks {
 	 */
 	public static function disable_all_firewall_rules() {
 		$msg = array();
-		AIOWPSecurity_Configure_Settings::turn_off_all_security_features();
+		AIOWPSecurity_Configure_Settings::turn_off_firewall_configs();
 
 		//Now let's clear the applicable rules from the .htaccess file
-		$serverType = AIOWPSecurity_Utility::get_server_type();
-		if (!in_array($serverType, array('-1', 'nginx', 'iis'))) {
+		if (AIOWPSecurity_Utility::allow_to_write_to_htaccess()) {
 			$res = AIOWPSecurity_Utility_Htaccess::write_to_htaccess();
 		} else {
 			$res = true;
@@ -102,7 +99,11 @@ class AIOWPSecurity_Settings_Tasks {
 			include(AIO_WP_SECURITY_PATH . '/admin/wp-security-reset-settings.php');
 		}
 		$reset_option_res = AIOWPSecurity_Reset_Settings::reset_options();
-		$delete_htaccess = AIOWPSecurity_Reset_Settings::delete_htaccess();
+		if (AIOWPSecurity_Utility::allow_to_write_to_htaccess()) {
+			$delete_htaccess = AIOWPSecurity_Reset_Settings::delete_htaccess();
+		} else {
+			$delete_htaccess = true;
+		}
 		AIOWPSecurity_Reset_Settings::reset_db_tables();
 		// AIOS premium and other plugin related config settings are reset by adding below action.
 		do_action('aios_reset_all_settings');

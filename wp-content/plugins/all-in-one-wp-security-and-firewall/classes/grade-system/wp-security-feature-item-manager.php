@@ -134,6 +134,15 @@ class AIOWPSecurity_Feature_Item_Manager {
 					'aiowps_enable_registration_honeypot'
 				)
 			),
+			'http-authentication-admin-frontend' => array(
+				'name' => __('HTTP authentication for admin and frontend', 'all-in-one-wp-security-and-firewall'),
+				'points' => $this->feature_point_2,
+				'level' => $this->sec_level_basic,
+				'options' => array(
+					'aiowps_http_authentication_admin',
+					'aiowps_http_authentication_frontend',
+				)
+			),
 			// Database Security menu features
 			'db-security-db-prefix' => array(
 				'name' => __('Database prefix', 'all-in-one-wp-security-and-firewall'),

@@ -332,6 +332,10 @@
 	color: darkorange;
 }
 
+#aiowps_password_crack_time_calculation:empty + #aiowps_http_authentication_password_crack_time_explanation {
+	display: none;
+}
+
 /* bootstrap type labels */
 .aiowps_dashboard_table {
 	table-layout: fixed;
@@ -803,7 +807,7 @@ button.button-link.aios-toggle-advanced-options.advanced-options-disabled, butto
 }
 
 @media screen and (max-width: 600px) {
-	
+
 	.aiowps_next_scheduled_entity {
 		float: none;
 		width: 100%;
@@ -813,7 +817,7 @@ button.button-link.aios-toggle-advanced-options.advanced-options-disabled, butto
 	.aiowps_time_now_wrapper {
 		margin-top: 0;
 	}
-	
+
 }
 
 .details.column-details {

@@ -51,6 +51,10 @@ class AIOWPSecurity_User_Security_Menu extends AIOWPSecurity_Admin_Menu {
 				'render_callback' => array($this, 'render_salt_tab'),
 				'display_condition_callback' => array('AIOWPSecurity_Utility_Permissions', 'is_main_site_and_super_admin'),
 			),
+			'http-authentication' => array(
+				'title' => __('HTTP authentication', 'all-in-one-wp-security-and-firewall'),
+				'render_callback' => array($this, 'render_http_authentication'),
+			),
 			'additional' => array(
 				'title' => __('Additional settings', 'all-in-one-wp-security-and-firewall'),
 				'render_callback' => array($this, 'render_additional'),
@@ -189,7 +193,80 @@ class AIOWPSecurity_User_Security_Menu extends AIOWPSecurity_Admin_Menu {
 
 		$aio_wp_security->include_template('wp-admin/user-security/salt.php');
 	}
-	
+
+	/**
+	 * Renders the submenu's http authentication tab.
+	 *
+	 * @global AIO_WP_Security $aio_wp_security
+	 *
+	 * @return void
+	 */
+	protected function render_http_authentication() {
+		global $aio_wp_security, $aiowps_feature_mgr;
+
+		if (isset($_POST['aiowps_save_http_authentication_settings'])) {
+			$nonce_user_cap_result = AIOWPSecurity_Utility_Permissions::check_nonce_and_user_cap($_POST['_wpnonce'], 'aiowpsec-http-authentication-settings-nonce');
+
+			if (is_wp_error($nonce_user_cap_result)) {
+				$aio_wp_security->debug_logger->log_debug($nonce_user_cap_result->get_error_message(), 4);
+				die($nonce_user_cap_result->get_error_message());
+			}
+
+			$error = false;
+
+			$aio_wp_security->configs->set_value('aiowps_http_authentication_admin', '');
+
+			if (isset($_POST['aiowps_http_authentication_admin'])) {
+				if (!is_ssl()) {
+					$this->show_msg_error(__('Failed to save \'Enable for WordPress dashboard\'.', 'all-in-one-wp-security-and-firewall') . ' ' . __('Your site is currently not using https.', 'all-in-one-wp-security-and-firewall'));
+					$error = true;
+				} else {
+					$aio_wp_security->configs->set_value('aiowps_http_authentication_admin', '1');
+				}
+			}
+
+			$aio_wp_security->configs->set_value('aiowps_http_authentication_frontend', '');
+
+			if (isset($_POST['aiowps_http_authentication_frontend'])) {
+				if (!is_ssl()) {
+					$this->show_msg_error(__('Failed to save \'Enable for frontend\'.', 'all-in-one-wp-security-and-firewall') . ' ' . __('Your site is currently not using https.', 'all-in-one-wp-security-and-firewall'));
+					$error = true;
+				} else {
+					$aio_wp_security->configs->set_value('aiowps_http_authentication_frontend', '1');
+				}
+			}
+
+			if (empty($_POST['aiowps_http_authentication_username'])) {
+				$this->show_msg_error(__('Failed to save \'Username\'.', 'all-in-one-wp-security-and-firewall') . ' ' . __('Please enter a value for the HTTP authentication username.', 'all-in-one-wp-security-and-firewall'));
+				$error = true;
+			} else {
+				$aio_wp_security->configs->set_value('aiowps_http_authentication_username', sanitize_text_field($_POST['aiowps_http_authentication_username']));
+			}
+
+			if (empty($_POST['aiowps_http_authentication_password'])) {
+				$this->show_msg_error(__('Failed to save \'Password\'.', 'all-in-one-wp-security-and-firewall') . ' ' . __('Please enter a value for the HTTP authentication password.', 'all-in-one-wp-security-and-firewall'));
+				$error = true;
+			} else {
+				$aio_wp_security->configs->set_value('aiowps_http_authentication_password', sanitize_text_field($_POST['aiowps_http_authentication_password']));
+			}
+
+			$aio_wp_security->configs->set_value('aiowps_http_authentication_failure_message', htmlentities(stripslashes($_POST['aiowps_http_authentication_failure_message']), ENT_COMPAT, 'UTF-8'));
+
+			$aio_wp_security->configs->save_config();
+
+			// Recalculate points after the feature status/options have been altered.
+			$aiowps_feature_mgr->check_feature_status_and_recalculate_points();
+
+			if (!$error) {
+				$this->show_msg_settings_updated();
+			}
+		}
+
+		wp_enqueue_script('aiowpsec-pw-tool-js');
+
+		$aio_wp_security->include_template('wp-admin/user-security/http-authentication.php');
+	}
+
 	/**
 	 * Shows additional tab and field for the disable application password and saves on submit.
 	 *

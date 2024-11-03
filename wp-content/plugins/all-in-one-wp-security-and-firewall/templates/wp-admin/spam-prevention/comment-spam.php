@@ -36,6 +36,21 @@
 							</div>
 						</td>
 					</tr>
+					<tr valign="top">
+						<th scope="row"><?php _e('Use cookies to detect comment spam', 'all-in-one-wp-security-and-firewall'); ?></th>
+						<td>
+							<div class="aiowps_switch_container">
+								<?php AIOWPSecurity_Utility_UI::setting_checkbox(__('Using cookies may prevent caches from caching pages containing comment forms.', 'all-in-one-wp-security-and-firewall'), 'aiowps_spambot_detect_usecookies', $aio_wp_security->configs->get_value('aiowps_spambot_detect_usecookies')); ?>
+								<span class="aiowps_more_info_anchor"><span class="aiowps_more_info_toggle_char">+</span><span class="aiowps_more_info_toggle_text"><?php _e('More info', 'all-in-one-wp-security-and-firewall'); ?></span></span>
+								<div class="aiowps_more_info_body">
+									<?php
+									echo '<p class="description">'.__('This feature uses cookies.', 'all-in-one-wp-security-and-firewall') . ' ' . __('Unless your cache (e.g. Cloudflare) is configured to ignore these cookies, it may decide to not cache any of these pages.', 'all-in-one-wp-security-and-firewall').'</p>';
+									echo '<p class="description">'.__('Cloudflare detects that the set-cookie header is set and will not cache the page by default.', 'all-in-one-wp-security-and-firewall').'</p>';
+									?>
+								</div>
+							</div>
+						</td>
+					</tr>
 				</table>
 			</div>
 			<h3 class="hndle"><label for="title"><?php _e('Comment processing', 'all-in-one-wp-security-and-firewall'); ?></label></h3>
