@@ -35,7 +35,7 @@
 
 .image-choices-choice-selected {
   .image-choices-choice-text {
-    border-color: $brand-teal;
+    border-color: $brand-blue;
   }
 }
 .image-choices-choice {
@@ -86,7 +86,7 @@
   width: 100% !important;
   background-image: none !important;
   border: 1px solid $brand-mid-grey;
-  border-top: 2px solid $brand-teal;
+  border-top: 2px solid $brand-blue;
   @extend .o-image-overlay;
 
 }

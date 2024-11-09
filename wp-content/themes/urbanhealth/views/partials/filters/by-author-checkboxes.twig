@@ -1,0 +1,7 @@
+{% for author in authors %}
+  {% set checkbox_id = id_prefix ~ 'author-' ~ author.ID %}
+  <div class='o-checkbox'>
+    <input type="checkbox" id="{{ checkbox_id }}" name="by-author" value="{{author.ID}}" {{author.ID in active_authors ? 'checked' : ''}}>
+    <label for="{{checkbox_id}}">{{author.data.display_name}}</label>
+  </div>
+{% endfor %}

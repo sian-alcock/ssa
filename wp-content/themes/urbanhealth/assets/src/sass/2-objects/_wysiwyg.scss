@@ -1,6 +1,6 @@
 .o-wysiwyg {
   a:not(.o-cta) {
-    border-bottom: 2px solid $brand-teal;
+    border-bottom: 2px solid $brand-blue;
   }
 
   ul {
@@ -68,10 +68,10 @@
 
 .o-wysiwyg--teal {
   a:not(.o-cta) {
-    border-bottom: 2px solid $brand-teal;
+    border-bottom: 2px solid $brand-blue;
   }
   ::selection {
-    background: $brand-teal;
+    background: $brand-blue;
   }
 }
 

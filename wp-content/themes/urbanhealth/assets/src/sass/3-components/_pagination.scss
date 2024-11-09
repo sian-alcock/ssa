@@ -53,7 +53,7 @@
   cursor: pointer;
 
   &.current {
-    background-color: $brand-teal;
+    background-color: $brand-blue;
   }
 }
 
@@ -84,7 +84,7 @@
   }
 
   &.invisible {
-    color: $brand-teal;
+    color: $brand-blue;
 
     @include breakpoint($break-tablet) {
       display: none;

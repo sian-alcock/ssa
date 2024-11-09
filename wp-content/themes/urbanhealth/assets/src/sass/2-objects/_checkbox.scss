@@ -53,7 +53,7 @@
   input:checked:focus + label:before,
   label:hover:before,
   input:not(:checked):focus + label:before {
-    background-color: $brand-teal-light;
+    background-color: $brand-blue-light;
   }
 
   /* hover style just for information */

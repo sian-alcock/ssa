@@ -9,7 +9,7 @@
     z-index: 1;
     width: 20%;
     max-width: 285px;
-    background-color: $brand-teal-opacity;
+    background-color: $brand-blue-opacity;
     mix-blend-mode: multiply;
     content: '';
     box-sizing: border-box;
@@ -32,7 +32,7 @@
   &::before {
     width: calc(1rem + 4px);
     max-width: none;
-    border-right: 4px solid $brand-teal;
+    border-right: 4px solid $brand-blue;
     @include breakpoint($break-tablet) {
       width: calc(2rem + 4px);
     }
@@ -52,8 +52,8 @@
 
 .o-image-overlay--teal {
   &::before {
-    background: $brand-teal-opacity;
-    border-color: $brand-teal;
+    background: $brand-blue-opacity;
+    border-color: $brand-blue;
   }
 }
 

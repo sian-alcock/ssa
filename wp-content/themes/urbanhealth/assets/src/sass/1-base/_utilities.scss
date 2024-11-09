@@ -37,7 +37,7 @@
   color: $brand-white;
 }
 .bg-teal {
-  background-color: $brand-teal;
+  background-color: $brand-blue;
 }
 .bg-green {
   background-color: $brand-green;
@@ -69,7 +69,7 @@
 }
 .bg-hover--teal:hover {
   @include breakpoint($break-desktop) {
-    background-color: $brand-teal;
+    background-color: $brand-blue;
   }
 }
 .bg-hover--green:hover {
@@ -94,7 +94,7 @@
   border-top: 4px solid $brand-purple;
 }
 .border-top-teal {
-  border-top: 4px solid $brand-teal;
+  border-top: 4px solid $brand-blue;
 }
 .border-top-green {
   border-top: 4px solid $brand-green;
@@ -113,7 +113,7 @@
   border-left: 4px solid $brand-purple;
 }
 .border-left-teal {
-  border-left: 4px solid $brand-teal;
+  border-left: 4px solid $brand-blue;
 }
 .border-left-green {
   border-left: 4px solid $brand-green;

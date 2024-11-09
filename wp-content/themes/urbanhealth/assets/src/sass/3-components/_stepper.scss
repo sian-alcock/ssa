@@ -11,7 +11,7 @@
     left: 35px;
     width: calc(100% - 70px);
     height: 6px;
-    background-color: $brand-teal;
+    background-color: $brand-blue;
     content: '';
   }
 }
@@ -37,7 +37,7 @@
   margin-bottom: 0.5rem;
   padding: 0 0.5rem;
   background-color: $brand-light-teal;
-  border: 1px solid $brand-teal;
+  border: 1px solid $brand-blue;
   line-height: 40px;
   text-align: center;
 }
@@ -48,7 +48,7 @@
 .c-stepper--active {
   .c-stepper__number {
     @extend .bg-teal;
-    border: 1px solid $brand-teal;
+    border: 1px solid $brand-blue;
   }
 }
 
@@ -61,7 +61,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: $brand-teal;
+    background-color: $brand-blue;
     color: $brand-white;
     font-size: 1.5em;
   }

@@ -46,7 +46,7 @@
   display: none;
   width: 60px;
   height: 60px;
-  background-color: $brand-teal;
+  background-color: $brand-blue;
   border-radius: 0px;
   transition: 0.3s;
   cursor: pointer;
@@ -55,7 +55,7 @@
   }
 
   &:hover {
-    background-color: $brand-dark-teal;
+    background-color: $brand-dark-blue;
   }
 }
 

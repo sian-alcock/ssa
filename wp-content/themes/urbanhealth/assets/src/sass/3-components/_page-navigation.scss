@@ -82,7 +82,7 @@
     color: $brand-black;
     font-weight: bold;
     @include breakpoint($break-mobile-nav-break-point) {
-      border-bottom: 2px solid $brand-teal;
+      border-bottom: 2px solid $brand-blue;
       font-weight: normal;
     }
   }
