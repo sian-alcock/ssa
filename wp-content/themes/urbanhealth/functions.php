@@ -87,10 +87,10 @@ include 'functions/register/menus.php';
 
 include 'functions/register/options-pages.php';
 
-/**
- * @desc Altering Yoast SEO breadcrumbs
- */
-include 'functions/breadcrumbs.php';
+// /**
+//  * @desc Altering Yoast SEO breadcrumbs
+//  */
+// include 'functions/breadcrumbs.php';
 
 /**
  * @desc Adds endpoints to WP Rest API

@@ -51,7 +51,6 @@ function create_prop_post_types()
     'exclude_from_search'   => false,
     'publicly_queryable'    => true,
     'capability_type'       => 'post',
-    'rewrite'               => array('slug' => 'partnerships/current-partnerships', 'with_front' => false)
   );
 
   register_post_type( 'project', $args );
